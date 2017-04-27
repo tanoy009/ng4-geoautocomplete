@@ -1,0 +1,106 @@
+<div class="row">
+  <div class="col-xs-12 col-md-6">
+  	<div class="panel panel-primary">
+		  <div class="panel-heading">
+		    <h3 class="panel-title">Example 1</h3>
+		  </div>
+		  <div class="panel-body">
+		  	<div class="well">
+		  		<p>Setting used:</p>
+		  		<code>NONE (All default settings are used)</code>
+		  	</div>
+		  	<div>
+		    	<ng2geo-autocomplete (componentCallback)="autoCompleteCallback1($event)"></ng2geo-autocomplete>
+		    </div>
+		    <div class="well" style="float: left;width: 100%;margin-top: 20px;">
+		    	<p>Sample Output:</p>
+		    	<samp style="word-wrap: break-word;">{{componentData1}}</samp>
+		    </div>
+		  </div>
+		</div>
+  </div>
+  <div class="col-xs-12 col-md-6">
+  	<div class="panel panel-primary">
+		  <div class="panel-heading">
+		    <h3 class="panel-title">Example 2 (without saving recent search & changed search icon)</h3>
+		  </div>
+		  <div class="panel-body">
+		  	<div class="well">
+		  		<p>Setting used:</p>
+		  		<code style="word-wrap: break-word;" [innerHTML]="getCodeHtml(userSettings2)"></code>
+		  	</div>
+		  	<div>
+		    	<ng2geo-autocomplete [userSettings]="userSettings2" (componentCallback)="autoCompleteCallback2($event)"></ng2geo-autocomplete>
+		    </div>
+		    <div class="well" style="float: left;width: 100%;margin-top: 20px;">
+		    	<p>Sample Output:</p>
+		    	<samp style="word-wrap: break-word;">{{componentData2}}</samp>
+		    </div>
+		  </div>
+		</div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12 col-md-6">
+  	<div class="panel panel-primary">
+		  <div class="panel-heading">
+		    <h3 class="panel-title">Example 3 (without showing current location and change placeholder text)</h3>
+		  </div>
+		  <div class="panel-body">
+		  	<div class="well">
+		  		<p>Setting used:</p>
+		  		<code style="word-wrap: break-word;" [innerHTML]="getCodeHtml(userSettings3)"></code>
+		  	</div>
+		  	<div>
+		    	<ng2geo-autocomplete [userSettings]="userSettings3" (componentCallback)="autoCompleteCallback3($event)"></ng2geo-autocomplete>
+		    </div>
+		    <div class="well" style="float: left;width: 100%;margin-top: 20px;">
+		    	<p>Sample Output:</p>
+		    	<samp style="word-wrap: break-word;">{{componentData3}}</samp>
+		    </div>
+		  </div>
+		</div>
+  </div>
+  <div class="col-xs-12 col-md-6">
+  	<div class="panel panel-primary">
+		  <div class="panel-heading">
+		    <h3 class="panel-title">Example 4 (without search button and changed icons.)</h3>
+		  </div>
+		  <div class="panel-body">
+		  	<div class="well">
+		  		<p>Setting used:</p>
+		  		<code style="word-wrap: break-word;" [innerHTML]="getCodeHtml(userSettings4)"></code>
+		  	</div>
+		  	<div>
+		    	<ng2geo-autocomplete [userSettings]="userSettings4" (componentCallback)="autoCompleteCallback4($event)"></ng2geo-autocomplete>
+		    </div>
+		    <div class="well" style="float: left;width: 100%;margin-top: 20px;">
+		    	<p>Sample Output:</p>
+		    	<samp style="word-wrap: break-word;">{{componentData4}}</samp>
+		    </div>
+		  </div>
+		</div>
+  </div>
+</div>
+<div class="row">
+	<div class="col-xs-12 col-md-6">
+  	<div class="panel panel-primary">
+		  <div class="panel-heading">
+		    <h3 class="panel-title">Example 5 (using server API instade of google API)</h3>
+		  </div>
+		  <div class="panel-body">
+		  	<div class="well">
+		  		<p>Setting used:</p>
+		  		<code style="word-wrap: break-word;" [innerHTML]="getCodeHtml(userSettings5)"></code>
+		  	</div>
+		  	<div>
+		    	<ng2geo-autocomplete [userSettings]="userSettings5" (componentCallback)="autoCompleteCallback5($event)"></ng2geo-autocomplete>
+		    </div>
+		    <div class="well" style="float: left;width: 100%;margin-top: 20px;">
+		    	<p>Sample Output:</p>
+		    	<samp style="word-wrap: break-word;">{{componentData5}}</samp>
+		    </div>
+		  </div>
+		</div>
+  </div>
+</div>

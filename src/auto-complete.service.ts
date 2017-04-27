@@ -1,0 +1,197 @@
+import { Injectable, PLATFORM_ID, Inject } from '@angular/core';
+import { isPlatformBrowser, isPlatformServer } from '@angular/common';
+import { GlobalRef } from './windowRef.service';
+import { Http } from '@angular/http';
+import { LocalStorageService } from './storage.service';
+import 'rxjs/Rx';
+
+@Injectable()
+export class AutoCompleteSearchService {
+  constructor(private _http: Http, @Inject(PLATFORM_ID) private platformId: Object,
+  private _global: GlobalRef, private _localStorageService: LocalStorageService) {
+
+  }
+
+  getPredictions(url: string, query: string): any {
+    return new Promise(resolve => {
+      this._http.get(url + '?query=' + query
+      ).map(res => res.json())
+      .subscribe((data: any) => {
+        if (data) {
+          resolve(data);
+        }else {
+          resolve(false);
+        }
+      });
+    });
+  }
+
+
+  getLatLngDetail(url: string, lat: number, lng: number): any {
+    return new Promise(resolve => {
+      this._http.get(url + '?lat=' + lat + '&lng=' + lng
+      ).map(res => res.json())
+      .subscribe((data: any) => {
+        if (data) {
+          resolve(data);
+        }else {
+          resolve(false);
+        }
+      });
+    });
+  }
+
+
+  getPlaceDetails(url: string, placeId: string): any {
+    return new Promise(resolve => {
+      this._http.get(url + '?query=' + placeId
+      ).map(res => res.json())
+      .subscribe((data: any) => {
+        if (data) {
+          resolve(data);
+        }else {
+          resolve(false);
+        }
+      });
+    });
+  }
+
+  getGeoCurrentLocation(): any {
+    return new Promise(resolve => {
+      if (isPlatformBrowser(this.platformId)) {
+        let _window: any = this._global.nativeGlobal;
+        if (_window.navigator.geolocation) {
+          _window.navigator.geolocation.getCurrentPosition((pos) => {
+            let latlng: any = {lat: parseFloat(pos.coords.latitude + ''), lng: parseFloat(pos.coords.longitude + '')};
+            resolve(latlng);
+          });
+        }else {
+          resolve(false);
+        }
+      }else {
+        resolve(false);
+      }
+    });
+  }
+
+  getGeoLatLngDetail(latlng: any): any {
+    return new Promise(resolve => {
+      if (isPlatformBrowser(this.platformId)) {
+        let _window: any = this._global.nativeGlobal;
+        let geocoder: any = new _window.google.maps.Geocoder;
+        geocoder.geocode({'location': latlng}, (results, status) => {
+          if (status === 'OK') {
+            this.getGeoPlaceDetail(results[0].place_id).then((result) => {
+              console.log(result);
+              if (result) {
+                resolve(result);
+              }else {
+                resolve(false);
+              }
+            });
+          } else {
+            resolve(false);
+          }
+        });
+      }else {
+        resolve(false);
+      }
+    });
+  }
+
+  getGeoPrediction(query: string, countryRestriction?: string): any {
+    return new Promise(resolve => {
+      if (isPlatformBrowser(this.platformId)) {
+        let _window: any = this._global.nativeGlobal;
+        let placesService: any = new _window.google.maps.places.AutocompleteService();
+        let queryInput: any = {
+          input: query,
+          componentRestrictions: {country: countryRestriction ? countryRestriction : 'in'}
+        };
+        placesService.getPlacePredictions(queryInput, (result: any, status: any) => {
+          if (status === _window.google.maps.places.PlacesServiceStatus.OK) {
+            resolve(result);
+          }else {
+            resolve(false);
+          }
+        });
+      }else {
+        resolve(false);
+      }
+    });
+  }
+
+  getGeoPlaceDetail(placeId: string): any {
+    return new Promise(resolve => {
+      if (isPlatformBrowser(this.platformId)) {
+        let _window: any = this._global.nativeGlobal;
+        let placesService: any = new _window.google.maps.places.PlacesService(document.createElement('div'));
+        placesService.getDetails({'placeId': placeId}, (result: any, status: any) => {
+          if (result == null || result.length === 0) {
+            this.getGeoPaceDetailByReferance(result.referance).then((referanceData: any) => {
+              if (!referanceData) {
+                resolve(false);
+              }else {
+                resolve(referanceData);
+              }
+            });
+          }else {
+            resolve(result);
+          }
+        });
+      }else {
+        resolve(false);
+      }
+    });
+  }
+
+  getGeoPaceDetailByReferance(referance: string): any {
+    return new Promise(resolve => {
+      if (isPlatformBrowser(this.platformId)) {
+        let _window: any = this._global.nativeGlobal;
+        let placesService: any = new _window.google.maps.places.PlacesService();
+        placesService.getDetails({'reference': referance}, (result: any, status: any) => {
+          if (status === _window.google.maps.places.PlacesServiceStatus.OK) {
+            resolve(result);
+          }else {
+            resolve(false);
+          }
+        });
+      }else {
+        resolve(false);
+      }
+    });
+  }
+
+  addRecentList(localStorageName: string, result: any): any {
+    this.getRecentList(localStorageName).then((data: any) => {
+      if (data) {
+        for (let i: number = 0; i < data.length; i++) {
+          if (data[i].description === result.description) {
+            data.splice(i, 1);
+            break;
+          }
+        }
+        data.unshift(result);
+        if (data.length > 5) {
+          data.pop();
+        }
+        this._localStorageService.setItem(localStorageName, JSON.stringify(data));
+      }
+    });
+  };
+
+
+  getRecentList(localStorageName: string): any {
+    return new Promise(resolve => {
+      let value: any = this._localStorageService.getItem(localStorageName);
+      if (value) {
+        value = JSON.parse(value);
+      } else {
+        value = [];
+      }
+      resolve(value);
+    });
+  }
+
+}

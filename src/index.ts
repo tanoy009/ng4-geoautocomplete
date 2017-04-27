@@ -1,0 +1,1 @@
+export * from './ng-2-geoautocomplete.module';

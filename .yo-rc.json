@@ -1,0 +1,14 @@
+{
+  "generator-angular-library": {
+    "githubUsername": "tanoy009",
+    "githubRepoName": "ng2-geoautocomplete",
+    "npmModuleName": "ng2-geoautocomplete",
+    "allowNg2InModuleName": true,
+    "moduleGlobal": "ng2Geoautocomplete",
+    "ngModuleName": "Ng2GeoautocompleteModule",
+    "selectorPrefix": "ng2Geoautocomplete",
+    "projectTitle": "Angular 2/4 compatable google autocomplete",
+    "projectDescription": "angular 2/4 compatable google autocomplete with server side api support and AOT enabled",
+    "authorName": "tanoy kumar maity"
+  }
+}
