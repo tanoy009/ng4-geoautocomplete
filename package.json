@@ -1,6 +1,6 @@
 {
   "name": "ng2-geoautocomplete",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "angular 2/4 compatable google autocomplete with server side api support and AOT enabled",
   "main": "./bundles/ng2-geoautocomplete.umd.js",
   "module": "./index.js",

@@ -10,6 +10,9 @@
 ## Demo
 https://tanoy009.github.io/ng2-geoautocomplete/
 
+## Test Case.
+In Pipeline will be updated in a while.
+
 ## Table of contents
 
 - [About](#about)
@@ -42,15 +45,24 @@ import { Ng2GeoautocompleteModule } from 'ng2-geoautocomplete';
 })
 export class MyModule {}
 ```
+Add google place script in your main file generally referred to 'index.html' (Optional if you want to use google services).
+
+```
+<script type="text/javascript" src="https://maps.google.com/maps/api/js?sensor=true&key=XXReplace this with valid keyXX&libraries=places&language=en-US"></script>
+```
 
 Finally use in one of your apps components:
 ```typescript
 import { Component } from '@angular/core';
 
 @Component({
-  template: '<hello-world></hello-world>'
+  template: '<ng2geo-autocomplete (componentCallback)="autoCompleteCallback1($event)"></ng2geo-autocomplete>'
 })
-export class MyComponent {}
+export class MyComponent {
+	autoCompleteCallback1(selectedData:any) {
+		//do any necessery stuff.
+	}
+}
 ```
 
 You may also find it useful to view the [demo source](https://github.com/tanoy009/ng2-geoautocomplete/blob/master/demo/demo.component.ts).
