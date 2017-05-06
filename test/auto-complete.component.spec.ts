@@ -22,4 +22,9 @@ describe('ng2geo-autocomplete component', () => {
   //   expect(fixture.nativeElement.innerHTML.trim()).to.equal('Hello world from the Angular 2/4 compatable google autocomplete module!');
   // });
 
+  it('should say hello world', () => {
+    expect('test').to.equal('test');
+  });
+
+
 });
