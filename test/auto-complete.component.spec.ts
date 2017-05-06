@@ -6,7 +6,7 @@ import {
 import { expect } from 'chai';
 import { Ng2GeoautocompleteModule } from '../src';
 
-describe('ng2Geoautocomplete-hello-world component', () => {
+describe('ng2geo-autocomplete component', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'ng2Geoautocomplete-demo-app',
+  selector: 'ng2geo-autocomplete-demoapp',
   templateUrl: './demo/demo.component.html'
 })
 export class DemoComponent {
@@ -36,7 +36,9 @@ export class DemoComponent {
         recentStorageName: 'componentData5'
     };
 
-	constructor() {}
+	constructor() {
+    console.log('in demo component');
+  }
 
     getCodeHtml(data: any): any {
         let _temp: any = JSON.stringify(data);

@@ -9,8 +9,8 @@
     </div>
     <pre class="custom-autocomplete__loader" *ngIf="gettingCurrentLocationFlag"><i class="gif"></i></pre>
   </div>
-  <ul class="custom-autocomplete__dropdown" *ngIf="dropdownOpen && (currentLocationFlag || queryItems.length)">
-    <li *ngIf="currentLocationFlag" class="currentlocation">
+  <ul class="custom-autocomplete__dropdown" *ngIf="dropdownOpen && (settings.showCurrentLocation || queryItems.length)">
+    <li *ngIf="settings.showCurrentLocation" class="currentlocation">
       <a href="javascript:;" (click)="currentLocationSelected()">
         <i class="location-icon" *ngIf="settings.currentLocIconUrl" [ngStyle]="{'background-image': 'url(' + settings.currentLocIconUrl + ')'}"></i>Use Current Location
         <i class="location-icon current-default-icon" *ngIf="!settings.currentLocIconUrl"></i>
