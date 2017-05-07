@@ -7,6 +7,7 @@ export interface Settings {
   geoPredictionServerUrl?: string;
   geoLatLangServiceUrl?: string;
   geoLocDetailServerUrl?: string;
+  geoComponentRestriction?: string;
   serverResponseListHierarchy?: any;
   serverResponseatLangHierarchy?: any;
   serverResponseDetailHierarchy?: any;
@@ -50,6 +51,7 @@ export class AutoCompleteComponent implements OnInit {
     geoPredictionServerUrl: '',
     geoLatLangServiceUrl: '',
     geoLocDetailServerUrl: '',
+    geoComponentRestriction: 'in',
     serverResponseListHierarchy: [],
     serverResponseatLangHierarchy: [],
     serverResponseDetailHierarchy: [],
@@ -154,7 +156,7 @@ export class AutoCompleteComponent implements OnInit {
   }
 
   //function to set user settings if it is available.
-  private setUserSettings(): any {
+  private setUserSettings(): Settings {
     let _tempObj: any = {};
     if (this.userSettings && typeof(this.userSettings) === 'object') {
       let keys: string[] = Object.keys(this.defaultSettings);
@@ -171,7 +173,7 @@ export class AutoCompleteComponent implements OnInit {
   private getListQuery(value: string): any {
     this.recentDropdownOpen = false;
     if (this.settings.useGoogleGeoApi) {
-      this._autoCompleteSearchService.getGeoPrediction(value).then((result) => {
+      this._autoCompleteSearchService.getGeoPrediction(value, this.settings.geoComponentRestriction).then((result) => {
         this.updateListItem(result);
       });
     }else {

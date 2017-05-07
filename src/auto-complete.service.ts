@@ -12,7 +12,7 @@ export class AutoCompleteSearchService {
 
   }
 
-  getPredictions(url: string, query: string): any {
+  getPredictions(url: string, query: string): Promise<any> {
     return new Promise(resolve => {
       this._http.get(url + '?query=' + query
       ).map(res => res.json())
@@ -27,7 +27,7 @@ export class AutoCompleteSearchService {
   }
 
 
-  getLatLngDetail(url: string, lat: number, lng: number): any {
+  getLatLngDetail(url: string, lat: number, lng: number): Promise<any> {
     return new Promise(resolve => {
       this._http.get(url + '?lat=' + lat + '&lng=' + lng
       ).map(res => res.json())
@@ -42,7 +42,7 @@ export class AutoCompleteSearchService {
   }
 
 
-  getPlaceDetails(url: string, placeId: string): any {
+  getPlaceDetails(url: string, placeId: string): Promise<any> {
     return new Promise(resolve => {
       this._http.get(url + '?query=' + placeId
       ).map(res => res.json())
@@ -56,7 +56,7 @@ export class AutoCompleteSearchService {
     });
   }
 
-  getGeoCurrentLocation(): any {
+  getGeoCurrentLocation(): Promise<any> {
     return new Promise(resolve => {
       if (isPlatformBrowser(this.platformId)) {
         let _window: any = this._global.nativeGlobal;
@@ -74,7 +74,7 @@ export class AutoCompleteSearchService {
     });
   }
 
-  getGeoLatLngDetail(latlng: any): any {
+  getGeoLatLngDetail(latlng: any): Promise<any> {
     return new Promise(resolve => {
       if (isPlatformBrowser(this.platformId)) {
         let _window: any = this._global.nativeGlobal;
@@ -82,7 +82,6 @@ export class AutoCompleteSearchService {
         geocoder.geocode({'location': latlng}, (results, status) => {
           if (status === 'OK') {
             this.getGeoPlaceDetail(results[0].place_id).then((result) => {
-              console.log(result);
               if (result) {
                 resolve(result);
               }else {
@@ -99,14 +98,14 @@ export class AutoCompleteSearchService {
     });
   }
 
-  getGeoPrediction(query: string, countryRestriction?: string): any {
+  getGeoPrediction(query: string, countryRestriction: string): Promise<any> {
     return new Promise(resolve => {
       if (isPlatformBrowser(this.platformId)) {
         let _window: any = this._global.nativeGlobal;
         let placesService: any = new _window.google.maps.places.AutocompleteService();
         let queryInput: any = {
           input: query,
-          componentRestrictions: {country: countryRestriction ? countryRestriction : 'in'}
+          componentRestrictions: {country: countryRestriction}
         };
         placesService.getPlacePredictions(queryInput, (result: any, status: any) => {
           if (status === _window.google.maps.places.PlacesServiceStatus.OK) {
@@ -121,7 +120,7 @@ export class AutoCompleteSearchService {
     });
   }
 
-  getGeoPlaceDetail(placeId: string): any {
+  getGeoPlaceDetail(placeId: string): Promise<any> {
     return new Promise(resolve => {
       if (isPlatformBrowser(this.platformId)) {
         let _window: any = this._global.nativeGlobal;
@@ -145,7 +144,7 @@ export class AutoCompleteSearchService {
     });
   }
 
-  getGeoPaceDetailByReferance(referance: string): any {
+  getGeoPaceDetailByReferance(referance: string): Promise<any> {
     return new Promise(resolve => {
       if (isPlatformBrowser(this.platformId)) {
         let _window: any = this._global.nativeGlobal;
@@ -182,7 +181,7 @@ export class AutoCompleteSearchService {
   };
 
 
-  getRecentList(localStorageName: string): any {
+  getRecentList(localStorageName: string): Promise<any> {
     return new Promise(resolve => {
       let value: any = this._localStorageService.getItem(localStorageName);
       if (value) {

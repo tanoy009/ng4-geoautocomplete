@@ -1,4 +1,4 @@
-# Angular 2/4 compatable google autocomplete
+# Angular 4 compatable google autocomplete
 [![Build Status](https://travis-ci.org/tanoy009/ng4-geoautocomplete.svg?branch=master)](https://travis-ci.org/tanoy009/ng4-geoautocomplete)
 [![codecov](https://codecov.io/gh/tanoy009/ng4-geoautocomplete/branch/master/graph/badge.svg)](https://codecov.io/gh/tanoy009/ng4-geoautocomplete)
 [![npm version](https://badge.fury.io/js/ng4-geoautocomplete.svg)](http://badge.fury.io/js/ng4-geoautocomplete)
