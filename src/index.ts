@@ -1,1 +1,1 @@
-export * from './ng-2-geoautocomplete.module';
+export * from './ng-4-geoautocomplete.module';

@@ -10,6 +10,7 @@ export interface Settings {
   serverResponseListHierarchy?: any;
   serverResponseatLangHierarchy?: any;
   serverResponseDetailHierarchy?: any;
+  resOnSearchButtonClickOnly?: boolean;
   useGoogleGeoApi?: boolean;
   inputPlaceholderText?: string;
   showSearchButton?: boolean;
@@ -22,7 +23,7 @@ export interface Settings {
 }
 
 @Component({
-  selector: 'ng2geo-autocomplete',
+  selector: 'ng4geo-autocomplete',
   templateUrl: './src/auto-complete.component.html',
   styleUrls: ['./src/auto-complete.component.css'],
   host: {
@@ -43,6 +44,7 @@ export class AutoCompleteComponent implements OnInit {
   public settingsErrorMsg: string = '';
   private selectedDataIndex: number = -1;
   private recentSearchData: any = [];
+  private userSelectedOption: any = '';
   private settings: Settings = {};
   private defaultSettings: Settings = {
     geoPredictionServerUrl: '',
@@ -51,6 +53,7 @@ export class AutoCompleteComponent implements OnInit {
     serverResponseListHierarchy: [],
     serverResponseatLangHierarchy: [],
     serverResponseDetailHierarchy: [],
+    resOnSearchButtonClickOnly: false,
     useGoogleGeoApi: true,
     inputPlaceholderText: 'Enter Area Name',
     showSearchButton: true,
@@ -102,6 +105,7 @@ export class AutoCompleteComponent implements OnInit {
       this.getListQuery(inputVal);
     } else {
       this.queryItems = [];
+      this.userSelectedOption = '';
       if (this.settings.showRecentSearch) {
         this.showRecentSearch();
       }else {
@@ -137,6 +141,15 @@ export class AutoCompleteComponent implements OnInit {
     if (!this._elmRef.nativeElement.contains(event.target)) {
       this.selectedDataIndex = -1;
       this.dropdownOpen = false;
+    }
+  }
+
+  //function to manually trigger the callback to parent component when clicked search button.
+  userQuerySubmit(): any {
+    if (this.userSelectedOption) {
+      this.componentCallback.emit(this.userSelectedOption);
+    }else {
+      this.componentCallback.emit(false);
     }
   }
 
@@ -290,14 +303,15 @@ export class AutoCompleteComponent implements OnInit {
     data.active = false;
     this.selectedDataIndex = -1;
     this.locationInput = data.description;
-    console.log(this.locationInput);
     if (this.settings.showRecentSearch) {
       this._autoCompleteSearchService.addRecentList(this.settings.recentStorageName, data);
       this.getRecentLocations();
     }
-
-    //below code will execute only when user press enter and it emit a callback to the parent component.
-    this.componentCallback.emit(data);
+    this.userSelectedOption = data;
+    //below code will execute only when user press enter or select any option selection and it emit a callback to the parent component.
+    if (!this.settings.resOnSearchButtonClickOnly) {
+      this.componentCallback.emit(data);
+    }
   }
 
   //function to retrive the stored recent user search from the localstorage.

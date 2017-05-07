@@ -16,6 +16,7 @@ export class DemoComponent {
     };
     public userSettings3: any = {
         showCurrentLocation: false,
+        resOnSearchButtonClickOnly: true,
         inputPlaceholderText: 'Type anything and you will get a location',
         recentStorageName: 'componentData3'
     };
@@ -30,6 +31,17 @@ export class DemoComponent {
         geoLocDetailServerUrl: 'https://www.simplymovein.com/api/v4/get-location',
         geoPredictionServerUrl: 'https://www.simplymovein.com/api/v4/search-location',
         geoLatLangServiceUrl: 'https://www.simplymovein.com/api/v4/geocode',
+        serverResponseListHierarchy: ['data', 'items'],
+        serverResponseatLangHierarchy: ['data'],
+        serverResponseDetailHierarchy: ['data'],
+        recentStorageName: 'componentData5'
+    };
+
+    public userSettings5_1: any = {
+        useGoogleGeoApi: false,
+        geoLocDetailServerUrl: 'https://www.XXX.com/api/v4/get-location',
+        geoPredictionServerUrl: 'https://www.XXX.com/api/v4/search-location',
+        geoLatLangServiceUrl: 'https://www.XXX.com/api/v4/geocode',
         serverResponseListHierarchy: ['data', 'items'],
         serverResponseatLangHierarchy: ['data'],
         serverResponseDetailHierarchy: ['data'],

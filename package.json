@@ -1,8 +1,8 @@
 {
-  "name": "ng2-geoautocomplete",
-  "version": "0.0.1",
-  "description": "angular 2/4 compatable google autocomplete with server side api support and AOT enabled",
-  "main": "./bundles/ng2-geoautocomplete.umd.js",
+  "name": "ng4-geoautocomplete",
+  "version": "0.0.2",
+  "description": "angular 4 compatable google autocomplete with server side api support and AOT enabled",
+  "main": "./bundles/ng4-geoautocomplete.umd.js",
   "module": "./index.js",
   "typings": "./index.d.ts",
   "scripts": {
@@ -28,18 +28,26 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tanoy009/ng2-geoautocomplete.git"
+    "url": "git+https://github.com/tanoy009/ng4-geoautocomplete.git"
   },
   "keywords": [
+    "angular4",
+    "angular",
     "angular2",
-    "angular"
+    "autocomplete",
+    "google place search",
+    "api autocomplete",
+    "angular4 geo autocomplete",
+    "angular 4 autocomplete",
+    "angular 4 custom place search",
+    "angular 4 google place search"
   ],
   "author": "tanoy kumar maity",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/tanoy009/ng2-geoautocomplete/issues"
+    "url": "https://github.com/tanoy009/ng4-geoautocomplete/issues"
   },
-  "homepage": "https://github.com/tanoy009/ng2-geoautocomplete#readme",
+  "homepage": "https://github.com/tanoy009/ng4-geoautocomplete#readme",
   "devDependencies": {
     "@angular/common": "^4.0.0",
     "@angular/compiler": "^4.0.0",

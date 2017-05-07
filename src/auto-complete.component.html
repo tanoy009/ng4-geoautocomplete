@@ -2,7 +2,7 @@
   <div class="custom-autocomplete__container" >
     <div class="custom-autocomplete__input" [ngClass]="{'button-included':settings.showSearchButton}">
       <input  [(ngModel)]="locationInput" (click)="searchinputCallback($event)"  (keyup)="searchinputCallback($event)" (keyup.enter)="processSearchQuery()" type="search" name="search" id="search_places" placeholder="{{settings.inputPlaceholderText}}" autocomplete="off">
-      <button class="search-icon" *ngIf="settings.showSearchButton">
+      <button class="search-icon" *ngIf="settings.showSearchButton" (click)="userQuerySubmit()">
         <i *ngIf="settings.searchIconUrl" [ngStyle]="{'background-image': 'url(' + settings.searchIconUrl + ')'}"></i>
         <i *ngIf="!settings.searchIconUrl" class="search-default-icon"></i>
       </button>

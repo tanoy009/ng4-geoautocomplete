@@ -1,14 +1,14 @@
 # Angular 2/4 compatable google autocomplete
-[![Build Status](https://travis-ci.org/tanoy009/ng2-geoautocomplete.svg?branch=master)](https://travis-ci.org/tanoy009/ng2-geoautocomplete)
-[![codecov](https://codecov.io/gh/tanoy009/ng2-geoautocomplete/branch/master/graph/badge.svg)](https://codecov.io/gh/tanoy009/ng2-geoautocomplete)
-[![npm version](https://badge.fury.io/js/ng2-geoautocomplete.svg)](http://badge.fury.io/js/ng2-geoautocomplete)
-[![devDependency Status](https://david-dm.org/tanoy009/ng2-geoautocomplete/dev-status.svg)](https://david-dm.org/tanoy009/ng2-geoautocomplete?type=dev)
-[![GitHub issues](https://img.shields.io/github/issues/tanoy009/ng2-geoautocomplete.svg)](https://github.com/tanoy009/ng2-geoautocomplete/issues)
-[![GitHub stars](https://img.shields.io/github/stars/tanoy009/ng2-geoautocomplete.svg)](https://github.com/tanoy009/ng2-geoautocomplete/stargazers)
-[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/tanoy009/ng2-geoautocomplete/master/LICENSE)
+[![Build Status](https://travis-ci.org/tanoy009/ng4-geoautocomplete.svg?branch=master)](https://travis-ci.org/tanoy009/ng4-geoautocomplete)
+[![codecov](https://codecov.io/gh/tanoy009/ng4-geoautocomplete/branch/master/graph/badge.svg)](https://codecov.io/gh/tanoy009/ng4-geoautocomplete)
+[![npm version](https://badge.fury.io/js/ng4-geoautocomplete.svg)](http://badge.fury.io/js/ng4-geoautocomplete)
+[![devDependency Status](https://david-dm.org/tanoy009/ng4-geoautocomplete/dev-status.svg)](https://david-dm.org/tanoy009/ng4-geoautocomplete?type=dev)
+[![GitHub issues](https://img.shields.io/github/issues/tanoy009/ng4-geoautocomplete.svg)](https://github.com/tanoy009/ng4-geoautocomplete/issues)
+[![GitHub stars](https://img.shields.io/github/stars/tanoy009/ng4-geoautocomplete.svg)](https://github.com/tanoy009/ng4-geoautocomplete/stargazers)
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/tanoy009/ng4-geoautocomplete/master/LICENSE)
 
 ## Demo
-https://tanoy009.github.io/ng2-geoautocomplete/
+https://tanoy009.github.io/ng4-geoautocomplete/
 
 ## Test Case.
 In Pipeline will be updated in a while.
@@ -23,24 +23,24 @@ In Pipeline will be updated in a while.
 
 ## About
 
-angular 2/4 compatable google autocomplete with server side api support and AOT enabled
+angular 4 compatable google autocomplete with server side api support and AOT enabled
 
 ## Installation
 
 Install through npm:
 ```
-npm install --save ng2-geoautocomplete
+npm install --save ng4-geoautocomplete
 ```
 
 Then include in your apps module:
 
 ```typescript
 import { Component, NgModule } from '@angular/core';
-import { Ng2GeoautocompleteModule } from 'ng2-geoautocomplete';
+import { Ng4GeoautocompleteModule } from 'ng4-geoautocomplete';
 
 @NgModule({
   imports: [
-    Ng2GeoautocompleteModule.forRoot()
+    Ng4GeoautocompleteModule.forRoot()
   ]
 })
 export class MyModule {}
@@ -56,7 +56,7 @@ Finally use in one of your apps components:
 import { Component } from '@angular/core';
 
 @Component({
-  template: '<ng2geo-autocomplete (componentCallback)="autoCompleteCallback1($event)"></ng2geo-autocomplete>'
+  template: '<ng4geo-autocomplete (componentCallback)="autoCompleteCallback1($event)"></ng4geo-autocomplete>'
 })
 export class MyComponent {
 	autoCompleteCallback1(selectedData:any) {
@@ -65,19 +65,19 @@ export class MyComponent {
 }
 ```
 
-You may also find it useful to view the [demo source](https://github.com/tanoy009/ng2-geoautocomplete/blob/master/demo/demo.component.ts).
+You may also find it useful to view the [demo source](https://github.com/tanoy009/ng4-geoautocomplete/blob/master/demo/demo.component.ts).
 
 ### Usage without a module bundler
 ```
-<script src="node_modules/ng2-geoautocomplete/bundles/ng2-geoautocomplete.umd.js"></script>
+<script src="node_modules/ng4-geoautocomplete/bundles/ng4-geoautocomplete.umd.js"></script>
 <script>
-    // everything is exported ng2Geoautocomplete namespace
+    // everything is exported ng4Geoautocomplete namespace
 </script>
 ```
 
 ## Documentation
 All documentation is auto-generated from the source via [compodoc](https://compodoc.github.io/compodoc/) and can be viewed here:
-https://tanoy009.github.io/ng2-geoautocomplete/docs/
+https://tanoy009.github.io/ng4-geoautocomplete/docs/
 
 ## Development
 
