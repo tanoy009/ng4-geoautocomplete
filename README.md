@@ -1,4 +1,4 @@
-# Angular 4 compatable google autocomplete
+# Angular 4 compatible google autocomplete
 [![Build Status](https://travis-ci.org/tanoy009/ng4-geoautocomplete.svg?branch=master)](https://travis-ci.org/tanoy009/ng4-geoautocomplete)
 [![codecov](https://codecov.io/gh/tanoy009/ng4-geoautocomplete/branch/master/graph/badge.svg)](https://codecov.io/gh/tanoy009/ng4-geoautocomplete)
 [![npm version](https://badge.fury.io/js/ng4-geoautocomplete.svg)](http://badge.fury.io/js/ng4-geoautocomplete)
@@ -23,7 +23,7 @@ In Pipeline will be updated in a while.
 
 ## About
 
-angular 4 compatable google autocomplete with server side api support and AOT enabled
+angular 4 compatible google autocomplete with server side api support and AOT enabled
 
 ## Installation
 
