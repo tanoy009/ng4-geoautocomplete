@@ -8,8 +8,8 @@
     "eofline": false,
     "indent": "spaces",
     "max-line-length": [
-      true,
-      140
+      false,
+      200
     ],
     "member-ordering": [
       true,
