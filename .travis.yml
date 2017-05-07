@@ -4,7 +4,7 @@ node_js:
 - '6'
 
 script: npm test
-script: npm run build:prod
+script: npm run build:dist
 
 notifications:
   email: false
