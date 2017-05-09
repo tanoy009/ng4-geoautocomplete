@@ -162,7 +162,7 @@ export class AutoCompleteSearchService {
     });
   }
 
-  addRecentList(localStorageName: string, result: any, itemSavedLength:number): any {
+  addRecentList(localStorageName: string, result: any, itemSavedLength: number): any {
     this.getRecentList(localStorageName).then((data: any) => {
       if (data) {
         for (let i: number = 0; i < data.length; i++) {
