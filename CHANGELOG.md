@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.0.5"></a>
+## [0.0.5](https://github.com/tanoy009/ng4-geoautocomplete/compare/v0.0.4...v0.0.5) (2017-05-09)
+
+
+### Bug Fixes
+
+* google object grometry issue fix when tryig to access it and minor enhancement ([72ee51b](https://github.com/tanoy009/ng4-geoautocomplete/commit/72ee51b))
+
+
+
 <a name="0.0.4"></a>
 ## [0.0.4](https://github.com/tanoy009/ng4-geoautocomplete/compare/v0.0.3...v0.0.4) (2017-05-07)
 
