@@ -162,7 +162,7 @@ export class AutoCompleteSearchService {
     });
   }
 
-  addRecentList(localStorageName: string, result: any): any {
+  addRecentList(localStorageName: string, result: any, itemSavedLength:number): any {
     this.getRecentList(localStorageName).then((data: any) => {
       if (data) {
         for (let i: number = 0; i < data.length; i++) {
@@ -172,7 +172,7 @@ export class AutoCompleteSearchService {
           }
         }
         data.unshift(result);
-        if (data.length > 5) {
+        if (data.length > itemSavedLength) {
           data.pop();
         }
         this._localStorageService.setItem(localStorageName, JSON.stringify(data));

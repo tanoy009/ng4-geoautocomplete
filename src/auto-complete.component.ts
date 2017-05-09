@@ -18,6 +18,7 @@ export interface Settings {
   showRecentSearch?: boolean;
   showCurrentLocation?: boolean;
   recentStorageName?: string;
+  noOfRecentSearchSave?: number;
   currentLocIconUrl?: string;
   searchIconUrl?: string;
   locationIconUrl?: string;
@@ -29,7 +30,7 @@ export interface Settings {
     <div class="custom-autocomplete" *ngIf="!isSettingsError">
       <div class="custom-autocomplete__container" >
         <div class="custom-autocomplete__input" [ngClass]="{'button-included':settings.showSearchButton}">
-          <input  [(ngModel)]="locationInput" (click)="searchinputCallback($event)"  (keyup)="searchinputCallback($event)" (keyup.enter)="processSearchQuery()" 
+          <input  [(ngModel)]="locationInput" (click)="searchinputClickCallback($event)"  (keyup)="searchinputCallback($event)" 
            type="search" name="search" id="search_places" placeholder="{{settings.inputPlaceholderText}}" autocomplete="off">
           <button class="search-icon" *ngIf="settings.showSearchButton" (click)="userQuerySubmit()">
             <i *ngIf="settings.searchIconUrl" [ngStyle]="{'background-image': 'url(' + settings.searchIconUrl + ')'}"></i>
@@ -304,6 +305,7 @@ export class AutoCompleteComponent implements OnInit {
     showRecentSearch: true,
     showCurrentLocation: true,
     recentStorageName: 'recentSearches',
+    noOfRecentSearchSave: 5,
     currentLocIconUrl: '',
     searchIconUrl: '',
     locationIconUrl: ''
@@ -338,6 +340,12 @@ export class AutoCompleteComponent implements OnInit {
         'Location detail custom server url is not defined. Please use "geoLocDetailServerUrl" key to set. ';
       }
     }
+  }
+
+  //function called when click event happens in input box. (Binded with view)
+  searchinputClickCallback(event: any): any {
+    event.target.select();
+    this.searchinputCallback(event);
   }
 
   //function called when there is a change in input. (Binded with view)
@@ -397,17 +405,6 @@ export class AutoCompleteComponent implements OnInit {
     }
   }
 
-  //function to process the search query when pressed enter.
-  processSearchQuery(): any {
-    if (this.queryItems.length) {
-      if (this.selectedDataIndex > -1) {
-        this.selectedListNode(this.selectedDataIndex);
-      }else {
-        this.selectedListNode(0);
-      }
-    }
-  }
-
   //function to get user current location from the device.
   currentLocationSelected(): any {
     if (isPlatformBrowser(this.platformId)) {
@@ -420,6 +417,17 @@ export class AutoCompleteComponent implements OnInit {
           this.getCurrentLocationInfo(result);
         }
       });
+    }
+  }
+
+  //function to process the search query when pressed enter.
+  private processSearchQuery(): any {
+    if (this.queryItems.length) {
+      if (this.selectedDataIndex > -1) {
+        this.selectedListNode(this.selectedDataIndex);
+      }else {
+        this.selectedListNode(0);
+      }
     }
   }
 
@@ -500,6 +508,8 @@ export class AutoCompleteComponent implements OnInit {
         arrayIndex = this.queryItems.length - 1;
       }
       this.activeListNode(arrayIndex);
+    } else {
+      this.processSearchQuery();
     }
   }
 
@@ -543,12 +553,13 @@ export class AutoCompleteComponent implements OnInit {
 
   //function to store the selected user search in the localstorage.
   private setRecentLocation(data: any): any {
+    data = JSON.parse(JSON.stringify(data));
     data.description = data.description ? data.description : data.formatted_address;
     data.active = false;
     this.selectedDataIndex = -1;
     this.locationInput = data.description;
     if (this.settings.showRecentSearch) {
-      this._autoCompleteSearchService.addRecentList(this.settings.recentStorageName, data);
+      this._autoCompleteSearchService.addRecentList(this.settings.recentStorageName, data, this.settings.noOfRecentSearchSave);
       this.getRecentLocations();
     }
     this.userSelectedOption = data;
