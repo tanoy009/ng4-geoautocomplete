@@ -515,7 +515,7 @@
                             </tr>
                             <tr>
                                 <td class="col-md-4">
-            <code>getGeoPrediction(query: string, countryRestriction: string)</code>
+            <code>getGeoPrediction(query: string, countryRestriction: any)</code>
                                 </td>
                             </tr>
             
@@ -551,7 +551,7 @@
             
                                 <tr>
                                     <td class="col-md-4">
-                                        <div class="io-line">Defined in <a href="" data-line="123" class="link-to-prism">src/auto-complete.service.ts:123</a></div>
+                                        <div class="io-line">Defined in <a href="" data-line="130" class="link-to-prism">src/auto-complete.service.ts:130</a></div>
                                     </td>
                                 </tr>
             
@@ -581,7 +581,7 @@
             
                                 <tr>
                                     <td class="col-md-4">
-                                        <div class="io-line">Defined in <a href="" data-line="147" class="link-to-prism">src/auto-complete.service.ts:147</a></div>
+                                        <div class="io-line">Defined in <a href="" data-line="154" class="link-to-prism">src/auto-complete.service.ts:154</a></div>
                                     </td>
                                 </tr>
             
@@ -611,7 +611,7 @@
             
                                 <tr>
                                     <td class="col-md-4">
-                                        <div class="io-line">Defined in <a href="" data-line="165" class="link-to-prism">src/auto-complete.service.ts:165</a></div>
+                                        <div class="io-line">Defined in <a href="" data-line="172" class="link-to-prism">src/auto-complete.service.ts:172</a></div>
                                     </td>
                                 </tr>
             
@@ -641,7 +641,7 @@
             
                                 <tr>
                                     <td class="col-md-4">
-                                        <div class="io-line">Defined in <a href="" data-line="184" class="link-to-prism">src/auto-complete.service.ts:184</a></div>
+                                        <div class="io-line">Defined in <a href="" data-line="191" class="link-to-prism">src/auto-complete.service.ts:191</a></div>
                                     </td>
                                 </tr>
             
@@ -760,15 +760,22 @@ export class AutoCompleteSearchService {
     });
   }
 
-  getGeoPrediction(query: string, countryRestriction: string): Promise&lt;any&gt; {
+  getGeoPrediction(query: string, countryRestriction: any): Promise&lt;any&gt; {
     return new Promise(resolve &#x3D;&gt; {
       if (isPlatformBrowser(this.platformId)) {
         let _window: any &#x3D; this._global.nativeGlobal;
         let placesService: any &#x3D; new _window.google.maps.places.AutocompleteService();
-        let queryInput: any &#x3D; {
-          input: query,
-          componentRestrictions: {country: countryRestriction}
-        };
+        let queryInput: any &#x3D; {};
+        if (countryRestriction.length) {
+          queryInput &#x3D; {
+            input: query,
+            componentRestrictions: {country: countryRestriction}
+          };
+        }else {
+           queryInput &#x3D; {
+            input: query
+          };
+        }
         placesService.getPlacePredictions(queryInput, (result: any, status: any) &#x3D;&gt; {
           if (status &#x3D;&#x3D;&#x3D; _window.google.maps.places.PlacesServiceStatus.OK) {
             resolve(result);
