@@ -98,15 +98,22 @@ export class AutoCompleteSearchService {
     });
   }
 
-  getGeoPrediction(query: string, countryRestriction: string): Promise<any> {
+  getGeoPrediction(query: string, countryRestriction: any): Promise<any> {
     return new Promise(resolve => {
       if (isPlatformBrowser(this.platformId)) {
         let _window: any = this._global.nativeGlobal;
         let placesService: any = new _window.google.maps.places.AutocompleteService();
-        let queryInput: any = {
-          input: query,
-          componentRestrictions: {country: countryRestriction}
-        };
+        let queryInput: any = {};
+        if (countryRestriction.length) {
+          queryInput = {
+            input: query,
+            componentRestrictions: {country: countryRestriction}
+          };
+        }else {
+           queryInput = {
+            input: query
+          };
+        }
         placesService.getPlacePredictions(queryInput, (result: any, status: any) => {
           if (status === _window.google.maps.places.PlacesServiceStatus.OK) {
             resolve(result);

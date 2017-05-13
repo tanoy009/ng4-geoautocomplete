@@ -65,6 +65,30 @@ export class MyComponent {
 }
 ```
 
+List of settings that can be used to configure the module (all config. are optional):
+```typescript
+	{
+	  geoPredictionServerUrl?: string;  		//should be a server url which returns list of places upon input query (GET request)
+	  geoLatLangServiceUrl?: string;				//should be a server url which returns place object upon lat and lon. (GET request)
+	  geoLocDetailServerUrl?: string;				//should be a server url which returns place details upon placeID received by 'geoPredictionServerUrl' (GET request)
+	  geoComponentRestriction?: any;				//should be an array of country code where search should be restricted like ['in', 'us', 'pr', 'vi', 'gu', 'mp'] *(Default: 'no restriction')*
+	  serverResponseListHierarchy?: any;		//should be an array of key from where 'geoPredictionServer' data should be extracted. (see Example.)
+	  serverResponseatLangHierarchy?: any;  //should be an array of key from where 'geoLatLangService' data should be extracted. (see Example.)
+	  serverResponseDetailHierarchy?: any;	//should be an array of key from where 'geoLocDetailSerice' data should be extracted. (see Example.)
+	  resOnSearchButtonClickOnly?: boolean;	//when output should be emmited when search button clicked only.
+	  useGoogleGeoApi?: boolean;						//should set to 'false' when server urls to be used instade of google api. *(Default: true)*
+	  inputPlaceholderText?: string;				//Input Placeholder text can be changed *(Default: 'Enter Area Name')*
+	  showSearchButton?: boolean;						//Search button to be visible or not. *(Default: true)*
+	  showRecentSearch?: boolean;						//Recent search to be saved & shown to user or not. *(Default: true)*
+	  showCurrentLocation?: boolean;				//current location option to be visible or not. *(Default: true)*
+	  recentStorageName?: string;						//Recent seraches are saved in browser localsorage. The key value which is used by the module to save can be changed. *(Default: 'recentSearches')*
+	  noOfRecentSearchSave?: number;				//Number of recent user entry to be saved . *(Default: 5)*
+	  currentLocIconUrl?: string;						//Current location icon can be changed *(Should be an image url or svg url)*
+	  searchIconUrl?: string;								//Search icon can be changed *(Should be an image url or svg url)*
+	  locationIconUrl?: string;							//Genetal Location icon can be changed *(Should be an image or svg url)*
+	}
+```
+
 You may also find it useful to view the [demo source](https://github.com/tanoy009/ng4-geoautocomplete/blob/master/demo/demo.component.ts).
 
 ### Usage without a module bundler

@@ -7,7 +7,7 @@ export interface Settings {
   geoPredictionServerUrl?: string;
   geoLatLangServiceUrl?: string;
   geoLocDetailServerUrl?: string;
-  geoComponentRestriction?: string;
+  geoComponentRestriction?: any;
   serverResponseListHierarchy?: any;
   serverResponseatLangHierarchy?: any;
   serverResponseDetailHierarchy?: any;
@@ -294,7 +294,7 @@ export class AutoCompleteComponent implements OnInit {
     geoPredictionServerUrl: '',
     geoLatLangServiceUrl: '',
     geoLocDetailServerUrl: '',
-    geoComponentRestriction: 'in',
+    geoComponentRestriction: [],
     serverResponseListHierarchy: [],
     serverResponseatLangHierarchy: [],
     serverResponseDetailHierarchy: [],
