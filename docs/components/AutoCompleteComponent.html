@@ -1,0 +1,1786 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>ng4-geoautocomplete documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	    <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">ng4-geoautocomplete documentation</a>
+            <button type="button" class="btn btn-default btn-menu fa fa-bars" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+            <div id="book-search-input" role="search">
+                <input type="text" placeholder="Type to search">
+            </div>
+            <nav>
+            
+                <ul class="list">
+            
+                    <li class="title">
+                        <a href="../index.html">ng4-geoautocomplete documentation</a>
+                    </li>
+            
+                    <li class="divider"></li>
+            
+            
+                    <li class="chapter">
+                        <a data-type="chapter-link" href="../index.html"><span class="fa fa-home"></span>Getting started</a>
+                        <ul class="links">
+                                <li class="link">
+                                    <a href="../index.html" ><span class="fa fa-file-text-o"></span>README</a>
+                                </li>
+                                <li class="link">
+                                    <a 
+                                        
+                                         href="../overview.html" 
+                                         href="../overview.html" 
+                                        >
+                                        <span class="fa fa-th"></span>Overview
+                                    </a>
+                                </li>
+                        </ul>
+                    </li>
+            
+            
+                    <li class="chapter">
+                        <a data-type="chapter-link" href="../modules.html" >
+                            <span class="fa fa-archive"></span>
+                            <span>Modules</span>
+                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                    data-target="#xs-modules-links"
+                            ></span>
+                        </a>
+                        <ul class="links collapse in"
+                                id="xs-modules-links"
+                            >
+                                <li class="link">
+                                    <a href="../modules/Ng4GeoautocompleteModule.html" >Ng4GeoautocompleteModule</a>
+                                </li>
+                        </ul>
+                    </li>
+            
+                    <li class="chapter">
+                        <div class="simple">
+                            <span class="fa fa-cogs"></span>
+                            <span>Components</span>
+                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                    data-target="#xs-components-links"
+                                ></span>
+                        </div>
+                        <ul class="links collapse in"
+                                id="xs-components-links"
+                            >
+                                <li class="link">
+                                    <a href="../components/AutoCompleteComponent.html"  data-type="entity-link" class="active" >AutoCompleteComponent</a>
+                                </li>
+                        </ul>
+                    </li>
+            
+            
+                    <li class="chapter">
+                        <div class="simple">
+                            <span class="fa fa-file-code-o"></span>
+                            <span>Classes</span>
+                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                    data-target="#xs-classes-links"
+                                ></span>
+                        </div>
+                        <ul class="links collapse in"
+                                id="xs-classes-links"
+                            >
+                                <li class="link">
+                                    <a href="../classes/BrowserGlobalRef.html" >BrowserGlobalRef</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../classes/GlobalRef.html" >GlobalRef</a>
+                                </li>
+                        </ul>
+                    </li>
+            
+                    <li class="chapter">
+                        <div class="simple">
+                            <span class="fa fa-long-arrow-down"></span>
+                            <span>Injectables</span>
+                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                    data-target="#xs-injectables-links"
+                                ></span>
+                        </div>
+                        <ul class="links collapse in"
+                                id="xs-injectables-links"
+                            >
+                                <li class="link">
+                                    <a href="../injectables/AutoCompleteSearchService.html" >AutoCompleteSearchService</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../injectables/LocalStorageService.html" >LocalStorageService</a>
+                                </li>
+                        </ul>
+                    </li>
+            
+                    <li class="chapter">
+                        <div class="simple">
+                            <span class="fa fa-info"></span>
+                            <span>Interfaces</span>
+                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                    data-target="#xs-interfaces-links"
+                                ></span>
+                        </div>
+                        <ul class="links collapse in"
+                                id="xs-interfaces-links"
+                            >
+                                <li class="link">
+                                    <a href="../interfaces/MyGlobal.html" >MyGlobal</a>
+                                </li>
+                        </ul>
+                    </li>
+            
+            
+            
+            
+            
+                    <li class="divider"></li>
+                    <li class="copyright">
+                            Documentation generated using <a href="https://compodoc.github.io/website/" target="_blank">
+                                        <img src="..//images/compodoc-vectorise.svg" class="img-responsive">
+                            </a>
+                    </li>
+            
+                </ul>
+            
+            </nav>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <nav>
+                   
+                       <ul class="list">
+                   
+                           <li class="title">
+                               <a href="../index.html">ng4-geoautocomplete documentation</a>
+                           </li>
+                   
+                           <li class="divider"></li>
+                   
+                               <div id="book-search-input" role="search">
+                                   <input type="text" placeholder="Type to search">
+                               </div>
+                   
+                           <li class="chapter">
+                               <a data-type="chapter-link" href="../index.html"><span class="fa fa-home"></span>Getting started</a>
+                               <ul class="links">
+                                       <li class="link">
+                                           <a href="../index.html" ><span class="fa fa-file-text-o"></span>README</a>
+                                       </li>
+                                       <li class="link">
+                                           <a 
+                                               
+                                                href="../overview.html" 
+                                                href="../overview.html" 
+                                               >
+                                               <span class="fa fa-th"></span>Overview
+                                           </a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                   
+                           <li class="chapter">
+                               <a data-type="chapter-link" href="../modules.html" >
+                                   <span class="fa fa-archive"></span>
+                                   <span>Modules</span>
+                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                           data-target="#modules-links"
+                                   ></span>
+                               </a>
+                               <ul class="links collapse in"
+                                       id="modules-links"
+                   >
+                                       <li class="link">
+                                           <a href="../modules/Ng4GeoautocompleteModule.html" >Ng4GeoautocompleteModule</a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                           <li class="chapter">
+                               <div class="simple">
+                                   <span class="fa fa-cogs"></span>
+                                   <span>Components</span>
+                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                           data-target="#components-links"
+                   ></span>
+                               </div>
+                               <ul class="links collapse in"
+                                       id="components-links"
+                   >
+                                       <li class="link">
+                                           <a href="../components/AutoCompleteComponent.html"  data-type="entity-link" class="active" >AutoCompleteComponent</a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                   
+                           <li class="chapter">
+                               <div class="simple">
+                                   <span class="fa fa-file-code-o"></span>
+                                   <span>Classes</span>
+                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                           data-target="#classes-links"
+                   ></span>
+                               </div>
+                               <ul class="links collapse in"
+                                       id="classes-links"
+                   >
+                                       <li class="link">
+                                           <a href="../classes/BrowserGlobalRef.html" >BrowserGlobalRef</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../classes/GlobalRef.html" >GlobalRef</a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                           <li class="chapter">
+                               <div class="simple">
+                                   <span class="fa fa-long-arrow-down"></span>
+                                   <span>Injectables</span>
+                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                           data-target="#injectables-links"
+                   ></span>
+                               </div>
+                               <ul class="links collapse in"
+                                       id="injectables-links"
+                   >
+                                       <li class="link">
+                                           <a href="../injectables/AutoCompleteSearchService.html" >AutoCompleteSearchService</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../injectables/LocalStorageService.html" >LocalStorageService</a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                           <li class="chapter">
+                               <div class="simple">
+                                   <span class="fa fa-info"></span>
+                                   <span>Interfaces</span>
+                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                           data-target="#interfaces-links"
+                   ></span>
+                               </div>
+                               <ul class="links collapse in"
+                                       id="interfaces-links"
+                   >
+                                       <li class="link">
+                                           <a href="../interfaces/MyGlobal.html" >MyGlobal</a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                   
+                   
+                   
+                   
+                           <li class="divider"></li>
+                           <li class="copyright">
+                                   Documentation generated using <a href="https://compodoc.github.io/website/" target="_blank">
+                                               <img src="..//images/compodoc-vectorise.svg" class="img-responsive">
+                                   </a>
+                           </li>
+                   
+                       </ul>
+                   
+                   </nav>
+               </div>
+               <div class="content component">
+                   <div class="content-data">
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>AutoCompleteComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+    <li class="active">
+        <a href="#infos" id="infos-tab" role="tab" data-toggle="tab" data-link="infos">Infos</a>
+    </li>
+
+    <li>
+        <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+    </li>
+
+    <li>
+        <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+    </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="infos"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/auto-complete.component.ts</code>
+</p>
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code><a href="https://angular.io/docs/ts/latest/api/core/index/OnInit-interface.html" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">host</td>
+                <td class="col-md-9"><code>{<br>&nbsp;&nbsp;&nbsp;&nbsp;"(document:click)":"closeAutocomplete($event)"<br>}</code></td>
+            </tr>
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>ng4geo-autocomplete</code></td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-3">styles</td>
+                <td class="col-md-9"><code>
+    .custom-autocomplete {
+      display: block;
+      position: relative;
+      width: 100%;
+      float: left;
+    }
+
+    .custom-autocomplete a, .custom-autocomplete a:hover {
+      text-decoration: none;
+    }
+
+    .custom-autocomplete--error {
+      color: #fff;
+      background-color: #fd4f4f;
+      padding: 10px;
+    }
+
+    .custom-autocomplete__dropdown {
+      position: absolute;
+      background: #fff;
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      list-style: none;
+      border: 1px solid #909090;
+      z-index: 99;
+      top: 50px;
+    }
+    .custom-autocomplete__dropdown li {
+      float: left;
+      width: 100%;
+      font-size: 15px;
+    }
+    .custom-autocomplete__dropdown a {
+      width: 100%;
+      color: #353535;
+      float: left;
+      padding: 8px 10px;
+    }
+    .custom-autocomplete__dropdown a:hover {
+      text-decoration: none;
+    }
+    .custom-autocomplete__dropdown .currentlocation {
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .custom-autocomplete__dropdown .currentlocation a {
+      padding: 10px 10px 10px 13px;
+      font-size: 14px;
+    }
+    .custom-autocomplete__dropdown .currentlocation a:hover {
+      background-color: #eeeded;
+    }
+    .custom-autocomplete__dropdown .currentlocation .location-icon {
+      width: 16px;
+      height: 16px;
+      background-size: cover;
+      background-image: url(data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTYuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjE2cHgiIGhlaWdodD0iMTZweCIgdmlld0JveD0iMCAwIDg3Ljg1OSA4Ny44NTkiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDg3Ljg1OSA4Ny44NTk7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4KPGc+Cgk8ZyBpZD0iTWFya2VyIj4KCQk8Zz4KCQkJPHBhdGggZD0iTTgwLjkzOCw0MC40ODNDNzkuMjk0LDIyLjcxMyw2NS4wOTMsOC41MjgsNDcuMzEyLDYuOTE3VjBoLTYuNzU3djYuOTE4QzIyLjc3Myw4LjUyOCw4LjU3MiwyMi43MTQsNi45Myw0MC40ODNIMHY2Ljc1NyAgICAgaDYuOTE5YzEuNTgyLDE3LjgzOCwxNS44MSwzMi4wODcsMzMuNjM2LDMzLjcwMXY2LjkxOGg2Ljc1N3YtNi45MThjMTcuODI2LTEuNjEzLDMyLjA1NC0xNS44NjIsMzMuNjM2LTMzLjcwMWg2LjkxMXYtNi43NTcgICAgIEg4MC45Mzh6IE00Ny4zMTIsNzQuMTQ2di02LjU1OGgtNi43NTd2Ni41NThDMjYuNDU3LDcyLjU4LDE1LjI0Miw2MS4zNDUsMTMuNzA4LDQ3LjI0aDYuNTY2di02Ljc1N2gtNi41NDkgICAgIGMxLjU5MS0xNC4wNDEsMTIuNzc3LTI1LjIxLDI2LjgyOS0yNi43NzF2Ni41NjRoNi43NTZ2LTYuNTY0YzE0LjA1MywxLjU2LDI1LjIzOSwxMi43MjksMjYuODMsMjYuNzcxaC02LjU1NnY2Ljc1N2g2LjU3MyAgICAgQzcyLjYyNSw2MS4zNDUsNjEuNDA5LDcyLjU4LDQ3LjMxMiw3NC4xNDZ6IE00My45MzQsMzMuNzI3Yy01LjU5NSwwLTEwLjEzNSw0LjUzMy0xMC4xMzUsMTAuMTMxICAgICBjMCw1LjU5OSw0LjU0LDEwLjEzOSwxMC4xMzUsMTAuMTM5czEwLjEzNC00LjU0LDEwLjEzNC0xMC4xMzlDNTQuMDY4LDM4LjI2LDQ5LjUyNywzMy43MjcsNDMuOTM0LDMzLjcyN3oiIGZpbGw9IiMwMDAwMDAiLz4KCQk8L2c+Cgk8L2c+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPC9zdmc+Cg&#x3D;&#x3D;);
+      float: left;
+      margin-right: 10px;
+    }
+    .custom-autocomplete__dropdown .heading {
+      padding: 13px 10px 7px 13px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 13px;
+      position: relative;
+    }
+    .custom-autocomplete__dropdown .heading .line {
+      border-top: 1px solid #c2c2c2;
+      width: calc(100% - 115px);
+      display: inline-block;
+      position: absolute;
+      top: 21px;
+      left: 100px;
+    }
+
+    .custom-autocomplete__dropdown .heading .line-location {
+      left: 100px;
+      top: 16px;
+      width: calc(100% - 110px);
+    }
+
+    .custom-autocomplete__dropdown .heading .line-recent {
+      left: 158px;
+      top: 16px;
+      width: calc(100% - 168px);
+    }
+    .custom-autocomplete__dropdown .heading-recent {
+      padding-top: 8px;
+    }
+    .custom-autocomplete__dropdown .custom-icon {
+      width: 16px;
+      height: 16px;
+      background-size: cover;
+      vertical-align: bottom;
+      display: inline-block;
+      margin-right: 4px;
+    }
+    .custom-autocomplete__dropdown .main-text {
+      padding-right: 4px;
+      font-weight: 700;
+    }
+    .custom-autocomplete__dropdown .secondary_text {
+      font-size: 12px;
+      color: #909090;
+    }
+    .custom-autocomplete__dropdown .active a {
+      background-color: #ffe0cd;
+    }
+    .custom-autocomplete__loader {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      background: white;
+    }
+    .custom-autocomplete__loader .gif {
+      background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAiIGhlaWdodD0iMzAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmlld0JveD0iMCAwIDEwMCAxMDAiIHByZXNlcnZlQXNwZWN0UmF0aW89InhNaWRZTWlkIiBjbGFzcz0idWlsLXJpcHBsZSI+PHBhdGggZmlsbD0ibm9uZSIgY2xhc3M9ImJrIiBkPSJNMCAwaDEwMHYxMDBIMHoiLz48Zz48YW5pbWF0ZSBhdHRyaWJ1dGVOYW1lPSJvcGFjaXR5IiBkdXI9IjJzIiByZXBlYXRDb3VudD0iaW5kZWZpbml0ZSIgYmVnaW49IjBzIiBrZXlUaW1lcz0iMDswLjMzOzEiIHZhbHVlcz0iMTsxOzAiLz48Y2lyY2xlIGN4PSI1MCIgY3k9IjUwIiByPSI0MCIgc3Ryb2tlPSIjYWZhZmI3IiBmaWxsPSJub25lIiBzdHJva2Utd2lkdGg9IjgiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCI+PGFuaW1hdGUgYXR0cmlidXRlTmFtZT0iciIgZHVyPSIycyIgcmVwZWF0Q291bnQ9ImluZGVmaW5pdGUiIGJlZ2luPSIwcyIga2V5VGltZXM9IjA7MC4zMzsxIiB2YWx1ZXM9IjA7MjI7NDQiLz48L2NpcmNsZT48L2c+PGc+PGFuaW1hdGUgYXR0cmlidXRlTmFtZT0ib3BhY2l0eSIgZHVyPSIycyIgcmVwZWF0Q291bnQ9ImluZGVmaW5pdGUiIGJlZ2luPSIxcyIga2V5VGltZXM9IjA7MC4zMzsxIiB2YWx1ZXM9IjE7MTswIi8+PGNpcmNsZSBjeD0iNTAiIGN5PSI1MCIgcj0iNDAiIHN0cm9rZT0iI2ZmYTYzMyIgZmlsbD0ibm9uZSIgc3Ryb2tlLXdpZHRoPSI4IiBzdHJva2UtbGluZWNhcD0icm91bmQiPjxhbmltYXRlIGF0dHJpYnV0ZU5hbWU9InIiIGR1cj0iMnMiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIiBiZWdpbj0iMXMiIGtleVRpbWVzPSIwOzAuMzM7MSIgdmFsdWVzPSIwOzIyOzQ0Ii8+PC9jaXJjbGU+PC9nPjwvc3ZnPg&#x3D;&#x3D;);
+      background-size: cover;
+      width: 30px;
+      height: 30px;
+      top: 50%;
+      left: 50%;
+      transform: translate3d(-50%, -50%, 0);
+      position: absolute;
+    }
+    .custom-autocomplete__container,.custom-autocomplete__input {
+      width: inherit;
+      float: inherit;
+      position: relative;
+    }
+
+    .custom-autocomplete__input input{
+      margin: 0;
+      padding: 10px;
+      height: 50px;
+      border: 1px solid #ccc;
+      display: block;
+      width: 100%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      font-size: 16px;
+      &amp;::-webkit-input-placeholder {
+         color: #868484;
+      }
+
+      &amp;:-moz-placeholder { /* Firefox 18- */
+         color: #868484;
+      }
+
+      &amp;::-moz-placeholder {  /* Firefox 19+ */
+         color: #868484;
+      }
+
+      &amp;:-ms-input-placeholder {
+         color: #868484;
+      }
+    }
+
+    .button-included input{
+      padding-right: 60px;
+    }
+
+    .search-icon {
+      position: absolute;
+      right: 0;
+      width: 55px;
+      top: 0;
+      height: 100%;
+      background-color: transparent;
+      border-bottom: 0;
+      border-top: 0;
+      border-right: 0;
+      border-left: 1px solid #ccc;
+    }
+
+    .search-icon i {
+      background-size: cover;
+      height: 23px;
+      width: 23px;
+      display: inline-block;
+    }
+
+    .search-default-icon {
+      background-image: url(&#x27;data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDU2Ljk2NiA1Ni45NjYiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDU2Ljk2NiA1Ni45NjY7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iMTZweCIgaGVpZ2h0PSIxNnB4Ij4KPHBhdGggZD0iTTU1LjE0Niw1MS44ODdMNDEuNTg4LDM3Ljc4NmMzLjQ4Ni00LjE0NCw1LjM5Ni05LjM1OCw1LjM5Ni0xNC43ODZjMC0xMi42ODItMTAuMzE4LTIzLTIzLTIzcy0yMywxMC4zMTgtMjMsMjMgIHMxMC4zMTgsMjMsMjMsMjNjNC43NjEsMCw5LjI5OC0xLjQzNiwxMy4xNzctNC4xNjJsMTMuNjYxLDE0LjIwOGMwLjU3MSwwLjU5MywxLjMzOSwwLjkyLDIuMTYyLDAuOTIgIGMwLjc3OSwwLDEuNTE4LTAuMjk3LDIuMDc5LTAuODM3QzU2LjI1NSw1NC45ODIsNTYuMjkzLDUzLjA4LDU1LjE0Niw1MS44ODd6IE0yMy45ODQsNmM5LjM3NCwwLDE3LDcuNjI2LDE3LDE3cy03LjYyNiwxNy0xNywxNyAgcy0xNy03LjYyNi0xNy0xN1MxNC42MSw2LDIzLjk4NCw2eiIgZmlsbD0iIzAwMDAwMCIvPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K&#x27;);
+    }
+
+    .location-default-icon {
+      background-image: url(&#x27;data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDQ4Ny43MjQgNDg3LjcyNCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNDg3LjcyNCA0ODcuNzI0OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjE2cHgiIGhlaWdodD0iMTZweCI+CjxnPgoJPGc+CgkJPHBhdGggZD0iTTIzNi45MjUsMC4xMjRjLTk2LjksMy40LTE3Ny40LDc5LTE4Ni43LDE3NS41Yy0xLjksMTkuMy0wLjgsMzgsMi42LDU1LjlsMCwwYzAsMCwwLjMsMi4xLDEuMyw2LjEgICAgYzMsMTMuNCw3LjUsMjYuNCwxMy4xLDM4LjZjMTkuNSw0Ni4yLDY0LjYsMTIzLjUsMTY1LjgsMjA3LjZjNi4yLDUuMiwxNS4zLDUuMiwyMS42LDBjMTAxLjItODQsMTQ2LjMtMTYxLjMsMTY1LjktMjA3LjcgICAgYzUuNy0xMi4yLDEwLjEtMjUuMSwxMy4xLTM4LjZjMC45LTMuOSwxLjMtNi4xLDEuMy02LjFsMCwwYzIuMy0xMiwzLjUtMjQuMywzLjUtMzYuOUM0MzguNDI1LDg0LjcyNCwzNDcuNTI1LTMuNzc2LDIzNi45MjUsMC4xMjQgICAgeiBNMjQzLjgyNSwyOTEuMzI0Yy01Mi4yLDAtOTQuNS00Mi4zLTk0LjUtOTQuNXM0Mi4zLTk0LjUsOTQuNS05NC41czk0LjUsNDIuMyw5NC41LDk0LjVTMjk2LjAyNSwyOTEuMzI0LDI0My44MjUsMjkxLjMyNHoiIGZpbGw9IiMwMDAwMDAiLz4KCTwvZz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K&#x27;);
+    }
+
+    .current-default-icon {
+      background-image: url(&#x27;data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTYuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjE2cHgiIGhlaWdodD0iMTZweCIgdmlld0JveD0iMCAwIDg3Ljg1OSA4Ny44NTkiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDg3Ljg1OSA4Ny44NTk7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4KPGc+Cgk8ZyBpZD0iTWFya2VyIj4KCQk8Zz4KCQkJPHBhdGggZD0iTTgwLjkzOCw0MC40ODNDNzkuMjk0LDIyLjcxMyw2NS4wOTMsOC41MjgsNDcuMzEyLDYuOTE3VjBoLTYuNzU3djYuOTE4QzIyLjc3Myw4LjUyOCw4LjU3MiwyMi43MTQsNi45Myw0MC40ODNIMHY2Ljc1NyAgICAgaDYuOTE5YzEuNTgyLDE3LjgzOCwxNS44MSwzMi4wODcsMzMuNjM2LDMzLjcwMXY2LjkxOGg2Ljc1N3YtNi45MThjMTcuODI2LTEuNjEzLDMyLjA1NC0xNS44NjIsMzMuNjM2LTMzLjcwMWg2LjkxMXYtNi43NTcgICAgIEg4MC45Mzh6IE00Ny4zMTIsNzQuMTQ2di02LjU1OGgtNi43NTd2Ni41NThDMjYuNDU3LDcyLjU4LDE1LjI0Miw2MS4zNDUsMTMuNzA4LDQ3LjI0aDYuNTY2di02Ljc1N2gtNi41NDkgICAgIGMxLjU5MS0xNC4wNDEsMTIuNzc3LTI1LjIxLDI2LjgyOS0yNi43NzF2Ni41NjRoNi43NTZ2LTYuNTY0YzE0LjA1MywxLjU2LDI1LjIzOSwxMi43MjksMjYuODMsMjYuNzcxaC02LjU1NnY2Ljc1N2g2LjU3MyAgICAgQzcyLjYyNSw2MS4zNDUsNjEuNDA5LDcyLjU4LDQ3LjMxMiw3NC4xNDZ6IE00My45MzQsMzMuNzI3Yy01LjU5NSwwLTEwLjEzNSw0LjUzMy0xMC4xMzUsMTAuMTMxICAgICBjMCw1LjU5OSw0LjU0LDEwLjEzOSwxMC4xMzUsMTAuMTM5czEwLjEzNC00LjU0LDEwLjEzNC0xMC4xMzlDNTQuMDY4LDM4LjI2LDQ5LjUyNywzMy43MjcsNDMuOTM0LDMzLjcyN3oiIGZpbGw9IiMwMDAwMDAiLz4KCQk8L2c+Cgk8L2c+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPC9zdmc+Cg&#x3D;&#x3D;&#x27;);
+    }
+
+    .custom-autocomplete__container .searchpage {
+      margin-top: 0;
+      padding: 0;
+      height: 55px;
+      border: none;
+    }
+
+  </code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">template</td>
+                <td class="col-md-9"><pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;custom-autocomplete&quot; *ngIf&#x3D;&quot;!isSettingsError&quot;&gt;
+  &lt;div class&#x3D;&quot;custom-autocomplete__container&quot; &gt;
+    &lt;div class&#x3D;&quot;custom-autocomplete__input&quot; [ngClass]&#x3D;&quot;{&#x27;button-included&#x27;:settings.showSearchButton}&quot;&gt;
+      &lt;input  [(ngModel)]&#x3D;&quot;locationInput&quot; (click)&#x3D;&quot;searchinputClickCallback($event)&quot;  (keyup)&#x3D;&quot;searchinputCallback($event)&quot;
+       type&#x3D;&quot;search&quot; name&#x3D;&quot;search&quot; id&#x3D;&quot;search_places&quot; placeholder&#x3D;&quot;{{settings.inputPlaceholderText}}&quot; autocomplete&#x3D;&quot;off&quot;&gt;
+      &lt;button class&#x3D;&quot;search-icon&quot; *ngIf&#x3D;&quot;settings.showSearchButton&quot; (click)&#x3D;&quot;userQuerySubmit()&quot;&gt;
+        &lt;i *ngIf&#x3D;&quot;settings.searchIconUrl&quot; [ngStyle]&#x3D;&quot;{&#x27;background-image&#x27;: &#x27;url(&#x27; + settings.searchIconUrl + &#x27;)&#x27;}&quot;&gt;&lt;/i&gt;
+        &lt;i *ngIf&#x3D;&quot;!settings.searchIconUrl&quot; class&#x3D;&quot;search-default-icon&quot;&gt;&lt;/i&gt;
+      &lt;/button&gt;
+    &lt;/div&gt;
+    &lt;pre class&#x3D;&quot;custom-autocomplete__loader&quot; *ngIf&#x3D;&quot;gettingCurrentLocationFlag&quot;&gt;&lt;i class&#x3D;&quot;gif&quot;&gt;&lt;/i&gt;&lt;/pre&gt;
+  &lt;/div&gt;
+  &lt;ul class&#x3D;&quot;custom-autocomplete__dropdown&quot; *ngIf&#x3D;&quot;dropdownOpen &amp;&amp; (settings.showCurrentLocation || queryItems.length)&quot;&gt;
+    &lt;li *ngIf&#x3D;&quot;settings.showCurrentLocation&quot; class&#x3D;&quot;currentlocation&quot;&gt;
+      &lt;a href&#x3D;&quot;javascript:;&quot; (click)&#x3D;&quot;currentLocationSelected()&quot;&gt;
+        &lt;i class&#x3D;&quot;location-icon&quot; *ngIf&#x3D;&quot;settings.currentLocIconUrl&quot; [ngStyle]&#x3D;&quot;{&#x27;background-image&#x27;: &#x27;url(&#x27; + settings.currentLocIconUrl + &#x27;)&#x27;}&quot;&gt;&lt;/i&gt;Use Current Location
+        &lt;i class&#x3D;&quot;location-icon current-default-icon&quot; *ngIf&#x3D;&quot;!settings.currentLocIconUrl&quot;&gt;&lt;/i&gt;
+      &lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li class&#x3D;&quot;heading heading-recent&quot; *ngIf&#x3D;&quot;!recentDropdownOpen &amp;&amp; queryItems.length&quot;&gt;&lt;span&gt;Locations&lt;/span&gt;&lt;span class&#x3D;&quot;line line-location&quot;&gt;&lt;/span&gt;&lt;/li&gt;
+    &lt;li class&#x3D;&quot;heading heading-recent&quot; *ngIf&#x3D;&quot;recentDropdownOpen &amp;&amp; queryItems.length&quot;&gt;
+      &lt;span&gt;Recent Searches&lt;/span&gt;&lt;span class&#x3D;&quot;line line-recent&quot;&gt;&lt;/span&gt;
+    &lt;/li&gt;
+    &lt;li *ngFor &#x3D; &quot;let data of queryItems;let $index &#x3D; index&quot; [ngClass]&#x3D;&quot;{&#x27;active&#x27;: data.active}&quot;&gt;
+      &lt;a href&#x3D;&quot;javascript:;&quot; (mouseover)&#x3D;&quot;activeListNode($index)&quot; (click)&#x3D;&quot;selectedListNode($index)&quot;&gt;
+        &lt;i class&#x3D;&quot;custom-icon&quot; *ngIf&#x3D;&quot;settings.locationIconUrl&quot; [ngStyle]&#x3D;&quot;{&#x27;background-image&#x27;: &#x27;url(&#x27; + settings.locationIconUrl + &#x27;)&#x27;}&quot;&gt;&lt;/i&gt;
+        &lt;i class&#x3D;&quot;custom-icon location-default-icon&quot; *ngIf&#x3D;&quot;!settings.locationIconUrl&quot;&gt;&lt;/i&gt;
+          &lt;span class&#x3D;&quot;main-text&quot;&gt;
+            {{data.structured_formatting?.main_text ? data.structured_formatting.main_text : data.description}}
+          &lt;/span&gt;
+          &lt;span class&#x3D;&quot;secondary_text&quot; *ngIf&#x3D;&quot;data.structured_formatting?.secondary_text&quot;&gt;{{data.structured_formatting.secondary_text}}&lt;/span&gt;
+      &lt;/a&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class&#x3D;&quot;custom-autocomplete--error&quot; *ngIf&#x3D;&quot;isSettingsError&quot;&gt;{{settingsErrorMsg}}&lt;/div&gt;
+</code></pre></td>
+            </tr>
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+        <h3 id="inputs">Inputs</h3>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-2">
+                            <code>userSettings</code>
+                        </td>
+                        <td class="col-md-10">
+                              <p>
+                                <em>Type:</em>    <code>Settings</code>
+
+                              </p>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                <div class="io-line">Defined in <a href="" data-line="278" class="link-to-prism">src/auto-complete.component.ts:278</a></div>
+                            </td>
+                        </tr>
+                </tbody>
+            </table>
+    </section>
+
+    <section>
+        <h3 id="outputs">Outputs</h3>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-2">
+                            <code>componentCallback</code>
+                        </td>
+                        <td class="col-md-10">
+                            <em><code>$event</code> type:</em>    <code>EventEmitter&lt;any&gt;</code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                <div class="io-line">Defined in <a href="" data-line="280" class="link-to-prism">src/auto-complete.component.ts:280</a></div>
+                            </td>
+                        </tr>
+                </tbody>
+            </table>
+    </section>
+
+    <section>
+        <h3 id="constructor">Constructor</h3>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <code>constructor(platformId: Object, _elmRef: <a href="https://angular.io/docs/ts/latest/api/core/index/ElementRef-class.html" target="_blank">ElementRef</a>, _global: <a href="../classes/GlobalRef.html">GlobalRef</a>, _autoCompleteSearchService: <a href="../injectables/AutoCompleteSearchService.html">AutoCompleteSearchService</a>)</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="312" class="link-to-prism">src/auto-complete.component.ts:312</a></div>
+                            </td>
+                        </tr>
+    
+                </tbody>
+            </table>
+    </section>
+
+    <section>
+        
+            <h3 id="methods">
+                Methods
+            </h3>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> ngOnInit</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+    <code>ngOnInit()</code>
+                        </td>
+                    </tr>
+    
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="320" class="link-to-prism">src/auto-complete.component.ts:320</a></div>
+                            </td>
+                        </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+    
+                                <div class="io-description">
+                                    <b>Returns: </b>    <code>any</code>
+    
+                                </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> searchinputClickCallback</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+    <code>searchinputClickCallback(event: any)</code>
+                        </td>
+                    </tr>
+    
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="346" class="link-to-prism">src/auto-complete.component.ts:346</a></div>
+                            </td>
+                        </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+    
+                                <div class="io-description">
+                                    <b>Returns: </b>    <code>any</code>
+    
+                                </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> searchinputCallback</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+    <code>searchinputCallback(event: any)</code>
+                        </td>
+                    </tr>
+    
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="352" class="link-to-prism">src/auto-complete.component.ts:352</a></div>
+                            </td>
+                        </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+    
+                                <div class="io-description">
+                                    <b>Returns: </b>    <code>any</code>
+    
+                                </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> activeListNode</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+    <code>activeListNode(index: number)</code>
+                        </td>
+                    </tr>
+    
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="370" class="link-to-prism">src/auto-complete.component.ts:370</a></div>
+                            </td>
+                        </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+    
+                                <div class="io-description">
+                                    <b>Returns: </b>    <code>any</code>
+    
+                                </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> selectedListNode</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+    <code>selectedListNode(index: number)</code>
+                        </td>
+                    </tr>
+    
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="382" class="link-to-prism">src/auto-complete.component.ts:382</a></div>
+                            </td>
+                        </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+    
+                                <div class="io-description">
+                                    <b>Returns: </b>    <code>any</code>
+    
+                                </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> closeAutocomplete</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+    <code>closeAutocomplete(event: any)</code>
+                        </td>
+                    </tr>
+    
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="392" class="link-to-prism">src/auto-complete.component.ts:392</a></div>
+                            </td>
+                        </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+    
+                                <div class="io-description">
+                                    <b>Returns: </b>    <code>any</code>
+    
+                                </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> userQuerySubmit</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+    <code>userQuerySubmit()</code>
+                        </td>
+                    </tr>
+    
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="400" class="link-to-prism">src/auto-complete.component.ts:400</a></div>
+                            </td>
+                        </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+    
+                                <div class="io-description">
+                                    <b>Returns: </b>    <code>any</code>
+    
+                                </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> currentLocationSelected</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+    <code>currentLocationSelected()</code>
+                        </td>
+                    </tr>
+    
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="409" class="link-to-prism">src/auto-complete.component.ts:409</a></div>
+                            </td>
+                        </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+    
+                                <div class="io-description">
+                                    <b>Returns: </b>    <code>any</code>
+    
+                                </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+    </section>
+
+    <section>
+        
+            <h3 id="inputs">
+                Properties
+            </h3>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b><span class="modifier">Public</span> dropdownOpen</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <span class="modifier-icon fa fa-circle"></span><code>dropdownOpen:     <code>boolean</code>
+    </bcode>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <i>Default value: </i><code>false</code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="284" class="link-to-prism">src/auto-complete.component.ts:284</a></div>
+                            </td>
+                        </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b><span class="modifier">Public</span> gettingCurrentLocationFlag</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <span class="modifier-icon fa fa-circle"></span><code>gettingCurrentLocationFlag:     <code>boolean</code>
+    </bcode>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <i>Default value: </i><code>false</code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="283" class="link-to-prism">src/auto-complete.component.ts:283</a></div>
+                            </td>
+                        </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b><span class="modifier">Public</span> isSettingsError</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <span class="modifier-icon fa fa-circle"></span><code>isSettingsError:     <code>boolean</code>
+    </bcode>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <i>Default value: </i><code>false</code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="287" class="link-to-prism">src/auto-complete.component.ts:287</a></div>
+                            </td>
+                        </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b><span class="modifier">Public</span> locationInput</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <span class="modifier-icon fa fa-circle"></span><code>locationInput:     <code>string</code>
+    </bcode>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="282" class="link-to-prism">src/auto-complete.component.ts:282</a></div>
+                            </td>
+                        </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b><span class="modifier">Public</span> queryItems</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <span class="modifier-icon fa fa-circle"></span><code>queryItems:     <code>any</code>
+    </bcode>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="286" class="link-to-prism">src/auto-complete.component.ts:286</a></div>
+                            </td>
+                        </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b><span class="modifier">Public</span> recentDropdownOpen</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <span class="modifier-icon fa fa-circle"></span><code>recentDropdownOpen:     <code>boolean</code>
+    </bcode>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <i>Default value: </i><code>false</code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="285" class="link-to-prism">src/auto-complete.component.ts:285</a></div>
+                            </td>
+                        </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b><span class="modifier">Public</span> settings</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <span class="modifier-icon fa fa-circle"></span><code>settings:     <code>Settings</code>
+    </bcode>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="289" class="link-to-prism">src/auto-complete.component.ts:289</a></div>
+                            </td>
+                        </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b><span class="modifier">Public</span> settingsErrorMsg</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <span class="modifier-icon fa fa-circle"></span><code>settingsErrorMsg:     <code>string</code>
+    </bcode>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="288" class="link-to-prism">src/auto-complete.component.ts:288</a></div>
+                            </td>
+                        </tr>
+                </tbody>
+            </table>
+    </section>
+</div>
+
+
+    <div class="tab-pane fade tab-source-code" id="source">
+        <pre class="line-numbers"><code class="language-typescript">import { Component, PLATFORM_ID, Inject, Input, Output, EventEmitter, OnInit, ElementRef } from &#x27;@angular/core&#x27;;
+import { isPlatformBrowser, isPlatformServer } from &#x27;@angular/common&#x27;;
+import { GlobalRef } from &#x27;./windowRef.service&#x27;;
+import { AutoCompleteSearchService } from &#x27;./auto-complete.service&#x27;;
+
+export interface Settings {
+  geoPredictionServerUrl?: string;
+  geoLatLangServiceUrl?: string;
+  geoLocDetailServerUrl?: string;
+  geoComponentRestriction?: string;
+  serverResponseListHierarchy?: any;
+  serverResponseatLangHierarchy?: any;
+  serverResponseDetailHierarchy?: any;
+  resOnSearchButtonClickOnly?: boolean;
+  useGoogleGeoApi?: boolean;
+  inputPlaceholderText?: string;
+  showSearchButton?: boolean;
+  showRecentSearch?: boolean;
+  showCurrentLocation?: boolean;
+  recentStorageName?: string;
+  noOfRecentSearchSave?: number;
+  currentLocIconUrl?: string;
+  searchIconUrl?: string;
+  locationIconUrl?: string;
+}
+
+@Component({
+  selector: &#x27;ng4geo-autocomplete&#x27;,
+  template: &#x60;
+    &lt;div class&#x3D;&quot;custom-autocomplete&quot; *ngIf&#x3D;&quot;!isSettingsError&quot;&gt;
+      &lt;div class&#x3D;&quot;custom-autocomplete__container&quot; &gt;
+        &lt;div class&#x3D;&quot;custom-autocomplete__input&quot; [ngClass]&#x3D;&quot;{&#x27;button-included&#x27;:settings.showSearchButton}&quot;&gt;
+          &lt;input  [(ngModel)]&#x3D;&quot;locationInput&quot; (click)&#x3D;&quot;searchinputClickCallback($event)&quot;  (keyup)&#x3D;&quot;searchinputCallback($event)&quot; 
+           type&#x3D;&quot;search&quot; name&#x3D;&quot;search&quot; id&#x3D;&quot;search_places&quot; placeholder&#x3D;&quot;{{settings.inputPlaceholderText}}&quot; autocomplete&#x3D;&quot;off&quot;&gt;
+          &lt;button class&#x3D;&quot;search-icon&quot; *ngIf&#x3D;&quot;settings.showSearchButton&quot; (click)&#x3D;&quot;userQuerySubmit()&quot;&gt;
+            &lt;i *ngIf&#x3D;&quot;settings.searchIconUrl&quot; [ngStyle]&#x3D;&quot;{&#x27;background-image&#x27;: &#x27;url(&#x27; + settings.searchIconUrl + &#x27;)&#x27;}&quot;&gt;&lt;/i&gt;
+            &lt;i *ngIf&#x3D;&quot;!settings.searchIconUrl&quot; class&#x3D;&quot;search-default-icon&quot;&gt;&lt;/i&gt;
+          &lt;/button&gt;
+        &lt;/div&gt;
+        &lt;pre class&#x3D;&quot;custom-autocomplete__loader&quot; *ngIf&#x3D;&quot;gettingCurrentLocationFlag&quot;&gt;&lt;i class&#x3D;&quot;gif&quot;&gt;&lt;/i&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+      &lt;ul class&#x3D;&quot;custom-autocomplete__dropdown&quot; *ngIf&#x3D;&quot;dropdownOpen &amp;&amp; (settings.showCurrentLocation || queryItems.length)&quot;&gt;
+        &lt;li *ngIf&#x3D;&quot;settings.showCurrentLocation&quot; class&#x3D;&quot;currentlocation&quot;&gt;
+          &lt;a href&#x3D;&quot;javascript:;&quot; (click)&#x3D;&quot;currentLocationSelected()&quot;&gt;
+            &lt;i class&#x3D;&quot;location-icon&quot; *ngIf&#x3D;&quot;settings.currentLocIconUrl&quot; [ngStyle]&#x3D;&quot;{&#x27;background-image&#x27;: &#x27;url(&#x27; + settings.currentLocIconUrl + &#x27;)&#x27;}&quot;&gt;&lt;/i&gt;Use Current Location
+            &lt;i class&#x3D;&quot;location-icon current-default-icon&quot; *ngIf&#x3D;&quot;!settings.currentLocIconUrl&quot;&gt;&lt;/i&gt;
+          &lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li class&#x3D;&quot;heading heading-recent&quot; *ngIf&#x3D;&quot;!recentDropdownOpen &amp;&amp; queryItems.length&quot;&gt;&lt;span&gt;Locations&lt;/span&gt;&lt;span class&#x3D;&quot;line line-location&quot;&gt;&lt;/span&gt;&lt;/li&gt;
+        &lt;li class&#x3D;&quot;heading heading-recent&quot; *ngIf&#x3D;&quot;recentDropdownOpen &amp;&amp; queryItems.length&quot;&gt;
+          &lt;span&gt;Recent Searches&lt;/span&gt;&lt;span class&#x3D;&quot;line line-recent&quot;&gt;&lt;/span&gt;
+        &lt;/li&gt;
+        &lt;li *ngFor &#x3D; &quot;let data of queryItems;let $index &#x3D; index&quot; [ngClass]&#x3D;&quot;{&#x27;active&#x27;: data.active}&quot;&gt;
+          &lt;a href&#x3D;&quot;javascript:;&quot; (mouseover)&#x3D;&quot;activeListNode($index)&quot; (click)&#x3D;&quot;selectedListNode($index)&quot;&gt;
+            &lt;i class&#x3D;&quot;custom-icon&quot; *ngIf&#x3D;&quot;settings.locationIconUrl&quot; [ngStyle]&#x3D;&quot;{&#x27;background-image&#x27;: &#x27;url(&#x27; + settings.locationIconUrl + &#x27;)&#x27;}&quot;&gt;&lt;/i&gt;
+            &lt;i class&#x3D;&quot;custom-icon location-default-icon&quot; *ngIf&#x3D;&quot;!settings.locationIconUrl&quot;&gt;&lt;/i&gt;
+              &lt;span class&#x3D;&quot;main-text&quot;&gt;
+                {{data.structured_formatting?.main_text ? data.structured_formatting.main_text : data.description}}
+              &lt;/span&gt;
+              &lt;span class&#x3D;&quot;secondary_text&quot; *ngIf&#x3D;&quot;data.structured_formatting?.secondary_text&quot;&gt;{{data.structured_formatting.secondary_text}}&lt;/span&gt;
+          &lt;/a&gt;
+        &lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;custom-autocomplete--error&quot; *ngIf&#x3D;&quot;isSettingsError&quot;&gt;{{settingsErrorMsg}}&lt;/div&gt;
+  &#x60;,
+  styles: [&#x60;
+    .custom-autocomplete {
+      display: block;
+      position: relative;
+      width: 100%;
+      float: left;
+    }
+
+    .custom-autocomplete a, .custom-autocomplete a:hover {
+      text-decoration: none;
+    }
+
+    .custom-autocomplete--error {
+      color: #fff;
+      background-color: #fd4f4f;
+      padding: 10px;
+    }
+
+    .custom-autocomplete__dropdown {
+      position: absolute;
+      background: #fff;
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      list-style: none;
+      border: 1px solid #909090;
+      z-index: 99;
+      top: 50px;
+    }
+    .custom-autocomplete__dropdown li {
+      float: left;
+      width: 100%;
+      font-size: 15px;
+    }
+    .custom-autocomplete__dropdown a {
+      width: 100%;
+      color: #353535;
+      float: left;
+      padding: 8px 10px;
+    }
+    .custom-autocomplete__dropdown a:hover {
+      text-decoration: none;
+    }
+    .custom-autocomplete__dropdown .currentlocation {
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .custom-autocomplete__dropdown .currentlocation a {
+      padding: 10px 10px 10px 13px;
+      font-size: 14px;
+    }
+    .custom-autocomplete__dropdown .currentlocation a:hover {
+      background-color: #eeeded;
+    }
+    .custom-autocomplete__dropdown .currentlocation .location-icon {
+      width: 16px;
+      height: 16px;
+      background-size: cover;
+      background-image: url(data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTYuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjE2cHgiIGhlaWdodD0iMTZweCIgdmlld0JveD0iMCAwIDg3Ljg1OSA4Ny44NTkiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDg3Ljg1OSA4Ny44NTk7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4KPGc+Cgk8ZyBpZD0iTWFya2VyIj4KCQk8Zz4KCQkJPHBhdGggZD0iTTgwLjkzOCw0MC40ODNDNzkuMjk0LDIyLjcxMyw2NS4wOTMsOC41MjgsNDcuMzEyLDYuOTE3VjBoLTYuNzU3djYuOTE4QzIyLjc3Myw4LjUyOCw4LjU3MiwyMi43MTQsNi45Myw0MC40ODNIMHY2Ljc1NyAgICAgaDYuOTE5YzEuNTgyLDE3LjgzOCwxNS44MSwzMi4wODcsMzMuNjM2LDMzLjcwMXY2LjkxOGg2Ljc1N3YtNi45MThjMTcuODI2LTEuNjEzLDMyLjA1NC0xNS44NjIsMzMuNjM2LTMzLjcwMWg2LjkxMXYtNi43NTcgICAgIEg4MC45Mzh6IE00Ny4zMTIsNzQuMTQ2di02LjU1OGgtNi43NTd2Ni41NThDMjYuNDU3LDcyLjU4LDE1LjI0Miw2MS4zNDUsMTMuNzA4LDQ3LjI0aDYuNTY2di02Ljc1N2gtNi41NDkgICAgIGMxLjU5MS0xNC4wNDEsMTIuNzc3LTI1LjIxLDI2LjgyOS0yNi43NzF2Ni41NjRoNi43NTZ2LTYuNTY0YzE0LjA1MywxLjU2LDI1LjIzOSwxMi43MjksMjYuODMsMjYuNzcxaC02LjU1NnY2Ljc1N2g2LjU3MyAgICAgQzcyLjYyNSw2MS4zNDUsNjEuNDA5LDcyLjU4LDQ3LjMxMiw3NC4xNDZ6IE00My45MzQsMzMuNzI3Yy01LjU5NSwwLTEwLjEzNSw0LjUzMy0xMC4xMzUsMTAuMTMxICAgICBjMCw1LjU5OSw0LjU0LDEwLjEzOSwxMC4xMzUsMTAuMTM5czEwLjEzNC00LjU0LDEwLjEzNC0xMC4xMzlDNTQuMDY4LDM4LjI2LDQ5LjUyNywzMy43MjcsNDMuOTM0LDMzLjcyN3oiIGZpbGw9IiMwMDAwMDAiLz4KCQk8L2c+Cgk8L2c+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPC9zdmc+Cg&#x3D;&#x3D;);
+      float: left;
+      margin-right: 10px;
+    }
+    .custom-autocomplete__dropdown .heading {
+      padding: 13px 10px 7px 13px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 13px;
+      position: relative;
+    }
+    .custom-autocomplete__dropdown .heading .line {
+      border-top: 1px solid #c2c2c2;
+      width: calc(100% - 115px);
+      display: inline-block;
+      position: absolute;
+      top: 21px;
+      left: 100px;
+    }
+
+    .custom-autocomplete__dropdown .heading .line-location {
+      left: 100px;
+      top: 16px;
+      width: calc(100% - 110px);
+    }
+
+    .custom-autocomplete__dropdown .heading .line-recent {
+      left: 158px;
+      top: 16px;
+      width: calc(100% - 168px);
+    }
+    .custom-autocomplete__dropdown .heading-recent {
+      padding-top: 8px;
+    }
+    .custom-autocomplete__dropdown .custom-icon {
+      width: 16px;
+      height: 16px;
+      background-size: cover;
+      vertical-align: bottom;
+      display: inline-block;
+      margin-right: 4px;
+    }
+    .custom-autocomplete__dropdown .main-text {
+      padding-right: 4px;
+      font-weight: 700;
+    }
+    .custom-autocomplete__dropdown .secondary_text {
+      font-size: 12px;
+      color: #909090;
+    }
+    .custom-autocomplete__dropdown .active a {
+      background-color: #ffe0cd;
+    }
+    .custom-autocomplete__loader {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      background: white;
+    }
+    .custom-autocomplete__loader .gif {
+      background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAiIGhlaWdodD0iMzAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmlld0JveD0iMCAwIDEwMCAxMDAiIHByZXNlcnZlQXNwZWN0UmF0aW89InhNaWRZTWlkIiBjbGFzcz0idWlsLXJpcHBsZSI+PHBhdGggZmlsbD0ibm9uZSIgY2xhc3M9ImJrIiBkPSJNMCAwaDEwMHYxMDBIMHoiLz48Zz48YW5pbWF0ZSBhdHRyaWJ1dGVOYW1lPSJvcGFjaXR5IiBkdXI9IjJzIiByZXBlYXRDb3VudD0iaW5kZWZpbml0ZSIgYmVnaW49IjBzIiBrZXlUaW1lcz0iMDswLjMzOzEiIHZhbHVlcz0iMTsxOzAiLz48Y2lyY2xlIGN4PSI1MCIgY3k9IjUwIiByPSI0MCIgc3Ryb2tlPSIjYWZhZmI3IiBmaWxsPSJub25lIiBzdHJva2Utd2lkdGg9IjgiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCI+PGFuaW1hdGUgYXR0cmlidXRlTmFtZT0iciIgZHVyPSIycyIgcmVwZWF0Q291bnQ9ImluZGVmaW5pdGUiIGJlZ2luPSIwcyIga2V5VGltZXM9IjA7MC4zMzsxIiB2YWx1ZXM9IjA7MjI7NDQiLz48L2NpcmNsZT48L2c+PGc+PGFuaW1hdGUgYXR0cmlidXRlTmFtZT0ib3BhY2l0eSIgZHVyPSIycyIgcmVwZWF0Q291bnQ9ImluZGVmaW5pdGUiIGJlZ2luPSIxcyIga2V5VGltZXM9IjA7MC4zMzsxIiB2YWx1ZXM9IjE7MTswIi8+PGNpcmNsZSBjeD0iNTAiIGN5PSI1MCIgcj0iNDAiIHN0cm9rZT0iI2ZmYTYzMyIgZmlsbD0ibm9uZSIgc3Ryb2tlLXdpZHRoPSI4IiBzdHJva2UtbGluZWNhcD0icm91bmQiPjxhbmltYXRlIGF0dHJpYnV0ZU5hbWU9InIiIGR1cj0iMnMiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIiBiZWdpbj0iMXMiIGtleVRpbWVzPSIwOzAuMzM7MSIgdmFsdWVzPSIwOzIyOzQ0Ii8+PC9jaXJjbGU+PC9nPjwvc3ZnPg&#x3D;&#x3D;);
+      background-size: cover;
+      width: 30px;
+      height: 30px;
+      top: 50%;
+      left: 50%;
+      transform: translate3d(-50%, -50%, 0);
+      position: absolute;
+    }
+    .custom-autocomplete__container,.custom-autocomplete__input {
+      width: inherit;
+      float: inherit;
+      position: relative;
+    }
+
+    .custom-autocomplete__input input{
+      margin: 0;
+      padding: 10px;
+      height: 50px;
+      border: 1px solid #ccc;
+      display: block;
+      width: 100%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      font-size: 16px;
+      &amp;::-webkit-input-placeholder {
+         color: #868484;
+      }
+
+      &amp;:-moz-placeholder { /* Firefox 18- */
+         color: #868484;
+      }
+
+      &amp;::-moz-placeholder {  /* Firefox 19+ */
+         color: #868484;
+      }
+
+      &amp;:-ms-input-placeholder {
+         color: #868484;
+      }
+    }
+
+    .button-included input{
+      padding-right: 60px;
+    }
+
+    .search-icon {
+      position: absolute;
+      right: 0;
+      width: 55px;
+      top: 0;
+      height: 100%;
+      background-color: transparent;
+      border-bottom: 0;
+      border-top: 0;
+      border-right: 0;
+      border-left: 1px solid #ccc;
+    }
+
+    .search-icon i {
+      background-size: cover;
+      height: 23px;
+      width: 23px;
+      display: inline-block;
+    }
+
+    .search-default-icon {
+      background-image: url(&#x27;data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDU2Ljk2NiA1Ni45NjYiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDU2Ljk2NiA1Ni45NjY7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iMTZweCIgaGVpZ2h0PSIxNnB4Ij4KPHBhdGggZD0iTTU1LjE0Niw1MS44ODdMNDEuNTg4LDM3Ljc4NmMzLjQ4Ni00LjE0NCw1LjM5Ni05LjM1OCw1LjM5Ni0xNC43ODZjMC0xMi42ODItMTAuMzE4LTIzLTIzLTIzcy0yMywxMC4zMTgtMjMsMjMgIHMxMC4zMTgsMjMsMjMsMjNjNC43NjEsMCw5LjI5OC0xLjQzNiwxMy4xNzctNC4xNjJsMTMuNjYxLDE0LjIwOGMwLjU3MSwwLjU5MywxLjMzOSwwLjkyLDIuMTYyLDAuOTIgIGMwLjc3OSwwLDEuNTE4LTAuMjk3LDIuMDc5LTAuODM3QzU2LjI1NSw1NC45ODIsNTYuMjkzLDUzLjA4LDU1LjE0Niw1MS44ODd6IE0yMy45ODQsNmM5LjM3NCwwLDE3LDcuNjI2LDE3LDE3cy03LjYyNiwxNy0xNywxNyAgcy0xNy03LjYyNi0xNy0xN1MxNC42MSw2LDIzLjk4NCw2eiIgZmlsbD0iIzAwMDAwMCIvPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K&#x27;);
+    }
+
+    .location-default-icon {
+      background-image: url(&#x27;data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDQ4Ny43MjQgNDg3LjcyNCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNDg3LjcyNCA0ODcuNzI0OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjE2cHgiIGhlaWdodD0iMTZweCI+CjxnPgoJPGc+CgkJPHBhdGggZD0iTTIzNi45MjUsMC4xMjRjLTk2LjksMy40LTE3Ny40LDc5LTE4Ni43LDE3NS41Yy0xLjksMTkuMy0wLjgsMzgsMi42LDU1LjlsMCwwYzAsMCwwLjMsMi4xLDEuMyw2LjEgICAgYzMsMTMuNCw3LjUsMjYuNCwxMy4xLDM4LjZjMTkuNSw0Ni4yLDY0LjYsMTIzLjUsMTY1LjgsMjA3LjZjNi4yLDUuMiwxNS4zLDUuMiwyMS42LDBjMTAxLjItODQsMTQ2LjMtMTYxLjMsMTY1LjktMjA3LjcgICAgYzUuNy0xMi4yLDEwLjEtMjUuMSwxMy4xLTM4LjZjMC45LTMuOSwxLjMtNi4xLDEuMy02LjFsMCwwYzIuMy0xMiwzLjUtMjQuMywzLjUtMzYuOUM0MzguNDI1LDg0LjcyNCwzNDcuNTI1LTMuNzc2LDIzNi45MjUsMC4xMjQgICAgeiBNMjQzLjgyNSwyOTEuMzI0Yy01Mi4yLDAtOTQuNS00Mi4zLTk0LjUtOTQuNXM0Mi4zLTk0LjUsOTQuNS05NC41czk0LjUsNDIuMyw5NC41LDk0LjVTMjk2LjAyNSwyOTEuMzI0LDI0My44MjUsMjkxLjMyNHoiIGZpbGw9IiMwMDAwMDAiLz4KCTwvZz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K&#x27;);
+    }
+
+    .current-default-icon {
+      background-image: url(&#x27;data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTYuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjE2cHgiIGhlaWdodD0iMTZweCIgdmlld0JveD0iMCAwIDg3Ljg1OSA4Ny44NTkiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDg3Ljg1OSA4Ny44NTk7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4KPGc+Cgk8ZyBpZD0iTWFya2VyIj4KCQk8Zz4KCQkJPHBhdGggZD0iTTgwLjkzOCw0MC40ODNDNzkuMjk0LDIyLjcxMyw2NS4wOTMsOC41MjgsNDcuMzEyLDYuOTE3VjBoLTYuNzU3djYuOTE4QzIyLjc3Myw4LjUyOCw4LjU3MiwyMi43MTQsNi45Myw0MC40ODNIMHY2Ljc1NyAgICAgaDYuOTE5YzEuNTgyLDE3LjgzOCwxNS44MSwzMi4wODcsMzMuNjM2LDMzLjcwMXY2LjkxOGg2Ljc1N3YtNi45MThjMTcuODI2LTEuNjEzLDMyLjA1NC0xNS44NjIsMzMuNjM2LTMzLjcwMWg2LjkxMXYtNi43NTcgICAgIEg4MC45Mzh6IE00Ny4zMTIsNzQuMTQ2di02LjU1OGgtNi43NTd2Ni41NThDMjYuNDU3LDcyLjU4LDE1LjI0Miw2MS4zNDUsMTMuNzA4LDQ3LjI0aDYuNTY2di02Ljc1N2gtNi41NDkgICAgIGMxLjU5MS0xNC4wNDEsMTIuNzc3LTI1LjIxLDI2LjgyOS0yNi43NzF2Ni41NjRoNi43NTZ2LTYuNTY0YzE0LjA1MywxLjU2LDI1LjIzOSwxMi43MjksMjYuODMsMjYuNzcxaC02LjU1NnY2Ljc1N2g2LjU3MyAgICAgQzcyLjYyNSw2MS4zNDUsNjEuNDA5LDcyLjU4LDQ3LjMxMiw3NC4xNDZ6IE00My45MzQsMzMuNzI3Yy01LjU5NSwwLTEwLjEzNSw0LjUzMy0xMC4xMzUsMTAuMTMxICAgICBjMCw1LjU5OSw0LjU0LDEwLjEzOSwxMC4xMzUsMTAuMTM5czEwLjEzNC00LjU0LDEwLjEzNC0xMC4xMzlDNTQuMDY4LDM4LjI2LDQ5LjUyNywzMy43MjcsNDMuOTM0LDMzLjcyN3oiIGZpbGw9IiMwMDAwMDAiLz4KCQk8L2c+Cgk8L2c+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPC9zdmc+Cg&#x3D;&#x3D;&#x27;);
+    }
+
+    .custom-autocomplete__container .searchpage {
+      margin-top: 0;
+      padding: 0;
+      height: 55px;
+      border: none;
+    }
+
+  &#x60;],
+  host: {
+    &#x27;(document:click)&#x27;: &#x27;closeAutocomplete($event)&#x27;,
+  }
+})
+export class AutoCompleteComponent implements OnInit {
+	@Input() userSettings: Settings;
+  @Output()
+  componentCallback: EventEmitter&lt;any&gt; &#x3D; new EventEmitter&lt;any&gt;();
+
+  public locationInput: string &#x3D; &#x27;&#x27;;
+  public gettingCurrentLocationFlag: boolean &#x3D; false;
+  public dropdownOpen: boolean &#x3D; false;
+  public recentDropdownOpen: boolean  &#x3D; false;
+  public queryItems: any &#x3D; [];
+  public isSettingsError: boolean &#x3D; false;
+  public settingsErrorMsg: string &#x3D; &#x27;&#x27;;
+  public settings: Settings &#x3D; {};
+  private selectedDataIndex: number &#x3D; -1;
+  private recentSearchData: any &#x3D; [];
+  private userSelectedOption: any &#x3D; &#x27;&#x27;;
+  private defaultSettings: Settings &#x3D; {
+    geoPredictionServerUrl: &#x27;&#x27;,
+    geoLatLangServiceUrl: &#x27;&#x27;,
+    geoLocDetailServerUrl: &#x27;&#x27;,
+    geoComponentRestriction: &#x27;in&#x27;,
+    serverResponseListHierarchy: [],
+    serverResponseatLangHierarchy: [],
+    serverResponseDetailHierarchy: [],
+    resOnSearchButtonClickOnly: false,
+    useGoogleGeoApi: true,
+    inputPlaceholderText: &#x27;Enter Area Name&#x27;,
+    showSearchButton: true,
+    showRecentSearch: true,
+    showCurrentLocation: true,
+    recentStorageName: &#x27;recentSearches&#x27;,
+    noOfRecentSearchSave: 5,
+    currentLocIconUrl: &#x27;&#x27;,
+    searchIconUrl: &#x27;&#x27;,
+    locationIconUrl: &#x27;&#x27;
+  };
+
+  constructor(@Inject(PLATFORM_ID) private platformId: Object,
+  private _elmRef: ElementRef, private _global: GlobalRef,
+  private _autoCompleteSearchService: AutoCompleteSearchService) {
+
+  }
+
+  ngOnInit(): any {
+    this.settings &#x3D; this.setUserSettings();
+
+    if (this.settings.showRecentSearch) {
+      this.getRecentLocations();
+    }
+    if (!this.settings.useGoogleGeoApi) {
+      if (!this.settings.geoPredictionServerUrl) {
+        this.isSettingsError &#x3D; true;
+        this.settingsErrorMsg &#x3D; this.settingsErrorMsg +
+        &#x27;Prediction custom server url is not defined. Please use &quot;geoPredictionServerUrl&quot; key to set. &#x27;;
+      }
+      if (!this.settings.geoLatLangServiceUrl) {
+        this.isSettingsError &#x3D; true;
+        this.settingsErrorMsg &#x3D; this.settingsErrorMsg +
+        &#x27;Latitude and longitude custom server url is not defined. Please use &quot;geoLatLangServiceUrl&quot; key to set. &#x27;;
+      }
+      if (!this.settings.geoLocDetailServerUrl) {
+        this.isSettingsError &#x3D; true;
+        this.settingsErrorMsg &#x3D; this.settingsErrorMsg +
+        &#x27;Location detail custom server url is not defined. Please use &quot;geoLocDetailServerUrl&quot; key to set. &#x27;;
+      }
+    }
+  }
+
+  //function called when click event happens in input box. (Binded with view)
+  searchinputClickCallback(event: any): any {
+    event.target.select();
+    this.searchinputCallback(event);
+  }
+
+  //function called when there is a change in input. (Binded with view)
+  searchinputCallback(event: any): any {
+    let inputVal: any &#x3D; this.locationInput;
+    if ((event.keyCode &#x3D;&#x3D;&#x3D; 40) || (event.keyCode &#x3D;&#x3D;&#x3D; 38) || (event.keyCode &#x3D;&#x3D;&#x3D; 13)) {
+      this.navigateInList(event.keyCode);
+    } else if (inputVal) {
+      this.getListQuery(inputVal);
+    } else {
+      this.queryItems &#x3D; [];
+      this.userSelectedOption &#x3D; &#x27;&#x27;;
+      if (this.settings.showRecentSearch) {
+        this.showRecentSearch();
+      }else {
+        this.dropdownOpen &#x3D; false;
+      }
+    }
+  }
+
+  //function to execute when user hover over autocomplete list.(binded with view)
+  activeListNode(index: number): any {
+    for (let i: number &#x3D; 0; i &lt; this.queryItems.length; i++) {
+      if (index &#x3D;&#x3D;&#x3D; i) {
+        this.queryItems[i].active &#x3D; true;
+        this.selectedDataIndex &#x3D; index;
+      }else {
+        this.queryItems[i].active &#x3D; false;
+      }
+    }
+  }
+
+  //function to execute when user select the autocomplete list.(binded with view)
+  selectedListNode(index: number): any {
+    this.dropdownOpen &#x3D; false;
+    if (this.recentDropdownOpen) {
+      this.setRecentLocation(this.queryItems[index]);
+    }else {
+      this.getPlaceLocationInfo(this.queryItems[index]);
+    }
+  }
+
+  //function to close the autocomplete list when clicked outside. (binded with view)
+  closeAutocomplete(event: any): any {
+    if (!this._elmRef.nativeElement.contains(event.target)) {
+      this.selectedDataIndex &#x3D; -1;
+      this.dropdownOpen &#x3D; false;
+    }
+  }
+
+  //function to manually trigger the callback to parent component when clicked search button.
+  userQuerySubmit(): any {
+    if (this.userSelectedOption) {
+      this.componentCallback.emit(this.userSelectedOption);
+    }else {
+      this.componentCallback.emit(false);
+    }
+  }
+
+  //function to get user current location from the device.
+  currentLocationSelected(): any {
+    if (isPlatformBrowser(this.platformId)) {
+      this.gettingCurrentLocationFlag &#x3D; true;
+      this.dropdownOpen &#x3D; false;
+      this._autoCompleteSearchService.getGeoCurrentLocation().then((result: any) &#x3D;&gt; {
+        if (!result) {
+          this.gettingCurrentLocationFlag &#x3D; false;
+        }else {
+          this.getCurrentLocationInfo(result);
+        }
+      });
+    }
+  }
+
+  //function to process the search query when pressed enter.
+  private processSearchQuery(): any {
+    if (this.queryItems.length) {
+      if (this.selectedDataIndex &gt; -1) {
+        this.selectedListNode(this.selectedDataIndex);
+      }else {
+        this.selectedListNode(0);
+      }
+    }
+  }
+
+  //function to set user settings if it is available.
+  private setUserSettings(): Settings {
+    let _tempObj: any &#x3D; {};
+    if (this.userSettings &amp;&amp; typeof(this.userSettings) &#x3D;&#x3D;&#x3D; &#x27;object&#x27;) {
+      let keys: string[] &#x3D; Object.keys(this.defaultSettings);
+      for (let value of keys) {
+        _tempObj[value] &#x3D; (this.userSettings[value] !&#x3D;&#x3D; undefined) ? this.userSettings[value] : this.defaultSettings[value];
+      }
+      return _tempObj;
+    }else {
+      return this.defaultSettings;
+    }
+  }
+
+  //function to get the autocomplete list based on user input.
+  private getListQuery(value: string): any {
+    this.recentDropdownOpen &#x3D; false;
+    if (this.settings.useGoogleGeoApi) {
+      this._autoCompleteSearchService.getGeoPrediction(value, this.settings.geoComponentRestriction).then((result) &#x3D;&gt; {
+        this.updateListItem(result);
+      });
+    }else {
+      this._autoCompleteSearchService.getPredictions(this.settings.geoPredictionServerUrl, value).then((result) &#x3D;&gt; {
+        result &#x3D; this.extractServerList(this.settings.serverResponseListHierarchy, result);
+        this.updateListItem(result);
+      });
+    }
+  }
+
+  //function to extratc custom data which is send by the server.
+  private extractServerList(arrayList: any, data: any): any {
+    if (arrayList.length) {
+      let _tempData: any &#x3D; data;
+      for (let key of arrayList) {
+        _tempData &#x3D; _tempData[key];
+      }
+      return _tempData;
+    }else {
+      return data;
+    }
+  }
+
+  //function to update the predicted list.
+  private updateListItem(listData: any): any {
+    this.queryItems &#x3D; listData ? listData : [];
+    this.dropdownOpen &#x3D; true;
+  }
+
+  //function to show the recent search result.
+  private showRecentSearch(): any {
+    this.recentDropdownOpen &#x3D; true;
+    this.dropdownOpen &#x3D; true;
+    this._autoCompleteSearchService.getRecentList(this.settings.recentStorageName).then((result: any) &#x3D;&gt; {
+      if (result) {
+        this.queryItems &#x3D; result;
+      }else {
+        this.queryItems &#x3D; [];
+      }
+    });
+  }
+
+  //function to navigate through list when up and down keyboard key is pressed;
+  private navigateInList(keyCode: number): any {
+    let arrayIndex: number &#x3D; 0;
+    //arrow down
+    if (keyCode &#x3D;&#x3D;&#x3D; 40) {
+      if (this.selectedDataIndex &gt;&#x3D; 0) {
+        arrayIndex &#x3D; ((this.selectedDataIndex + 1) &lt;&#x3D; (this.queryItems.length - 1)) ? (this.selectedDataIndex + 1) : 0;
+      }
+      this.activeListNode(arrayIndex);
+    }else if (keyCode &#x3D;&#x3D;&#x3D; 38) {//arrow up
+      if (this.selectedDataIndex &gt;&#x3D; 0) {
+        arrayIndex &#x3D; ((this.selectedDataIndex - 1) &gt;&#x3D; 0) ? (this.selectedDataIndex - 1) : (this.queryItems.length - 1);
+      }else {
+        arrayIndex &#x3D; this.queryItems.length - 1;
+      }
+      this.activeListNode(arrayIndex);
+    } else {
+      this.processSearchQuery();
+    }
+  }
+
+  //function to execute to get location detail based on latitude and longitude.
+  private getCurrentLocationInfo(latlng: any): any {
+    if (this.settings.useGoogleGeoApi) {
+      this._autoCompleteSearchService.getGeoLatLngDetail(latlng).then((result: any) &#x3D;&gt; {
+        if (result) {
+         this.setRecentLocation(result);
+        }
+        this.gettingCurrentLocationFlag &#x3D; false;
+      });
+    }else {
+      this._autoCompleteSearchService.getLatLngDetail(this.settings.geoLatLangServiceUrl, latlng.lat, latlng.lng).then((result: any) &#x3D;&gt; {
+        if (result) {
+          result &#x3D; this.extractServerList(this.settings.serverResponseatLangHierarchy, result);
+          this.setRecentLocation(result);
+        }
+        this.gettingCurrentLocationFlag &#x3D; false;
+      });
+    }
+  }
+
+  //function to retrive the location info based on goovle place id.
+  private getPlaceLocationInfo(selectedData: any): any {
+    if (this.settings.useGoogleGeoApi) {
+      this._autoCompleteSearchService.getGeoPlaceDetail(selectedData.place_id).then((data: any) &#x3D;&gt; {
+        if (data) {
+          this.setRecentLocation(data);
+        }
+      });
+    }else {
+      this._autoCompleteSearchService.getPlaceDetails(this.settings.geoLocDetailServerUrl, selectedData.place_id).then((result: any) &#x3D;&gt; {
+        if (result) {
+          result &#x3D; this.extractServerList(this.settings.serverResponseDetailHierarchy, result);
+          this.setRecentLocation(result);
+        }
+      });
+    }
+  }
+
+  //function to store the selected user search in the localstorage.
+  private setRecentLocation(data: any): any {
+    data &#x3D; JSON.parse(JSON.stringify(data));
+    data.description &#x3D; data.description ? data.description : data.formatted_address;
+    data.active &#x3D; false;
+    this.selectedDataIndex &#x3D; -1;
+    this.locationInput &#x3D; data.description;
+    if (this.settings.showRecentSearch) {
+      this._autoCompleteSearchService.addRecentList(this.settings.recentStorageName, data, this.settings.noOfRecentSearchSave);
+      this.getRecentLocations();
+    }
+    this.userSelectedOption &#x3D; data;
+    //below code will execute only when user press enter or select any option selection and it emit a callback to the parent component.
+    if (!this.settings.resOnSearchButtonClickOnly) {
+      this.componentCallback.emit(data);
+    }
+  }
+
+  //function to retrive the stored recent user search from the localstorage.
+  private getRecentLocations(): any {
+    this._autoCompleteSearchService.getRecentList(this.settings.recentStorageName).then((data: any) &#x3D;&gt; {
+      this.recentSearchData &#x3D; (data &amp;&amp; data.length) ? data : [];
+    });
+  }
+}
+</code></pre>
+    </div>
+
+
+    <div class="tab-pane fade" id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="custom-autocomplete" *ngIf="!isSettingsError">  <div class="custom-autocomplete__container" >    <div class="custom-autocomplete__input" [ngClass]="{\'button-included\':settings.showSearchButton}">      <input  [(ngModel)]="locationInput" (click)="searchinputClickCallback($event)"  (keyup)="searchinputCallback($event)"       type="search" name="search" id="search_places" placeholder="{{settings.inputPlaceholderText}}" autocomplete="off">      <button class="search-icon" *ngIf="settings.showSearchButton" (click)="userQuerySubmit()">        <i *ngIf="settings.searchIconUrl" [ngStyle]="{\'background-image\': \'url(\' + settings.searchIconUrl + \')\'}"></i>        <i *ngIf="!settings.searchIconUrl" class="search-default-icon"></i>      </button>    </div>    <pre class="custom-autocomplete__loader" *ngIf="gettingCurrentLocationFlag"><i class="gif"></i></pre>  </div>  <ul class="custom-autocomplete__dropdown" *ngIf="dropdownOpen && (settings.showCurrentLocation || queryItems.length)">    <li *ngIf="settings.showCurrentLocation" class="currentlocation">      <a href="javascript:;" (click)="currentLocationSelected()">        <i class="location-icon" *ngIf="settings.currentLocIconUrl" [ngStyle]="{\'background-image\': \'url(\' + settings.currentLocIconUrl + \')\'}"></i>Use Current Location        <i class="location-icon current-default-icon" *ngIf="!settings.currentLocIconUrl"></i>      </a>    </li>    <li class="heading heading-recent" *ngIf="!recentDropdownOpen && queryItems.length"><span>Locations</span><span class="line line-location"></span></li>    <li class="heading heading-recent" *ngIf="recentDropdownOpen && queryItems.length">      <span>Recent Searches</span><span class="line line-recent"></span>    </li>    <li *ngFor = "let data of queryItems;let $index = index" [ngClass]="{\'active\': data.active}">      <a href="javascript:;" (mouseover)="activeListNode($index)" (click)="selectedListNode($index)">        <i class="custom-icon" *ngIf="settings.locationIconUrl" [ngStyle]="{\'background-image\': \'url(\' + settings.locationIconUrl + \')\'}"></i>        <i class="custom-icon location-default-icon" *ngIf="!settings.locationIconUrl"></i>          <span class="main-text">            {{data.structured_formatting?.main_text ? data.structured_formatting.main_text : data.description}}          </span>          <span class="secondary_text" *ngIf="data.structured_formatting?.secondary_text">{{data.structured_formatting.secondary_text}}</span>      </a>    </li>  </ul></div><div class="custom-autocomplete--error" *ngIf="isSettingsError">{{settingsErrorMsg}}</div></div>'
+    var COMPONENTS = [{'name': 'AutoCompleteComponent', 'selector': 'ng4geo-autocomplete'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'AutoCompleteComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+           </div>
+       </div>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script>var COMPODOC_CURRENT_PAGE_DEPTH = 1;</script>
+
+       <script src="../js/search/search.js"></script>
+       <script src="../js/search/lunr.min.js"></script>
+       <script src="../js/search/search-lunr.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+       <script src="../js/search/search_index.js"></script>
+
+    </body>
+</html>
