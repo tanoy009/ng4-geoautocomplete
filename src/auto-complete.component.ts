@@ -7,7 +7,7 @@ export interface Settings {
   geoPredictionServerUrl?: string;
   geoLatLangServiceUrl?: string;
   geoLocDetailServerUrl?: string;
-  geoComponentRestriction?: any;
+  geoCountryRestriction?: any;
   serverResponseListHierarchy?: any;
   serverResponseatLangHierarchy?: any;
   serverResponseDetailHierarchy?: any;
@@ -294,7 +294,7 @@ export class AutoCompleteComponent implements OnInit {
     geoPredictionServerUrl: '',
     geoLatLangServiceUrl: '',
     geoLocDetailServerUrl: '',
-    geoComponentRestriction: [],
+    geoCountryRestriction: [],
     serverResponseListHierarchy: [],
     serverResponseatLangHierarchy: [],
     serverResponseDetailHierarchy: [],
@@ -449,7 +449,7 @@ export class AutoCompleteComponent implements OnInit {
   private getListQuery(value: string): any {
     this.recentDropdownOpen = false;
     if (this.settings.useGoogleGeoApi) {
-      this._autoCompleteSearchService.getGeoPrediction(value, this.settings.geoComponentRestriction).then((result) => {
+      this._autoCompleteSearchService.getGeoPrediction(value, this.settings.geoCountryRestriction).then((result) => {
         this.updateListItem(result);
       });
     }else {

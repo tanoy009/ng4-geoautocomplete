@@ -71,7 +71,7 @@ List of settings that can be used to configure the module (all config. are optio
 	  geoPredictionServerUrl?: string;      //should be a server url which returns list of places upon input query (GET request)
 	  geoLatLangServiceUrl?: string;        //should be a server url which returns place object upon lat and lon. (GET request)
 	  geoLocDetailServerUrl?: string;       //should be a server url which returns place details upon placeID received by 'geoPredictionServerUrl' (GET request)
-	  geoComponentRestriction?: any;        //should be an array of country code where search should be restricted like ['in', 'us', 'pr', 'vi', 'gu', 'mp'] *(Default: 'no restriction')*
+	  geoCountryRestriction?: any;          //should be an array of country code where search should be restricted like ['in', 'us', 'pr', 'vi', 'gu', 'mp'] *(Default: 'no restriction')*
 	  serverResponseListHierarchy?: any;    //should be an array of key from where 'geoPredictionServer' data should be extracted. (see Example.)
 	  serverResponseatLangHierarchy?: any;  //should be an array of key from where 'geoLatLangService' data should be extracted. (see Example.)
 	  serverResponseDetailHierarchy?: any;  //should be an array of key from where 'geoLocDetailSerice' data should be extracted. (see Example.)

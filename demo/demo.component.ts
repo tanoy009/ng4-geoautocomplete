@@ -12,7 +12,7 @@ export class DemoComponent {
   public componentData5: any = '';
   public userSettings2: any = {
     showRecentSearch: false,
-    geoComponentRestriction: ['in'],
+    geoCountryRestriction: ['in'],
     searchIconUrl: 'http://downloadicons.net/sites/default/files/identification-search-magnifying-glass-icon-73159.png'
   };
   public userSettings3: any = {
