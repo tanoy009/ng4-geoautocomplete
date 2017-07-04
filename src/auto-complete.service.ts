@@ -104,7 +104,7 @@ export class AutoCompleteSearchService {
         let _window: any = this._global.nativeGlobal;
         let placesService: any = new _window.google.maps.places.AutocompleteService();
         let queryInput: any = {};
-        let promiseArr = [];
+        let promiseArr: any = [];
         if (params.countryRestriction.length) {
           queryInput = {
             input: params.query,
@@ -115,26 +115,27 @@ export class AutoCompleteSearchService {
              input: params.query
           };
         }
-        if(params.geoLocation) {
-          queryInput.location = new _window.google.maps.LatLng(parseFloat(params.geoLocation[0]),parseFloat(params.geoLocation[1]));
-          queryInput.radius = params.radius
+        if (params.geoLocation) {
+          queryInput.location = new _window.google.maps.LatLng(parseFloat( params.geoLocation[0] ), parseFloat( params.geoLocation[1] ));
+          queryInput.radius = params.radius;
         }
-        if(params.geoTypes.length) {
-          for(let i = 0;i<params.geoTypes.length;i++) {
-              let _tempQuery:any = queryInput;
+        if (params.geoTypes.length) {
+          for (let i: number = 0; i < params.geoTypes.length; i++) {
+              let _tempQuery: any = queryInput;
               _tempQuery['types'] = new Array(params.geoTypes[i]);
               promiseArr.push(this.geoPredictionCall(placesService, _tempQuery));
           }
         }else {
           promiseArr.push(this.geoPredictionCall(placesService, queryInput));
         }
-        
+
         Promise.all(promiseArr).then(values => {
-            if(values.length > 1) {
-              let _tempArr = [];
-              for(let j = 0;j<values.length;j++) {
-                  if(values[j] && values[j].length) {
-                      _tempArr = _tempArr.concat(values[j]);
+            let val: any = values;
+            if (val.length > 1) {
+              let _tempArr: any = [];
+              for (let j: number = 0; j < val.length; j++) {
+                  if (val[j] && val[j].length) {
+                      _tempArr = _tempArr.concat(val[j]);
                   }
               }
               _tempArr = this.getUniqueResults(_tempArr);
@@ -142,7 +143,7 @@ export class AutoCompleteSearchService {
             }else {
               resolve(values[0]);
             }
-        })
+        });
       }else {
         resolve(false);
       }
@@ -223,7 +224,7 @@ export class AutoCompleteSearchService {
   }
 
   private getUniqueResults(arr: any): any {
-      return Array.from(arr.reduce((m, t) => m.set(t.place_id, t), new Map()).values())
+      return Array.from(arr.reduce((m, t) => m.set(t.place_id, t), new Map()).values());
   }
 
   private geoPredictionCall(placesService: any, queryInput: any): Promise<any> {

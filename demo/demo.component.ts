@@ -32,10 +32,10 @@ export class DemoComponent {
   };
   public userSettings5: any = {
     geoCountryRestriction: ['in'],
-    geoTypes: ["establishment"]
+    geoTypes: ['establishment']
   };
   public userSettings6: any = {
-    geoLocation: [37.76999,-122.44696],
+    geoLocation: [37.76999, -122.44696],
     geoRadius: 5
   };
   public userSettings7: any = {
@@ -61,7 +61,6 @@ export class DemoComponent {
   };
 
   constructor() {
-    
   }
 
   getCodeHtml(data: any): any {

@@ -33,7 +33,7 @@ export interface Settings {
     <div class="custom-autocomplete" *ngIf="!isSettingsError">
       <div class="custom-autocomplete__container" >
         <div class="custom-autocomplete__input" [ngClass]="{'button-included':settings.showSearchButton}">
-          <input  [(ngModel)]="locationInput" (click)="searchinputClickCallback($event)"  (keyup)="searchinputCallback($event)" 
+          <input  [(ngModel)]="locationInput" (click)="searchinputClickCallback($event)"  (keyup)="searchinputCallback($event)"
            type="search" name="search" id="search_places" placeholder="{{settings.inputPlaceholderText}}" autocomplete="off">
           <button class="search-icon" *ngIf="settings.showSearchButton" (click)="userQuerySubmit()">
             <i *ngIf="settings.searchIconUrl" [ngStyle]="{'background-image': 'url(' + settings.searchIconUrl + ')'}"></i>
@@ -326,8 +326,8 @@ export class AutoCompleteComponent implements OnInit {
   ngOnInit(): any {
     this.settings = this.setUserSettings();
     //condition to check if Radius is set without location detail.
-    if(this.settings.geoRadius) {
-        if(this.settings.geoLocation.length !== 2) {
+    if (this.settings.geoRadius) {
+        if (this.settings.geoLocation.length !== 2) {
           this.isSettingsError = true;
           this.settingsErrorMsg = this.settingsErrorMsg +
           'Radius should be used with GeoLocation. Please use "geoLocation" key to set lat and lng. ';
@@ -335,7 +335,7 @@ export class AutoCompleteComponent implements OnInit {
     }
 
     //condition to check if lat and lng is set and radious is not set then it will set to 20,000KM by default
-    if((this.settings.geoLocation.length === 2) && !this.settings.geoRadius) {
+    if ((this.settings.geoLocation.length === 2) && !this.settings.geoRadius) {
       this.settings.geoRadius = 20000000;
     }
     if (this.settings.showRecentSearch) {
@@ -471,8 +471,8 @@ export class AutoCompleteComponent implements OnInit {
         'query': value,
         'countryRestriction': this.settings.geoCountryRestriction,
         'geoTypes': this.settings.geoTypes
-      }
-      if(this.settings.geoLocation.length === 2) {
+      };
+      if (this.settings.geoLocation.length === 2) {
         _tempParams.geoLocation = this.settings.geoLocation;
         _tempParams.radius = this.settings.geoRadius;
       }
