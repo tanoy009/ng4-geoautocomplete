@@ -1,4 +1,4 @@
-import { Injectable, PLATFORM_ID, Inject } from '@angular/core';
+﻿import { Injectable, PLATFORM_ID, Inject } from '@angular/core';
 import { isPlatformBrowser, isPlatformServer } from '@angular/common';
 import { GlobalRef } from './windowRef.service';
 import { Http } from '@angular/http';
@@ -98,29 +98,51 @@ export class AutoCompleteSearchService {
     });
   }
 
-  getGeoPrediction(query: string, countryRestriction: any): Promise<any> {
+  getGeoPrediction(params: any): Promise<any> {
     return new Promise(resolve => {
       if (isPlatformBrowser(this.platformId)) {
         let _window: any = this._global.nativeGlobal;
         let placesService: any = new _window.google.maps.places.AutocompleteService();
         let queryInput: any = {};
-        if (countryRestriction.length) {
+        let promiseArr = [];
+        if (params.countryRestriction.length) {
           queryInput = {
-            input: query,
-            componentRestrictions: {country: countryRestriction}
+            input: params.query,
+            componentRestrictions: {country: params.countryRestriction},
           };
         }else {
            queryInput = {
-            input: query
+             input: params.query
           };
         }
-        placesService.getPlacePredictions(queryInput, (result: any, status: any) => {
-          if (status === _window.google.maps.places.PlacesServiceStatus.OK) {
-            resolve(result);
-          }else {
-            resolve(false);
+        if(params.geoLocation) {
+          queryInput.location = new _window.google.maps.LatLng(parseFloat(params.geoLocation[0]),parseFloat(params.geoLocation[1]));
+          queryInput.radius = params.radius
+        }
+        if(params.geoTypes.length) {
+          for(let i = 0;i<params.geoTypes.length;i++) {
+              let _tempQuery:any = queryInput;
+              _tempQuery['types'] = new Array(params.geoTypes[i]);
+              promiseArr.push(this.geoPredictionCall(placesService, _tempQuery));
           }
-        });
+        }else {
+          promiseArr.push(this.geoPredictionCall(placesService, queryInput));
+        }
+        
+        Promise.all(promiseArr).then(values => {
+            if(values.length > 1) {
+              let _tempArr = [];
+              for(let j = 0;j<values.length;j++) {
+                  if(values[j] && values[j].length) {
+                      _tempArr = _tempArr.concat(values[j]);
+                  }
+              }
+              _tempArr = this.getUniqueResults(_tempArr);
+              resolve(_tempArr);
+            }else {
+              resolve(values[0]);
+            }
+        })
       }else {
         resolve(false);
       }
@@ -197,6 +219,23 @@ export class AutoCompleteSearchService {
         value = [];
       }
       resolve(value);
+    });
+  }
+
+  private getUniqueResults(arr: any): any {
+      return Array.from(arr.reduce((m, t) => m.set(t.place_id, t), new Map()).values())
+  }
+
+  private geoPredictionCall(placesService: any, queryInput: any): Promise<any> {
+    let _window: any = this._global.nativeGlobal;
+    return new Promise(resolve => {
+      placesService.getPlacePredictions(queryInput, (result: any, status: any) => {
+          if (status === _window.google.maps.places.PlacesServiceStatus.OK) {
+            resolve(result);
+          }else {
+            resolve(false);
+          }
+        });
     });
   }
 

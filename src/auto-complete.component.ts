@@ -1,4 +1,4 @@
-import { Component, PLATFORM_ID, Inject, Input, Output, EventEmitter, OnInit, ElementRef } from '@angular/core';
+﻿import { Component, PLATFORM_ID, Inject, Input, Output, EventEmitter, OnInit, ElementRef } from '@angular/core';
 import { isPlatformBrowser, isPlatformServer } from '@angular/common';
 import { GlobalRef } from './windowRef.service';
 import { AutoCompleteSearchService } from './auto-complete.service';
@@ -8,6 +8,9 @@ export interface Settings {
   geoLatLangServiceUrl?: string;
   geoLocDetailServerUrl?: string;
   geoCountryRestriction?: any;
+  geoTypes?: any;
+  geoLocation?: any;
+  geoRadius?: number;
   serverResponseListHierarchy?: any;
   serverResponseatLangHierarchy?: any;
   serverResponseDetailHierarchy?: any;
@@ -295,6 +298,9 @@ export class AutoCompleteComponent implements OnInit {
     geoLatLangServiceUrl: '',
     geoLocDetailServerUrl: '',
     geoCountryRestriction: [],
+    geoTypes: [],
+    geoLocation: [],
+    geoRadius: 0,
     serverResponseListHierarchy: [],
     serverResponseatLangHierarchy: [],
     serverResponseDetailHierarchy: [],
@@ -319,7 +325,19 @@ export class AutoCompleteComponent implements OnInit {
 
   ngOnInit(): any {
     this.settings = this.setUserSettings();
+    //condition to check if Radius is set without location detail.
+    if(this.settings.geoRadius) {
+        if(this.settings.geoLocation.length !== 2) {
+          this.isSettingsError = true;
+          this.settingsErrorMsg = this.settingsErrorMsg +
+          'Radius should be used with GeoLocation. Please use "geoLocation" key to set lat and lng. ';
+        }
+    }
 
+    //condition to check if lat and lng is set and radious is not set then it will set to 20,000KM by default
+    if((this.settings.geoLocation.length === 2) && !this.settings.geoRadius) {
+      this.settings.geoRadius = 20000000;
+    }
     if (this.settings.showRecentSearch) {
       this.getRecentLocations();
     }
@@ -449,7 +467,16 @@ export class AutoCompleteComponent implements OnInit {
   private getListQuery(value: string): any {
     this.recentDropdownOpen = false;
     if (this.settings.useGoogleGeoApi) {
-      this._autoCompleteSearchService.getGeoPrediction(value, this.settings.geoCountryRestriction).then((result) => {
+      let _tempParams: any = {
+        'query': value,
+        'countryRestriction': this.settings.geoCountryRestriction,
+        'geoTypes': this.settings.geoTypes
+      }
+      if(this.settings.geoLocation.length === 2) {
+        _tempParams.geoLocation = this.settings.geoLocation;
+        _tempParams.radius = this.settings.geoRadius;
+      }
+      this._autoCompleteSearchService.getGeoPrediction(_tempParams).then((result) => {
         this.updateListItem(result);
       });
     }else {

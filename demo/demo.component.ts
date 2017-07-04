@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+﻿import { Component } from '@angular/core';
 
 @Component({
   selector: 'ng2geo-autocomplete-demoapp',
@@ -10,6 +10,8 @@ export class DemoComponent {
   public componentData3: any = '';
   public componentData4: any = '';
   public componentData5: any = '';
+  public componentData6: any = '';
+  public componentData7: any = '';
   public userSettings2: any = {
     showRecentSearch: false,
     geoCountryRestriction: ['in'],
@@ -29,6 +31,14 @@ export class DemoComponent {
     noOfRecentSearchSave: 8
   };
   public userSettings5: any = {
+    geoCountryRestriction: ['in'],
+    geoTypes: ["establishment"]
+  };
+  public userSettings6: any = {
+    geoLocation: [37.76999,-122.44696],
+    geoRadius: 5
+  };
+  public userSettings7: any = {
     useGoogleGeoApi: false,
     geoLocDetailServerUrl: 'https://www.simplymovein.com/api/v4/get-location',
     geoPredictionServerUrl: 'https://www.simplymovein.com/api/v4/search-location',
@@ -39,7 +49,7 @@ export class DemoComponent {
     recentStorageName: 'componentData5'
   };
 
-  public userSettings5_1: any = {
+  public userSettings7_1: any = {
     useGoogleGeoApi: false,
     geoLocDetailServerUrl: 'https://www.XXX.com/api/v4/get-location',
     geoPredictionServerUrl: 'https://www.XXX.com/api/v4/search-location',
@@ -80,4 +90,12 @@ export class DemoComponent {
   autoCompleteCallback5(data: any): any {
     this.componentData5 = JSON.stringify(data);
   }
+
+  autoCompleteCallback6(data: any): any {
+    this.componentData6 = JSON.stringify(data);
+  }
+  autoCompleteCallback7(data: any): any {
+    this.componentData7 = JSON.stringify(data);
+  }
+
 }

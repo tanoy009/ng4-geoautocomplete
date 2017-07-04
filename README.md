@@ -1,4 +1,4 @@
-# Angular 4 compatible google autocomplete
+﻿# Angular 4 compatible google autocomplete
 [![Build Status](https://travis-ci.org/tanoy009/ng4-geoautocomplete.svg?branch=master)](https://travis-ci.org/tanoy009/ng4-geoautocomplete)
 [![codecov](https://codecov.io/gh/tanoy009/ng4-geoautocomplete/branch/master/graph/badge.svg)](https://codecov.io/gh/tanoy009/ng4-geoautocomplete)
 [![npm version](https://badge.fury.io/js/ng4-geoautocomplete.svg)](http://badge.fury.io/js/ng4-geoautocomplete)
@@ -72,7 +72,10 @@ List of settings that can be used to configure the module (all config. are optio
 	  geoLatLangServiceUrl?: string;        //should be a server url which returns place object upon lat and lon. (GET request)
 	  geoLocDetailServerUrl?: string;       //should be a server url which returns place details upon placeID received by 'geoPredictionServerUrl' (GET request)
 	  geoCountryRestriction?: any;          //should be an array of country code where search should be restricted like ['in', 'us', 'pr', 'vi', 'gu', 'mp'] *(Default: 'no restriction')*
-	  serverResponseListHierarchy?: any;    //should be an array of key from where 'geoPredictionServer' data should be extracted. (see Example.)
+	  geoTypes?: any;                       //should be an array of Place types defined by [Google api](https://developers.google.com/places/web-service/autocomplete#place_types).
+      geoLocation?: any;                    //should be an array in the format [latitude,longitude]. #### This feature will not work if country restriction is implimented.
+      geoRadius?: number;                   //should be a number and should only be used with 'geoLocation'.
+      serverResponseListHierarchy?: any;    //should be an array of key from where 'geoPredictionServer' data should be extracted. (see Example.)
 	  serverResponseatLangHierarchy?: any;  //should be an array of key from where 'geoLatLangService' data should be extracted. (see Example.)
 	  serverResponseDetailHierarchy?: any;  //should be an array of key from where 'geoLocDetailSerice' data should be extracted. (see Example.)
 	  resOnSearchButtonClickOnly?: boolean; //when output should be emmited when search button clicked only.
@@ -88,8 +91,12 @@ List of settings that can be used to configure the module (all config. are optio
 	  locationIconUrl?: string;             //Genetal Location icon can be changed *(Should be an image or svg url)*
 	}
 ```
-
+* ####NOTE: 'geoType' can be used for multiple Place Types like ['(regions)', '(cities)'] OR ['(regions)', 'establishment', 'geocode']. This will make individual api call for each Place Types to google to fetch lists and then it will merge the resuts with uniqueness. USE THIS FEATURE CAREFULLY
 You may also find it useful to view the [demo source](https://github.com/tanoy009/ng4-geoautocomplete/blob/master/demo/demo.component.ts).
+
+### You can use it with system js as well
+
+`'ng4-geoautocomplete': 'npm:ng4-geoautocomplete/bundles/ng4-geoautocomplete.umd.js'`
 
 ### Usage without a module bundler
 ```

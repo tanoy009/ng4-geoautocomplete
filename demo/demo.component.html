@@ -1,4 +1,4 @@
-<div class="row">
+﻿<div class="row">
   <div class="col-xs-12 col-md-6">
   	<div class="panel panel-primary">
 		  <div class="panel-heading">
@@ -83,15 +83,16 @@
   </div>
 </div>
 <div class="row">
-	<div class="col-xs-12">
-  	<div class="panel panel-primary">
+    <div class="col-xs-12 col-md-6">
+  	  <div class="panel panel-primary">
 		  <div class="panel-heading">
-		    <h3 class="panel-title">Example 5 (using server API instead of google API) (Please enable CORS on your browser to see the result as I am using 3rd party server URL)</h3>
+		    <h3 class="panel-title">Example 5 (Using google pleace types for location filteration. multiple place types can be send)</h3>
 		  </div>
 		  <div class="panel-body">
 		  	<div class="well">
 		  		<p>Setting used:</p>
-		  		<code style="word-wrap: break-word;" [innerHTML]="getCodeHtml(userSettings5_1)"></code>
+		  		<code style="word-wrap: break-word;" [innerHTML]="getCodeHtml(userSettings5)"></code>
+                <p>Above 'geoTypes' attribute can be used for multiple 'TYPES' defined by google place service like <code style="word-wrap: break-word;">['(regions)', '(cities)']</code> (Refer Doc for more info)</p>
 		  	</div>
 		  	<div>
 		    	<ng4geo-autocomplete [userSettings]="userSettings5" (componentCallback)="autoCompleteCallback5($event)"></ng4geo-autocomplete>
@@ -101,6 +102,49 @@
 		    	<samp style="word-wrap: break-word;">{{componentData5}}</samp>
 		    </div>
 		  </div>
-		</div>
-  </div>
+	  </div>
+    </div>
+	<div class="col-xs-12 col-md-6">
+  	  <div class="panel panel-primary">
+		  <div class="panel-heading">
+		    <h3 class="panel-title">Example 6 (Using google Latitude and longitude along with radius to trimdown result)</h3>
+		  </div>
+		  <div class="panel-body">
+		  	<div class="well">
+		  		<p>Setting used:</p>
+		  		<code style="word-wrap: break-word;" [innerHTML]="getCodeHtml(userSettings6)"></code>
+                <p>Above 'geoRadius' is in KM (5 means 5KM)</p>
+		  	</div>
+		  	<div>
+		    	<ng4geo-autocomplete [userSettings]="userSettings6" (componentCallback)="autoCompleteCallback6($event)"></ng4geo-autocomplete>
+		    </div>
+		    <div class="well" style="float: left;width: 100%;margin-top: 20px;">
+		    	<p>Sample Output:</p>
+		    	<samp style="word-wrap: break-word;">{{componentData6}}</samp>
+		    </div>
+		  </div>
+	  </div>
+    </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+  	  <div class="panel panel-primary">
+		  <div class="panel-heading">
+		    <h3 class="panel-title">Example 7 (using server API instead of google API) (Please enable CORS on your browser to see the result as I am using 3rd party server URL)</h3>
+		  </div>
+		  <div class="panel-body">
+		  	<div class="well">
+		  		<p>Setting used:</p>
+		  		<code style="word-wrap: break-word;" [innerHTML]="getCodeHtml(userSettings7_1)"></code>
+		  	</div>
+		  	<div>
+		    	<ng4geo-autocomplete [userSettings]="userSettings7" (componentCallback)="autoCompleteCallback7($event)"></ng4geo-autocomplete>
+		    </div>
+		    <div class="well" style="float: left;width: 100%;margin-top: 20px;">
+		    	<p>Sample Output:</p>
+		    	<samp style="word-wrap: break-word;">{{componentData7}}</samp>
+		    </div>
+		  </div>
+	  </div>
+    </div>
 </div>
