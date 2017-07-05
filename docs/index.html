@@ -318,31 +318,30 @@ export class MyComponent {
     }
 }</code></pre><p>List of settings that can be used to configure the module (all config. are optional):</p>
 <pre class="line-numbers"><code class="language-typescript">    {
-      geoPredictionServerUrl?: string;      //should be a server url which returns list of places upon input query (GET request)
-      geoLatLangServiceUrl?: string;        //should be a server url which returns place object upon lat and lon. (GET request)
-      geoLocDetailServerUrl?: string;       //should be a server url which returns place details upon placeID received by &#39;geoPredictionServerUrl&#39; (GET request)
-      geoCountryRestriction?: any;          //should be an array of country code where search should be restricted like [&#39;in&#39;, &#39;us&#39;, &#39;pr&#39;, &#39;vi&#39;, &#39;gu&#39;, &#39;mp&#39;] *(Default: &#39;no restriction&#39;)*
-      geoTypes?: any;                       //should be an array of Place types defined by [Google api](https://developers.google.com/places/web-service/autocomplete#place_types).
-      geoLocation?: any;                    //should be an array in the format [latitude,longitude]. #### This feature will not work if country restriction is implimented.
-      geoRadius?: number;                   //should be a number and should only be used with &#39;geoLocation&#39;.
-      serverResponseListHierarchy?: any;    //should be an array of key from where &#39;geoPredictionServer&#39; data should be extracted. (see Example.)
-      serverResponseatLangHierarchy?: any;  //should be an array of key from where &#39;geoLatLangService&#39; data should be extracted. (see Example.)
-      serverResponseDetailHierarchy?: any;  //should be an array of key from where &#39;geoLocDetailSerice&#39; data should be extracted. (see Example.)
-      resOnSearchButtonClickOnly?: boolean; //when output should be emmited when search button clicked only.
-      useGoogleGeoApi?: boolean;            //should set to &#39;false&#39; when server urls to be used instade of google api. *(Default: true)*
-      inputPlaceholderText?: string;        //Input Placeholder text can be changed *(Default: &#39;Enter Area Name&#39;)*
-      showSearchButton?: boolean;           //Search button to be visible or not. *(Default: true)*
-      showRecentSearch?: boolean;           //Recent search to be saved &amp; shown to user or not. *(Default: true)*
-      showCurrentLocation?: boolean;        //current location option to be visible or not. *(Default: true)*
-      recentStorageName?: string;           //Recent seraches are saved in browser localsorage. The key value which is used by the module to save can be changed. *(Default: &#39;recentSearches&#39;)*
-      noOfRecentSearchSave?: number;        //Number of recent user entry to be saved . *(Default: 5)*
-      currentLocIconUrl?: string;           //Current location icon can be changed *(Should be an image url or svg url)*
-      searchIconUrl?: string;               //Search icon can be changed *(Should be an image url or svg url)*
-      locationIconUrl?: string;             //Genetal Location icon can be changed *(Should be an image or svg url)*
-    }</code></pre><ul>
-<li>####NOTE: &#39;geoType&#39; can be used for multiple Place Types like [&#39;(regions)&#39;, &#39;(cities)&#39;] OR [&#39;(regions)&#39;, &#39;establishment&#39;, &#39;geocode&#39;]. This will make individual api call for each Place Types to google to fetch lists and then it will merge the resuts with uniqueness. USE THIS FEATURE CAREFULLY
-You may also find it useful to view the <a href="https://github.com/tanoy009/ng4-geoautocomplete/blob/master/demo/demo.component.ts">demo source</a>.</li>
-</ul>
+    geoPredictionServerUrl?: string;      //should be a server url which returns list of places upon input query (GET request)
+    geoLatLangServiceUrl?: string;        //should be a server url which returns place object upon lat and lon. (GET request)
+    geoLocDetailServerUrl?: string;       //should be a server url which returns place details upon placeID received by &#39;geoPredictionServerUrl&#39; (GET request)
+    geoCountryRestriction?: any;          //should be an array of country code where search should be restricted like [&#39;in&#39;, &#39;us&#39;, &#39;pr&#39;, &#39;vi&#39;, &#39;gu&#39;, &#39;mp&#39;] *(Default: &#39;no restriction&#39;)*
+    geoTypes?: any;                       //should be an array of Place types defined by [Google api](https://developers.google.com/places/web-service/autocomplete#place_types).
+    geoLocation?: any;                    //should be an array in the format [latitude,longitude]. This feature will not work if country restriction is implimented.
+    geoRadius?: number;                   //should be a number and should only be used with &#39;geoLocation&#39;.
+    serverResponseListHierarchy?: any;    //should be an array of key from where &#39;geoPredictionServer&#39; data should be extracted. (see Example.)
+    serverResponseatLangHierarchy?: any;  //should be an array of key from where &#39;geoLatLangService&#39; data should be extracted. (see Example.)
+    serverResponseDetailHierarchy?: any;  //should be an array of key from where &#39;geoLocDetailSerice&#39; data should be extracted. (see Example.)
+    resOnSearchButtonClickOnly?: boolean; //when output should be emmited when search button clicked only.
+    useGoogleGeoApi?: boolean;            //should set to &#39;false&#39; when server urls to be used instade of google api. *(Default: true)*
+    inputPlaceholderText?: string;        //Input Placeholder text can be changed *(Default: &#39;Enter Area Name&#39;)*
+    showSearchButton?: boolean;           //Search button to be visible or not. *(Default: true)*
+    showRecentSearch?: boolean;           //Recent search to be saved &amp; shown to user or not. *(Default: true)*
+    showCurrentLocation?: boolean;        //current location option to be visible or not. *(Default: true)*
+    recentStorageName?: string;           //Recent seraches are saved in browser localsorage. The key value which is used by the module to save can be changed. *(Default: &#39;recentSearches&#39;)*
+    noOfRecentSearchSave?: number;        //Number of recent user entry to be saved . *(Default: 5)*
+    currentLocIconUrl?: string;           //Current location icon can be changed *(Should be an image url or svg url)*
+    searchIconUrl?: string;               //Search icon can be changed *(Should be an image url or svg url)*
+    locationIconUrl?: string;             //Genetal Location icon can be changed *(Should be an image or svg url)*
+    }</code></pre><h4 id="note-">NOTE:</h4>
+<p>&#39;geoTypes&#39; can be used for multiple Place Types like <code>[&#39;(regions)&#39;, &#39;(cities)&#39;]</code> OR <code>[&#39;(regions)&#39;, &#39;establishment&#39;, &#39;geocode&#39;]</code>. This will make individual api call for each Place Types to google to fetch lists and then it will merge the resuts with uniqueness.To know avalable Place Types please refer <a href="https://developers.google.com/places/web-service/autocomplete#place_types">Google api</a>.USE THIS FEATURE CAREFULLY<br/><br/></p>
+<h3 id="you-may-also-find-it-useful-to-view-the-demo-source-https-github-com-tanoy009-ng4-geoautocomplete-blob-master-demo-demo-component-ts-">You may also find it useful to view the <a href="https://github.com/tanoy009/ng4-geoautocomplete/blob/master/demo/demo.component.ts">demo source</a>.</h3>
 <h3 id="you-can-use-it-with-system-js-as-well">You can use it with system js as well</h3>
 <p><code>&#39;ng4-geoautocomplete&#39;: &#39;npm:ng4-geoautocomplete/bundles/ng4-geoautocomplete.umd.js&#39;</code></p>
 <h3 id="usage-without-a-module-bundler">Usage without a module bundler</h3>
