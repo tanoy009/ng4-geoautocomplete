@@ -73,7 +73,7 @@ List of settings that can be used to configure the module (all config. are optio
 	  geoLocDetailServerUrl?: string;       //should be a server url which returns place details upon placeID received by 'geoPredictionServerUrl' (GET request)
 	  geoCountryRestriction?: any;          //should be an array of country code where search should be restricted like ['in', 'us', 'pr', 'vi', 'gu', 'mp'] *(Default: 'no restriction')*
 	  geoTypes?: any;                       //should be an array of Place types defined by [Google api](https://developers.google.com/places/web-service/autocomplete#place_types).
-      geoLocation?: any;                    //should be an array in the format [latitude,longitude]. #### This feature will not work if country restriction is implimented.
+      geoLocation?: any;                    //should be an array in the format [latitude,longitude]. This feature will not work if country restriction is implimented.
       geoRadius?: number;                   //should be a number and should only be used with 'geoLocation'.
       serverResponseListHierarchy?: any;    //should be an array of key from where 'geoPredictionServer' data should be extracted. (see Example.)
 	  serverResponseatLangHierarchy?: any;  //should be an array of key from where 'geoLatLangService' data should be extracted. (see Example.)
@@ -91,8 +91,9 @@ List of settings that can be used to configure the module (all config. are optio
 	  locationIconUrl?: string;             //Genetal Location icon can be changed *(Should be an image or svg url)*
 	}
 ```
-* ####NOTE: 'geoType' can be used for multiple Place Types like ['(regions)', '(cities)'] OR ['(regions)', 'establishment', 'geocode']. This will make individual api call for each Place Types to google to fetch lists and then it will merge the resuts with uniqueness. USE THIS FEATURE CAREFULLY
-You may also find it useful to view the [demo source](https://github.com/tanoy009/ng4-geoautocomplete/blob/master/demo/demo.component.ts).
+#### NOTE: 
+'geoType' can be used for multiple Place Types like `['(regions)', '(cities)']` OR `['(regions)', 'establishment', 'geocode']`. This will make individual api call for each Place Types to google to fetch lists and then it will merge the resuts with uniqueness.To know avalable Place Types please refer [Google api](https://developers.google.com/places/web-service/autocomplete#place_types).USE THIS FEATURE CAREFULLY<br/><br/>
+### You may also find it useful to view the [demo source](https://github.com/tanoy009/ng4-geoautocomplete/blob/master/demo/demo.component.ts).
 
 ### You can use it with system js as well
 
