@@ -58,7 +58,7 @@
     "@angular/language-service": "^4.0.0",
     "@angular/platform-browser": "^4.0.0",
     "@angular/platform-browser-dynamic": "^4.0.0",
-    "@compodoc/compodoc": "^1.0.0-beta.3",
+    "@compodoc/compodoc": "1.0.0-beta.9",
     "@types/chai": "^3.4.30",
     "@types/html-webpack-plugin": "^2.11.2",
     "@types/jasmine": "^2.2.33",

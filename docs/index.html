@@ -126,22 +126,6 @@
                         </ul>
                     </li>
             
-                    <li class="chapter">
-                        <div class="simple">
-                            <span class="fa fa-info"></span>
-                            <span>Interfaces</span>
-                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
-                                    data-target="#xs-interfaces-links"
-                                ></span>
-                        </div>
-                        <ul class="links collapse in"
-                                id="xs-interfaces-links"
-                            >
-                                <li class="link">
-                                    <a href="./interfaces/MyGlobal.html" >MyGlobal</a>
-                                </li>
-                        </ul>
-                    </li>
             
             
             
@@ -270,22 +254,6 @@
                                </ul>
                            </li>
                    
-                           <li class="chapter">
-                               <div class="simple">
-                                   <span class="fa fa-info"></span>
-                                   <span>Interfaces</span>
-                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
-                                           data-target="#interfaces-links"
-                   ></span>
-                               </div>
-                               <ul class="links collapse in"
-                                       id="interfaces-links"
-                   >
-                                       <li class="link">
-                                           <a href="./interfaces/MyGlobal.html" >MyGlobal</a>
-                                       </li>
-                               </ul>
-                           </li>
                    
                    
                    
@@ -304,8 +272,14 @@
                </div>
                <div class="content readme">
                    <div class="content-data">
-<h1 id="angular-4-compatible-google-autocomplete">Angular 4 compatible google autocomplete</h1>
-<p><a href="https://travis-ci.org/tanoy009/ng4-geoautocomplete"><img src="https://travis-ci.org/tanoy009/ng4-geoautocomplete.svg?branch=master" alt="Build Status" class="img-responsive"></a><br><a href="https://codecov.io/gh/tanoy009/ng4-geoautocomplete"><img src="https://codecov.io/gh/tanoy009/ng4-geoautocomplete/branch/master/graph/badge.svg" alt="codecov" class="img-responsive"></a><br><a href="http://badge.fury.io/js/ng4-geoautocomplete"><img src="https://badge.fury.io/js/ng4-geoautocomplete.svg" alt="npm version" class="img-responsive"></a><br><a href="https://david-dm.org/tanoy009/ng4-geoautocomplete?type=dev"><img src="https://david-dm.org/tanoy009/ng4-geoautocomplete/dev-status.svg" alt="devDependency Status" class="img-responsive"></a><br><a href="https://github.com/tanoy009/ng4-geoautocomplete/issues"><img src="https://img.shields.io/github/issues/tanoy009/ng4-geoautocomplete.svg" alt="GitHub issues" class="img-responsive"></a><br><a href="https://github.com/tanoy009/ng4-geoautocomplete/stargazers"><img src="https://img.shields.io/github/stars/tanoy009/ng4-geoautocomplete.svg" alt="GitHub stars" class="img-responsive"></a><br><a href="https://raw.githubusercontent.com/tanoy009/ng4-geoautocomplete/master/LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="GitHub license" class="img-responsive"></a></p>
+<p>﻿# Angular 4 compatible google autocomplete
+<a href="https://travis-ci.org/tanoy009/ng4-geoautocomplete"><img src="https://travis-ci.org/tanoy009/ng4-geoautocomplete.svg?branch=master" alt="Build Status" class="img-responsive"></a>
+<a href="https://codecov.io/gh/tanoy009/ng4-geoautocomplete"><img src="https://codecov.io/gh/tanoy009/ng4-geoautocomplete/branch/master/graph/badge.svg" alt="codecov" class="img-responsive"></a>
+<a href="http://badge.fury.io/js/ng4-geoautocomplete"><img src="https://badge.fury.io/js/ng4-geoautocomplete.svg" alt="npm version" class="img-responsive"></a>
+<a href="https://david-dm.org/tanoy009/ng4-geoautocomplete?type=dev"><img src="https://david-dm.org/tanoy009/ng4-geoautocomplete/dev-status.svg" alt="devDependency Status" class="img-responsive"></a>
+<a href="https://github.com/tanoy009/ng4-geoautocomplete/issues"><img src="https://img.shields.io/github/issues/tanoy009/ng4-geoautocomplete.svg" alt="GitHub issues" class="img-responsive"></a>
+<a href="https://github.com/tanoy009/ng4-geoautocomplete/stargazers"><img src="https://img.shields.io/github/stars/tanoy009/ng4-geoautocomplete.svg" alt="GitHub stars" class="img-responsive"></a>
+<a href="https://raw.githubusercontent.com/tanoy009/ng4-geoautocomplete/master/LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="GitHub license" class="img-responsive"></a></p>
 <h2 id="demo">Demo</h2>
 <p><a href="https://tanoy009.github.io/ng4-geoautocomplete/">https://tanoy009.github.io/ng4-geoautocomplete/</a></p>
 <h2 id="test-case-">Test Case.</h2>
@@ -323,20 +297,20 @@
 <h2 id="installation">Installation</h2>
 <p>Install through npm:</p>
 <pre class="line-numbers"><code class="language-none">npm install --save ng4-geoautocomplete</code></pre><p>Then include in your apps module:</p>
-<pre class="line-numbers"><code class="language-typescript">import { Component, NgModule } from '@angular/core';
-import { Ng4GeoautocompleteModule } from 'ng4-geoautocomplete';
+<pre class="line-numbers"><code class="language-typescript">import { Component, NgModule } from &#39;&#40;angular/core&#39;;
+import { Ng4GeoautocompleteModule } from &#39;ng4-geoautocomplete&#39;;
 
-@NgModule({
+&#40;NgModule({
   imports: [
     Ng4GeoautocompleteModule.forRoot()
   ]
 })
 export class MyModule {}</code></pre><p>Add google place script in your main file generally referred to &#39;index.html&#39; (Optional if you want to use google services).</p>
-<pre class="line-numbers"><code class="language-none"><script type="text/javascript" src="https://maps.google.com/maps/api/js?sensor=true&key=XXReplace this with valid keyXX&libraries=places&language=en-US"></script></code></pre><p>Finally use in one of your apps components:</p>
-<pre class="line-numbers"><code class="language-typescript">import { Component } from '@angular/core';
+<pre class="line-numbers"><code class="language-none">&lt;script type=&quot;text/javascript&quot; src=&quot;https://maps.google.com/maps/api/js?sensor=true&amp;key=XXReplace this with valid keyXX&amp;libraries=places&amp;language=en-US&quot;&gt;&lt;/script&gt;</code></pre><p>Finally use in one of your apps components:</p>
+<pre class="line-numbers"><code class="language-typescript">import { Component } from &#39;&#40;angular/core&#39;;
 
-@Component({
-  template: '<ng4geo-autocomplete (componentCallback)="autoCompleteCallback1($event)"></ng4geo-autocomplete>'
+&#40;Component({
+  template: &#39;&lt;ng4geo-autocomplete (componentCallback)=&quot;autoCompleteCallback1($event)&quot;&gt;&lt;/ng4geo-autocomplete&gt;&#39;
 })
 export class MyComponent {
     autoCompleteCallback1(selectedData:any) {
@@ -346,29 +320,38 @@ export class MyComponent {
 <pre class="line-numbers"><code class="language-typescript">    {
       geoPredictionServerUrl?: string;      //should be a server url which returns list of places upon input query (GET request)
       geoLatLangServiceUrl?: string;        //should be a server url which returns place object upon lat and lon. (GET request)
-      geoLocDetailServerUrl?: string;       //should be a server url which returns place details upon placeID received by 'geoPredictionServerUrl' (GET request)
-      geoCountryRestriction?: any;          //should be an array of country code where search should be restricted like ['in', 'us', 'pr', 'vi', 'gu', 'mp'] *(Default: 'no restriction')*
-      serverResponseListHierarchy?: any;    //should be an array of key from where 'geoPredictionServer' data should be extracted. (see Example.)
-      serverResponseatLangHierarchy?: any;  //should be an array of key from where 'geoLatLangService' data should be extracted. (see Example.)
-      serverResponseDetailHierarchy?: any;  //should be an array of key from where 'geoLocDetailSerice' data should be extracted. (see Example.)
+      geoLocDetailServerUrl?: string;       //should be a server url which returns place details upon placeID received by &#39;geoPredictionServerUrl&#39; (GET request)
+      geoCountryRestriction?: any;          //should be an array of country code where search should be restricted like [&#39;in&#39;, &#39;us&#39;, &#39;pr&#39;, &#39;vi&#39;, &#39;gu&#39;, &#39;mp&#39;] *(Default: &#39;no restriction&#39;)*
+      geoTypes?: any;                       //should be an array of Place types defined by [Google api](https://developers.google.com/places/web-service/autocomplete#place_types).
+      geoLocation?: any;                    //should be an array in the format [latitude,longitude]. #### This feature will not work if country restriction is implimented.
+      geoRadius?: number;                   //should be a number and should only be used with &#39;geoLocation&#39;.
+      serverResponseListHierarchy?: any;    //should be an array of key from where &#39;geoPredictionServer&#39; data should be extracted. (see Example.)
+      serverResponseatLangHierarchy?: any;  //should be an array of key from where &#39;geoLatLangService&#39; data should be extracted. (see Example.)
+      serverResponseDetailHierarchy?: any;  //should be an array of key from where &#39;geoLocDetailSerice&#39; data should be extracted. (see Example.)
       resOnSearchButtonClickOnly?: boolean; //when output should be emmited when search button clicked only.
-      useGoogleGeoApi?: boolean;            //should set to 'false' when server urls to be used instade of google api. *(Default: true)*
-      inputPlaceholderText?: string;        //Input Placeholder text can be changed *(Default: 'Enter Area Name')*
+      useGoogleGeoApi?: boolean;            //should set to &#39;false&#39; when server urls to be used instade of google api. *(Default: true)*
+      inputPlaceholderText?: string;        //Input Placeholder text can be changed *(Default: &#39;Enter Area Name&#39;)*
       showSearchButton?: boolean;           //Search button to be visible or not. *(Default: true)*
-      showRecentSearch?: boolean;           //Recent search to be saved & shown to user or not. *(Default: true)*
+      showRecentSearch?: boolean;           //Recent search to be saved &amp; shown to user or not. *(Default: true)*
       showCurrentLocation?: boolean;        //current location option to be visible or not. *(Default: true)*
-      recentStorageName?: string;           //Recent seraches are saved in browser localsorage. The key value which is used by the module to save can be changed. *(Default: 'recentSearches')*
+      recentStorageName?: string;           //Recent seraches are saved in browser localsorage. The key value which is used by the module to save can be changed. *(Default: &#39;recentSearches&#39;)*
       noOfRecentSearchSave?: number;        //Number of recent user entry to be saved . *(Default: 5)*
       currentLocIconUrl?: string;           //Current location icon can be changed *(Should be an image url or svg url)*
       searchIconUrl?: string;               //Search icon can be changed *(Should be an image url or svg url)*
       locationIconUrl?: string;             //Genetal Location icon can be changed *(Should be an image or svg url)*
-    }</code></pre><p>You may also find it useful to view the <a href="https://github.com/tanoy009/ng4-geoautocomplete/blob/master/demo/demo.component.ts">demo source</a>.</p>
+    }</code></pre><ul>
+<li>####NOTE: &#39;geoType&#39; can be used for multiple Place Types like [&#39;(regions)&#39;, &#39;(cities)&#39;] OR [&#39;(regions)&#39;, &#39;establishment&#39;, &#39;geocode&#39;]. This will make individual api call for each Place Types to google to fetch lists and then it will merge the resuts with uniqueness. USE THIS FEATURE CAREFULLY
+You may also find it useful to view the <a href="https://github.com/tanoy009/ng4-geoautocomplete/blob/master/demo/demo.component.ts">demo source</a>.</li>
+</ul>
+<h3 id="you-can-use-it-with-system-js-as-well">You can use it with system js as well</h3>
+<p><code>&#39;ng4-geoautocomplete&#39;: &#39;npm:ng4-geoautocomplete/bundles/ng4-geoautocomplete.umd.js&#39;</code></p>
 <h3 id="usage-without-a-module-bundler">Usage without a module bundler</h3>
-<pre class="line-numbers"><code class="language-none"><script src="node_modules/ng4-geoautocomplete/bundles/ng4-geoautocomplete.umd.js"></script>
-<script>
+<pre class="line-numbers"><code class="language-none">&lt;script src=&quot;node_modules/ng4-geoautocomplete/bundles/ng4-geoautocomplete.umd.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
     // everything is exported ng4Geoautocomplete namespace
-</script></code></pre><h2 id="documentation">Documentation</h2>
-<p>All documentation is auto-generated from the source via <a href="https://compodoc.github.io/compodoc/">compodoc</a> and can be viewed here:<br><a href="https://tanoy009.github.io/ng4-geoautocomplete/docs/">https://tanoy009.github.io/ng4-geoautocomplete/docs/</a></p>
+&lt;/script&gt;</code></pre><h2 id="documentation">Documentation</h2>
+<p>All documentation is auto-generated from the source via <a href="https://compodoc.github.io/compodoc/">compodoc</a> and can be viewed here:
+<a href="https://tanoy009.github.io/ng4-geoautocomplete/docs/">https://tanoy009.github.io/ng4-geoautocomplete/docs/</a></p>
 <h2 id="development">Development</h2>
 <h3 id="prepare-your-environment">Prepare your environment</h3>
 <ul>
