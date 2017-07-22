@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.0.9"></a>
+## [0.0.9](https://github.com/tanoy009/ng4-geoautocomplete/compare/v0.0.8...v0.0.9) (2017-07-22)
+
+
+### Features
+
+* added settings for default input and settings can be changed after com. initialization ([772a452](https://github.com/tanoy009/ng4-geoautocomplete/commit/772a452))
+
+
+
 <a name="0.0.8"></a>
 ## [0.0.8](https://github.com/tanoy009/ng4-geoautocomplete/compare/v0.0.7...v0.0.8) (2017-07-04)
 
