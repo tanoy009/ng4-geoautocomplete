@@ -81,6 +81,7 @@ List of settings that can be used to configure the module (all config. are optio
     resOnSearchButtonClickOnly?: boolean; //when output should be emmited when search button clicked only.
     useGoogleGeoApi?: boolean;            //should set to 'false' when server urls to be used instade of google api. *(Default: true)*
     inputPlaceholderText?: string;        //Input Placeholder text can be changed *(Default: 'Enter Area Name')*
+    inputString?: string;                 //Default selected input like prefefined address. *(Default: ''). See Example 3 in Demo after 10 sec*
     showSearchButton?: boolean;           //Search button to be visible or not. *(Default: true)*
     showRecentSearch?: boolean;           //Recent search to be saved & shown to user or not. *(Default: true)*
     showCurrentLocation?: boolean;        //current location option to be visible or not. *(Default: true)*
@@ -91,6 +92,16 @@ List of settings that can be used to configure the module (all config. are optio
     locationIconUrl?: string;             //Genetal Location icon can be changed *(Should be an image or svg url)*
 	}
 ```
+#### NOTE: Component settings can also be altered after component initialization. Please follow the below method to change.
+```typescript
+this.userSettings: any = {
+  inputPlaceholderText: 'This is the placeholder text doring component initialization'
+}
+
+this.userSettings['inputPlaceholderText'] = 'This is the placeholder text after doing some external operation after some time';
+this.userSettings = Object.assign({},this.userSettings) //Very Important Line to add after modifying settings.
+```
+
 #### NOTE: 
 'geoTypes' can be used for multiple Place Types like `['(regions)', '(cities)']` OR `['(regions)', 'establishment', 'geocode']`. This will make individual api call for each Place Types to google to fetch lists and then it will merge the resuts with uniqueness.To know avalable Place Types please refer [Google api](https://developers.google.com/places/web-service/autocomplete#place_types).USE THIS FEATURE CAREFULLY<br/><br/>
 ### You may also find it useful to view the [demo source](https://github.com/tanoy009/ng4-geoautocomplete/blob/master/demo/demo.component.ts).

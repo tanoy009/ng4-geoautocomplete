@@ -61,6 +61,14 @@ export class DemoComponent {
   };
 
   constructor() {
+    setTimeout(() => {
+      this.userSettings3['inputPlaceholderText'] = 'This is delayed test';
+      this.userSettings3 = Object.assign({}, this.userSettings3);
+    }, 5000);
+    setTimeout(() => {
+      this.userSettings3['inputString'] = 'Bangalore, karnataka';
+      this.userSettings3 = Object.assign({}, this.userSettings3);
+    }, 10000);
   }
 
   getCodeHtml(data: any): any {

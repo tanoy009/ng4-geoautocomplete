@@ -1,4 +1,4 @@
-﻿import { Component, PLATFORM_ID, Inject, Input, Output, EventEmitter, OnInit, ElementRef } from '@angular/core';
+﻿import { Component, PLATFORM_ID, Inject, Input, Output, EventEmitter, OnInit, OnChanges, ElementRef } from '@angular/core';
 import { isPlatformBrowser, isPlatformServer } from '@angular/common';
 import { GlobalRef } from './windowRef.service';
 import { AutoCompleteSearchService } from './auto-complete.service';
@@ -17,6 +17,7 @@ export interface Settings {
   resOnSearchButtonClickOnly?: boolean;
   useGoogleGeoApi?: boolean;
   inputPlaceholderText?: string;
+  inputString?: string;
   showSearchButton?: boolean;
   showRecentSearch?: boolean;
   showCurrentLocation?: boolean;
@@ -277,7 +278,7 @@ export interface Settings {
     '(document:click)': 'closeAutocomplete($event)',
   }
 })
-export class AutoCompleteComponent implements OnInit {
+export class AutoCompleteComponent implements OnInit, OnChanges {
 	@Input() userSettings: Settings;
   @Output()
   componentCallback: EventEmitter<any> = new EventEmitter<any>();
@@ -290,6 +291,7 @@ export class AutoCompleteComponent implements OnInit {
   public isSettingsError: boolean = false;
   public settingsErrorMsg: string = '';
   public settings: Settings = {};
+  private moduleinit: boolean = false;
   private selectedDataIndex: number = -1;
   private recentSearchData: any = [];
   private userSelectedOption: any = '';
@@ -307,6 +309,7 @@ export class AutoCompleteComponent implements OnInit {
     resOnSearchButtonClickOnly: false,
     useGoogleGeoApi: true,
     inputPlaceholderText: 'Enter Area Name',
+    inputString: '',
     showSearchButton: true,
     showRecentSearch: true,
     showCurrentLocation: true,
@@ -324,41 +327,16 @@ export class AutoCompleteComponent implements OnInit {
   }
 
   ngOnInit(): any {
-    this.settings = this.setUserSettings();
-    //condition to check if Radius is set without location detail.
-    if (this.settings.geoRadius) {
-        if (this.settings.geoLocation.length !== 2) {
-          this.isSettingsError = true;
-          this.settingsErrorMsg = this.settingsErrorMsg +
-          'Radius should be used with GeoLocation. Please use "geoLocation" key to set lat and lng. ';
-        }
-    }
-
-    //condition to check if lat and lng is set and radious is not set then it will set to 20,000KM by default
-    if ((this.settings.geoLocation.length === 2) && !this.settings.geoRadius) {
-      this.settings.geoRadius = 20000000;
-    }
-    if (this.settings.showRecentSearch) {
-      this.getRecentLocations();
-    }
-    if (!this.settings.useGoogleGeoApi) {
-      if (!this.settings.geoPredictionServerUrl) {
-        this.isSettingsError = true;
-        this.settingsErrorMsg = this.settingsErrorMsg +
-        'Prediction custom server url is not defined. Please use "geoPredictionServerUrl" key to set. ';
-      }
-      if (!this.settings.geoLatLangServiceUrl) {
-        this.isSettingsError = true;
-        this.settingsErrorMsg = this.settingsErrorMsg +
-        'Latitude and longitude custom server url is not defined. Please use "geoLatLangServiceUrl" key to set. ';
-      }
-      if (!this.settings.geoLocDetailServerUrl) {
-        this.isSettingsError = true;
-        this.settingsErrorMsg = this.settingsErrorMsg +
-        'Location detail custom server url is not defined. Please use "geoLocDetailServerUrl" key to set. ';
-      }
+    if (!this.moduleinit) {
+      this.moduleInit();
     }
   }
+
+  ngOnChanges(): any {
+    this.moduleinit = true;
+    this.moduleInit();
+  }
+
 
   //function called when click event happens in input box. (Binded with view)
   searchinputClickCallback(event: any): any {
@@ -375,6 +353,9 @@ export class AutoCompleteComponent implements OnInit {
       this.getListQuery(inputVal);
     } else {
       this.queryItems = [];
+      if (this.userSelectedOption) {
+        this.userQuerySubmit('false');
+      }
       this.userSelectedOption = '';
       if (this.settings.showRecentSearch) {
         this.showRecentSearch();
@@ -415,8 +396,9 @@ export class AutoCompleteComponent implements OnInit {
   }
 
   //function to manually trigger the callback to parent component when clicked search button.
-  userQuerySubmit(): any {
-    if (this.userSelectedOption) {
+  userQuerySubmit(selectedOption?: any): any {
+    let _userOption: any = selectedOption === 'false' ? '' : this.userSelectedOption;
+    if (_userOption) {
       this.componentCallback.emit(this.userSelectedOption);
     }else {
       this.componentCallback.emit(false);
@@ -436,6 +418,45 @@ export class AutoCompleteComponent implements OnInit {
         }
       });
     }
+  }
+
+  //module initialization happens. function called by ngOninit and ngOnChange
+  private moduleInit(): any {
+    this.settings = this.setUserSettings();
+    //condition to check if Radius is set without location detail.
+    if (this.settings.geoRadius) {
+        if (this.settings.geoLocation.length !== 2) {
+          this.isSettingsError = true;
+          this.settingsErrorMsg = this.settingsErrorMsg +
+          'Radius should be used with GeoLocation. Please use "geoLocation" key to set lat and lng. ';
+        }
+    }
+
+    //condition to check if lat and lng is set and radious is not set then it will set to 20,000KM by default
+    if ((this.settings.geoLocation.length === 2) && !this.settings.geoRadius) {
+      this.settings.geoRadius = 20000000;
+    }
+    if (this.settings.showRecentSearch) {
+      this.getRecentLocations();
+    }
+    if (!this.settings.useGoogleGeoApi) {
+      if (!this.settings.geoPredictionServerUrl) {
+        this.isSettingsError = true;
+        this.settingsErrorMsg = this.settingsErrorMsg +
+        'Prediction custom server url is not defined. Please use "geoPredictionServerUrl" key to set. ';
+      }
+      if (!this.settings.geoLatLangServiceUrl) {
+        this.isSettingsError = true;
+        this.settingsErrorMsg = this.settingsErrorMsg +
+        'Latitude and longitude custom server url is not defined. Please use "geoLatLangServiceUrl" key to set. ';
+      }
+      if (!this.settings.geoLocDetailServerUrl) {
+        this.isSettingsError = true;
+        this.settingsErrorMsg = this.settingsErrorMsg +
+        'Location detail custom server url is not defined. Please use "geoLocDetailServerUrl" key to set. ';
+      }
+    }
+    this.locationInput = this.settings.inputString;
   }
 
   //function to process the search query when pressed enter.
