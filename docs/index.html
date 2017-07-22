@@ -331,6 +331,7 @@ export class MyComponent {
     resOnSearchButtonClickOnly?: boolean; //when output should be emmited when search button clicked only.
     useGoogleGeoApi?: boolean;            //should set to &#39;false&#39; when server urls to be used instade of google api. *(Default: true)*
     inputPlaceholderText?: string;        //Input Placeholder text can be changed *(Default: &#39;Enter Area Name&#39;)*
+    inputString?: string;                 //Default selected input like prefefined address. *(Default: &#39;&#39;). See Example 3 in Demo after 10 sec*
     showSearchButton?: boolean;           //Search button to be visible or not. *(Default: true)*
     showRecentSearch?: boolean;           //Recent search to be saved &amp; shown to user or not. *(Default: true)*
     showCurrentLocation?: boolean;        //current location option to be visible or not. *(Default: true)*
@@ -339,7 +340,13 @@ export class MyComponent {
     currentLocIconUrl?: string;           //Current location icon can be changed *(Should be an image url or svg url)*
     searchIconUrl?: string;               //Search icon can be changed *(Should be an image url or svg url)*
     locationIconUrl?: string;             //Genetal Location icon can be changed *(Should be an image or svg url)*
-    }</code></pre><h4 id="note-">NOTE:</h4>
+    }</code></pre><h4 id="note-component-settings-can-also-be-altered-after-component-initialization-please-follow-the-below-method-to-change-">NOTE: Component settings can also be altered after component initialization. Please follow the below method to change.</h4>
+<pre class="line-numbers"><code class="language-typescript">this.userSettings: any = {
+  inputPlaceholderText: &#39;This is the placeholder text doring component initialization&#39;
+}
+
+this.userSettings[&#39;inputPlaceholderText&#39;] = &#39;This is the placeholder text after doing some external operation after some time&#39;;
+this.userSettings = Object.assign({},this.userSettings) //Very Important Line to add after modifying settings.</code></pre><h4 id="note-">NOTE:</h4>
 <p>&#39;geoTypes&#39; can be used for multiple Place Types like <code>[&#39;(regions)&#39;, &#39;(cities)&#39;]</code> OR <code>[&#39;(regions)&#39;, &#39;establishment&#39;, &#39;geocode&#39;]</code>. This will make individual api call for each Place Types to google to fetch lists and then it will merge the resuts with uniqueness.To know avalable Place Types please refer <a href="https://developers.google.com/places/web-service/autocomplete#place_types">Google api</a>.USE THIS FEATURE CAREFULLY<br/><br/></p>
 <h3 id="you-may-also-find-it-useful-to-view-the-demo-source-https-github-com-tanoy009-ng4-geoautocomplete-blob-master-demo-demo-component-ts-">You may also find it useful to view the <a href="https://github.com/tanoy009/ng4-geoautocomplete/blob/master/demo/demo.component.ts">demo source</a>.</h3>
 <h3 id="you-can-use-it-with-system-js-as-well">You can use it with system js as well</h3>
