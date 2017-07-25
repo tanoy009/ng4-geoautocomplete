@@ -1,7 +1,7 @@
 ﻿import { Component } from '@angular/core';
 
 @Component({
-  selector: 'ng2geo-autocomplete-demoapp',
+  selector: 'ng4geo-autocomplete-demoapp',
   templateUrl: './demo/demo.component.html'
 })
 export class DemoComponent {
