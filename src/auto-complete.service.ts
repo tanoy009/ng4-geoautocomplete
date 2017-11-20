@@ -14,8 +14,8 @@ export class AutoCompleteSearchService {
 
   getPredictions(url: string, query: string): Promise<any> {
     return new Promise(resolve => {
-      this._http.get(url + '?query=' + query
-      ).map(res => res.json())
+      this._http.get(url, {params: {query: query}})
+      .map(res => res.json())
       .subscribe((data: any) => {
         if (data) {
           resolve(data);
@@ -29,8 +29,8 @@ export class AutoCompleteSearchService {
 
   getLatLngDetail(url: string, lat: number, lng: number): Promise<any> {
     return new Promise(resolve => {
-      this._http.get(url + '?lat=' + lat + '&lng=' + lng
-      ).map(res => res.json())
+      this._http.get(url, {params: {lat: lat, lng: lng}})
+      .map(res => res.json())
       .subscribe((data: any) => {
         if (data) {
           resolve(data);
@@ -44,8 +44,8 @@ export class AutoCompleteSearchService {
 
   getPlaceDetails(url: string, placeId: string): Promise<any> {
     return new Promise(resolve => {
-      this._http.get(url + '?query=' + placeId
-      ).map(res => res.json())
+      this._http.get(url, {params: {query: placeId}})
+      .map(res => res.json())
       .subscribe((data: any) => {
         if (data) {
           resolve(data);
