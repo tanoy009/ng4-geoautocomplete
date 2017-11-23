@@ -1,6 +1,6 @@
 {
   "name": "ng4-geoautocomplete",
-  "version": "0.0.9",
+  "version": "1.0.0",
   "description": "angular 4 compatable google autocomplete with server side api support and AOT enabled",
   "main": "./bundles/ng4-geoautocomplete.umd.js",
   "module": "./index.js",
