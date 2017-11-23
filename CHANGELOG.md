@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.0.0"></a>
+# [1.0.0](https://github.com/tanoy009/ng4-geoautocomplete/compare/v0.0.9...v1.0.0) (2017-11-23)
+
+
+### Bug Fixes
+
+* `AutoCompleteSearchService` now properly uses `params` when doing http requests ([42e6996](https://github.com/tanoy009/ng4-geoautocomplete/commit/42e6996))
+* error handled for the geolocation and breaking changes for component callback. ([6b8915c](https://github.com/tanoy009/ng4-geoautocomplete/commit/6b8915c))
+
+
+
 <a name="0.0.9"></a>
 ## [0.0.9](https://github.com/tanoy009/ng4-geoautocomplete/compare/v0.0.8...v0.0.9) (2017-07-22)
 
