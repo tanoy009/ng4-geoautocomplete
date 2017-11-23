@@ -413,7 +413,6 @@ export class AutoCompleteComponent implements OnInit, OnChanges {
       this._autoCompleteSearchService.getGeoCurrentLocation().then((result: any) => {
         if (!result) {
           this.gettingCurrentLocationFlag = false;
-          console.log("blocked geo loc")
           this.componentCallback.emit({'response': false, 'reason': 'Failed to get geo location'});
         }else {
           this.getCurrentLocationInfo(result);
