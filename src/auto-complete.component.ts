@@ -399,9 +399,9 @@ export class AutoCompleteComponent implements OnInit, OnChanges {
   userQuerySubmit(selectedOption?: any): any {
     let _userOption: any = selectedOption === 'false' ? '' : this.userSelectedOption;
     if (_userOption) {
-      this.componentCallback.emit(this.userSelectedOption);
+      this.componentCallback.emit({'response': true, 'data': this.userSelectedOption});
     }else {
-      this.componentCallback.emit(false);
+      this.componentCallback.emit({'response': false, 'reason': 'No user input'});
     }
   }
 
@@ -413,6 +413,8 @@ export class AutoCompleteComponent implements OnInit, OnChanges {
       this._autoCompleteSearchService.getGeoCurrentLocation().then((result: any) => {
         if (!result) {
           this.gettingCurrentLocationFlag = false;
+          console.log("blocked geo loc")
+          this.componentCallback.emit({'response': false, 'reason': 'Failed to get geo location'});
         }else {
           this.getCurrentLocationInfo(result);
         }
@@ -613,7 +615,7 @@ export class AutoCompleteComponent implements OnInit, OnChanges {
     this.userSelectedOption = data;
     //below code will execute only when user press enter or select any option selection and it emit a callback to the parent component.
     if (!this.settings.resOnSearchButtonClickOnly) {
-      this.componentCallback.emit(data);
+      this.componentCallback.emit({'response': true, 'data': data});
     }
   }
 

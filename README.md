@@ -106,6 +106,22 @@ this.userSettings = Object.assign({},this.userSettings) //Very Important Line to
 'geoTypes' can be used for multiple Place Types like `['(regions)', '(cities)']` OR `['(regions)', 'establishment', 'geocode']`. This will make individual api call for each Place Types to google to fetch lists and then it will merge the resuts with uniqueness.To know avalable Place Types please refer [Google api](https://developers.google.com/places/web-service/autocomplete#place_types).USE THIS FEATURE CAREFULLY<br/><br/>
 ### You may also find it useful to view the [demo source](https://github.com/tanoy009/ng4-geoautocomplete/blob/master/demo/demo.component.ts).
 
+### You can change the component css in the below manner (You have to set encapsulation to None)
+```
+import { Component, ViewEncapsulation } from '@angular/core';
+
+@Component({
+  selector: 'any-component-name',
+  encapsulation: ViewEncapsulation.None,
+  template: '<div class="demo"><ng4geo-autocomplete (componentCallback)="autoCompleteCallback1($event)"></ng4geo-autocomplete></div>',
+  styles: ['
+  .demo #search_places {
+    height: 100px;
+  }
+']
+})
+```
+
 ### You can use it with system js as well
 
 `'ng4-geoautocomplete': 'npm:ng4-geoautocomplete/bundles/ng4-geoautocomplete.umd.js'`

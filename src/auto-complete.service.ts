@@ -64,6 +64,8 @@ export class AutoCompleteSearchService {
           _window.navigator.geolocation.getCurrentPosition((pos) => {
             let latlng: any = {lat: parseFloat(pos.coords.latitude + ''), lng: parseFloat(pos.coords.longitude + '')};
             resolve(latlng);
+          }, (error) => {
+            resolve(false);
           });
         }else {
           resolve(false);
