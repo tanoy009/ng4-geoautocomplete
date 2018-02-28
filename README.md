@@ -56,12 +56,14 @@ Finally use in one of your apps components:
 import { Component } from '@angular/core';
 
 @Component({
-  template: '<ng4geo-autocomplete (componentCallback)="autoCompleteCallback1($event)"></ng4geo-autocomplete>'
+  template: '<ng4geo-autocomplete [userSettings]="userSettings" (componentCallback)="autoCompleteCallback1($event)"></ng4geo-autocomplete>'
 })
 export class MyComponent {
+  userSettings = {}
 	autoCompleteCallback1(selectedData:any) {
 		//do any necessery stuff.
 	}
+  
 }
 ```
 
