@@ -91,7 +91,7 @@ List of settings that can be used to configure the module (all config. are optio
     noOfRecentSearchSave?: number;        //Number of recent user entry to be saved . *(Default: 5)*
     currentLocIconUrl?: string;           //Current location icon can be changed *(Should be an image url or svg url)*
     searchIconUrl?: string;               //Search icon can be changed *(Should be an image url or svg url)*
-    locationIconUrl?: string;             //Genetal Location icon can be changed *(Should be an image or svg url)*
+    locationIconUrl?: string;             //General Location icon can be changed *(Should be an image or svg url)*
 	}
 ```
 #### NOTE: Component settings can also be altered after component initialization. Please follow the below method to change.
