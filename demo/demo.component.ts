@@ -32,7 +32,7 @@ export class DemoComponent {
   };
   public userSettings5: any = {
     geoCountryRestriction: ['in'],
-    geoTypes: ['establishment']
+    geoTypes: ['cities']
   };
   public userSettings6: any = {
     geoLocation: [37.76999, -122.44696],
