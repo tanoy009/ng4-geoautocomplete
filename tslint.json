@@ -33,7 +33,7 @@
       "check-whitespace"
     ],
     "quotemark": [
-      true,
+      false,
       "single"
     ],
     "semicolon": true,
@@ -58,8 +58,8 @@
       "variable-declaration",
       "member-variable-declaration"
     ],
-    "directive-selector": [true, "attribute", "ng4Geo", "camelCase"],
-    "component-selector": [true, "element", "ng4geo", "kebab-case"],
+    "directive-selector": [true, "attribute", "ngxGeo", "camelCase"],
+    "component-selector": [true, "element", "ngxgeo", "kebab-case"],
     "use-input-property-decorator": true,
     "use-output-property-decorator": true,
     "use-host-property-decorator": false,
@@ -69,10 +69,10 @@
     "no-forward-ref": true,
     "use-life-cycle-interface": true,
     "use-pipe-transform-interface": true,
-    "pipe-naming": [true, "camelCase", "ng4Geoautocomplete"],
+    "pipe-naming": [true, "camelCase", "ngxGeoautocomplete"],
     "component-class-suffix": true,
     "directive-class-suffix": true,
-    "import-destructuring-spacing": true,
+    "import-destructuring-spacing": false,
     "templates-use-public": true,
     "no-access-missing-member": false,
     "invoke-injectable": true

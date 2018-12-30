@@ -1,4 +1,4 @@
-﻿# Angular 4 compatible google autocomplete
+﻿# Angular 6 compatible google autocomplete
 [![Build Status](https://travis-ci.org/tanoy009/ng4-geoautocomplete.svg?branch=master)](https://travis-ci.org/tanoy009/ng4-geoautocomplete)
 [![codecov](https://codecov.io/gh/tanoy009/ng4-geoautocomplete/branch/master/graph/badge.svg)](https://codecov.io/gh/tanoy009/ng4-geoautocomplete)
 [![npm version](https://badge.fury.io/js/ng4-geoautocomplete.svg)](http://badge.fury.io/js/ng4-geoautocomplete)
@@ -7,7 +7,7 @@
 [![GitHub stars](https://img.shields.io/github/stars/tanoy009/ng4-geoautocomplete.svg)](https://github.com/tanoy009/ng4-geoautocomplete/stargazers)
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/tanoy009/ng4-geoautocomplete/master/LICENSE)
 
-## Demo
+## Demo (original version ng4)
 https://tanoy009.github.io/ng4-geoautocomplete/
 
 ## Test Case.
@@ -23,24 +23,24 @@ In Pipeline will be updated in a while.
 
 ## About
 
-angular 4 compatible google autocomplete with server side api support and AOT enabled
+angular 6 compatible google autocomplete with server side api support and AOT enabled
 
 ## Installation
 
 Install through npm:
 ```
-npm install --save ng4-geoautocomplete
+npm install --save ngx-geoautocomplete
 ```
 
 Then include in your apps module:
 
 ```typescript
 import { Component, NgModule } from '@angular/core';
-import { Ng4GeoautocompleteModule } from 'ng4-geoautocomplete';
+import { NgxGeoautocompleteModule } from 'ngx-geoautocomplete';
 
 @NgModule({
   imports: [
-    Ng4GeoautocompleteModule.forRoot()
+    NgxGeoautocompleteModule.forRoot()
   ]
 })
 export class MyModule {}
@@ -56,7 +56,7 @@ Finally use in one of your apps components:
 import { Component } from '@angular/core';
 
 @Component({
-  template: '<ng4geo-autocomplete [userSettings]="userSettings" (componentCallback)="autoCompleteCallback1($event)"></ng4geo-autocomplete>'
+  template: '<ngxgeo-autocomplete [userSettings]="userSettings" (componentCallback)="autoCompleteCallback1($event)"></ng4geo-autocomplete>'
 })
 export class MyComponent {
   userSettings = {}

@@ -1,7 +1,17 @@
-﻿import { Component, PLATFORM_ID, Inject, Input, Output, EventEmitter, OnInit, OnChanges, ElementRef } from '@angular/core';
-import { isPlatformBrowser, isPlatformServer } from '@angular/common';
-import { GlobalRef } from './windowRef.service';
-import { AutoCompleteSearchService } from './auto-complete.service';
+﻿import {
+  Component,
+  PLATFORM_ID,
+  Inject,
+  Input,
+  Output,
+  EventEmitter,
+  OnInit,
+  OnChanges,
+  ElementRef
+} from '@angular/core';
+import {isPlatformBrowser} from '@angular/common';
+import {GlobalRef} from './windowRef.service';
+import {AutoCompleteSearchService} from './auto-complete.service';
 
 export interface Settings {
   geoPredictionServerUrl?: string;
@@ -29,39 +39,47 @@ export interface Settings {
 }
 
 @Component({
-  selector: 'ng4geo-autocomplete',
+  selector: 'ngxgeo-autocomplete',
   template: `
     <div class="custom-autocomplete" *ngIf="!isSettingsError">
-      <div class="custom-autocomplete__container" >
+      <div class="custom-autocomplete__container">
         <div class="custom-autocomplete__input" [ngClass]="{'button-included':settings.showSearchButton}">
-          <input  [(ngModel)]="locationInput" (click)="searchinputClickCallback($event)"  (keyup)="searchinputCallback($event)"
-           type="search" name="search" id="search_places" placeholder="{{settings.inputPlaceholderText}}" autocomplete="off">
+          <input [(ngModel)]="locationInput" (click)="searchinputClickCallback($event)"
+                 (keyup)="searchinputCallback($event)"
+                 type="search" name="search" id="search_places" placeholder="{{settings.inputPlaceholderText}}"
+                 autocomplete="off">
           <button class="search-icon" *ngIf="settings.showSearchButton" (click)="userQuerySubmit()">
-            <i *ngIf="settings.searchIconUrl" [ngStyle]="{'background-image': 'url(' + settings.searchIconUrl + ')'}"></i>
+            <i *ngIf="settings.searchIconUrl"
+               [ngStyle]="{'background-image': 'url(' + settings.searchIconUrl + ')'}"></i>
             <i *ngIf="!settings.searchIconUrl" class="search-default-icon"></i>
           </button>
         </div>
         <pre class="custom-autocomplete__loader" *ngIf="gettingCurrentLocationFlag"><i class="gif"></i></pre>
       </div>
-      <ul class="custom-autocomplete__dropdown" *ngIf="dropdownOpen && (settings.showCurrentLocation || queryItems.length)">
+      <ul class="custom-autocomplete__dropdown"
+          *ngIf="dropdownOpen && (settings.showCurrentLocation || queryItems.length)">
         <li *ngIf="settings.showCurrentLocation" class="currentlocation">
           <a href="javascript:;" (click)="currentLocationSelected()">
-            <i class="location-icon" *ngIf="settings.currentLocIconUrl" [ngStyle]="{'background-image': 'url(' + settings.currentLocIconUrl + ')'}"></i>Use Current Location
+            <i class="location-icon" *ngIf="settings.currentLocIconUrl"
+               [ngStyle]="{'background-image': 'url(' + settings.currentLocIconUrl + ')'}"></i>Use Current Location
             <i class="location-icon current-default-icon" *ngIf="!settings.currentLocIconUrl"></i>
           </a>
         </li>
-        <li class="heading heading-recent" *ngIf="!recentDropdownOpen && queryItems.length"><span>Locations</span><span class="line line-location"></span></li>
+        <li class="heading heading-recent" *ngIf="!recentDropdownOpen && queryItems.length"><span>Locations</span><span
+          class="line line-location"></span></li>
         <li class="heading heading-recent" *ngIf="recentDropdownOpen && queryItems.length">
           <span>Recent Searches</span><span class="line line-recent"></span>
         </li>
-        <li *ngFor = "let data of queryItems;let $index = index" [ngClass]="{'active': data.active}">
+        <li *ngFor="let data of queryItems;let $index = index" [ngClass]="{'active': data.active}">
           <a href="javascript:;" (mouseover)="activeListNode($index)" (click)="selectedListNode($index)">
-            <i class="custom-icon" *ngIf="settings.locationIconUrl" [ngStyle]="{'background-image': 'url(' + settings.locationIconUrl + ')'}"></i>
+            <i class="custom-icon" *ngIf="settings.locationIconUrl"
+               [ngStyle]="{'background-image': 'url(' + settings.locationIconUrl + ')'}"></i>
             <i class="custom-icon location-default-icon" *ngIf="!settings.locationIconUrl"></i>
-              <span class="main-text">
+            <span class="main-text">
                 {{data.structured_formatting?.main_text ? data.structured_formatting.main_text : data.description}}
               </span>
-              <span class="secondary_text" *ngIf="data.structured_formatting?.secondary_text">{{data.structured_formatting.secondary_text}}</span>
+            <span class="secondary_text"
+                  *ngIf="data.structured_formatting?.secondary_text">{{data.structured_formatting.secondary_text}}</span>
           </a>
         </li>
       </ul>
@@ -97,31 +115,38 @@ export interface Settings {
       z-index: 99;
       top: 50px;
     }
+
     .custom-autocomplete__dropdown li {
       float: left;
       width: 100%;
       font-size: 15px;
     }
+
     .custom-autocomplete__dropdown a {
       width: 100%;
       color: #353535;
       float: left;
       padding: 8px 10px;
     }
+
     .custom-autocomplete__dropdown a:hover {
       text-decoration: none;
     }
+
     .custom-autocomplete__dropdown .currentlocation {
       text-transform: uppercase;
       letter-spacing: 1px;
     }
+
     .custom-autocomplete__dropdown .currentlocation a {
       padding: 10px 10px 10px 13px;
       font-size: 14px;
     }
+
     .custom-autocomplete__dropdown .currentlocation a:hover {
       background-color: #eeeded;
     }
+
     .custom-autocomplete__dropdown .currentlocation .location-icon {
       width: 16px;
       height: 16px;
@@ -130,6 +155,7 @@ export interface Settings {
       float: left;
       margin-right: 10px;
     }
+
     .custom-autocomplete__dropdown .heading {
       padding: 13px 10px 7px 13px;
       text-transform: uppercase;
@@ -137,6 +163,7 @@ export interface Settings {
       font-size: 13px;
       position: relative;
     }
+
     .custom-autocomplete__dropdown .heading .line {
       border-top: 1px solid #c2c2c2;
       width: calc(100% - 115px);
@@ -157,9 +184,11 @@ export interface Settings {
       top: 16px;
       width: calc(100% - 168px);
     }
+
     .custom-autocomplete__dropdown .heading-recent {
       padding-top: 8px;
     }
+
     .custom-autocomplete__dropdown .custom-icon {
       width: 16px;
       height: 16px;
@@ -168,17 +197,21 @@ export interface Settings {
       display: inline-block;
       margin-right: 4px;
     }
+
     .custom-autocomplete__dropdown .main-text {
       padding-right: 4px;
       font-weight: 700;
     }
+
     .custom-autocomplete__dropdown .secondary_text {
       font-size: 12px;
       color: #909090;
     }
+
     .custom-autocomplete__dropdown .active a {
       background-color: #ffe0cd;
     }
+
     .custom-autocomplete__loader {
       position: absolute;
       top: 0;
@@ -187,6 +220,7 @@ export interface Settings {
       text-align: center;
       background: white;
     }
+
     .custom-autocomplete__loader .gif {
       background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAiIGhlaWdodD0iMzAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmlld0JveD0iMCAwIDEwMCAxMDAiIHByZXNlcnZlQXNwZWN0UmF0aW89InhNaWRZTWlkIiBjbGFzcz0idWlsLXJpcHBsZSI+PHBhdGggZmlsbD0ibm9uZSIgY2xhc3M9ImJrIiBkPSJNMCAwaDEwMHYxMDBIMHoiLz48Zz48YW5pbWF0ZSBhdHRyaWJ1dGVOYW1lPSJvcGFjaXR5IiBkdXI9IjJzIiByZXBlYXRDb3VudD0iaW5kZWZpbml0ZSIgYmVnaW49IjBzIiBrZXlUaW1lcz0iMDswLjMzOzEiIHZhbHVlcz0iMTsxOzAiLz48Y2lyY2xlIGN4PSI1MCIgY3k9IjUwIiByPSI0MCIgc3Ryb2tlPSIjYWZhZmI3IiBmaWxsPSJub25lIiBzdHJva2Utd2lkdGg9IjgiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCI+PGFuaW1hdGUgYXR0cmlidXRlTmFtZT0iciIgZHVyPSIycyIgcmVwZWF0Q291bnQ9ImluZGVmaW5pdGUiIGJlZ2luPSIwcyIga2V5VGltZXM9IjA7MC4zMzsxIiB2YWx1ZXM9IjA7MjI7NDQiLz48L2NpcmNsZT48L2c+PGc+PGFuaW1hdGUgYXR0cmlidXRlTmFtZT0ib3BhY2l0eSIgZHVyPSIycyIgcmVwZWF0Q291bnQ9ImluZGVmaW5pdGUiIGJlZ2luPSIxcyIga2V5VGltZXM9IjA7MC4zMzsxIiB2YWx1ZXM9IjE7MTswIi8+PGNpcmNsZSBjeD0iNTAiIGN5PSI1MCIgcj0iNDAiIHN0cm9rZT0iI2ZmYTYzMyIgZmlsbD0ibm9uZSIgc3Ryb2tlLXdpZHRoPSI4IiBzdHJva2UtbGluZWNhcD0icm91bmQiPjxhbmltYXRlIGF0dHJpYnV0ZU5hbWU9InIiIGR1cj0iMnMiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIiBiZWdpbj0iMXMiIGtleVRpbWVzPSIwOzAuMzM7MSIgdmFsdWVzPSIwOzIyOzQ0Ii8+PC9jaXJjbGU+PC9nPjwvc3ZnPg==);
       background-size: cover;
@@ -197,40 +231,50 @@ export interface Settings {
       transform: translate3d(-50%, -50%, 0);
       position: absolute;
     }
-    .custom-autocomplete__container,.custom-autocomplete__input {
+
+    .custom-autocomplete__container, .custom-autocomplete__input {
       width: inherit;
       float: inherit;
       position: relative;
     }
 
-    .custom-autocomplete__input input{
+    .custom-autocomplete__input input {
+      font-family: Roboto;
+      color: #2a2a2a;
       margin: 0;
       padding: 10px;
       height: 50px;
-      border: 1px solid #ccc;
+      border: 2px solid #dadfe6;
+      border-radius: 0.375rem;
       display: block;
       width: 100%;
       overflow: hidden;
       text-overflow: ellipsis;
       font-size: 16px;
-      &::-webkit-input-placeholder {
-         color: #868484;
-      }
 
-      &:-moz-placeholder { /* Firefox 18- */
-         color: #868484;
-      }
-
-      &::-moz-placeholder {  /* Firefox 19+ */
-         color: #868484;
-      }
-
-      &:-ms-input-placeholder {
-         color: #868484;
-      }
+    &
+    ::-webkit-input-placeholder {
+      color: #868484;
     }
 
-    .button-included input{
+    &
+    :-moz-placeholder { /* Firefox 18- */
+      color: #868484;
+    }
+
+    &
+    ::-moz-placeholder { /* Firefox 19+ */
+      color: #868484;
+    }
+
+    &
+    :-ms-input-placeholder {
+      color: #868484;
+    }
+
+    }
+
+    .button-included input {
       padding-right: 60px;
     }
 
@@ -279,14 +323,14 @@ export interface Settings {
   }
 })
 export class AutoCompleteComponent implements OnInit, OnChanges {
-	@Input() userSettings: Settings;
+  @Input() userSettings: Settings;
   @Output()
   componentCallback: EventEmitter<any> = new EventEmitter<any>();
 
   public locationInput: string = '';
   public gettingCurrentLocationFlag: boolean = false;
   public dropdownOpen: boolean = false;
-  public recentDropdownOpen: boolean  = false;
+  public recentDropdownOpen: boolean = false;
   public queryItems: any = [];
   public isSettingsError: boolean = false;
   public settingsErrorMsg: string = '';
@@ -321,8 +365,8 @@ export class AutoCompleteComponent implements OnInit, OnChanges {
   };
 
   constructor(@Inject(PLATFORM_ID) private platformId: Object,
-  private _elmRef: ElementRef, private _global: GlobalRef,
-  private _autoCompleteSearchService: AutoCompleteSearchService) {
+              private _elmRef: ElementRef, private _global: GlobalRef,
+              private _autoCompleteSearchService: AutoCompleteSearchService) {
 
   }
 
@@ -359,7 +403,7 @@ export class AutoCompleteComponent implements OnInit, OnChanges {
       this.userSelectedOption = '';
       if (this.settings.showRecentSearch) {
         this.showRecentSearch();
-      }else {
+      } else {
         this.dropdownOpen = false;
       }
     }
@@ -371,7 +415,7 @@ export class AutoCompleteComponent implements OnInit, OnChanges {
       if (index === i) {
         this.queryItems[i].active = true;
         this.selectedDataIndex = index;
-      }else {
+      } else {
         this.queryItems[i].active = false;
       }
     }
@@ -382,7 +426,7 @@ export class AutoCompleteComponent implements OnInit, OnChanges {
     this.dropdownOpen = false;
     if (this.recentDropdownOpen) {
       this.setRecentLocation(this.queryItems[index]);
-    }else {
+    } else {
       this.getPlaceLocationInfo(this.queryItems[index]);
     }
   }
@@ -400,7 +444,7 @@ export class AutoCompleteComponent implements OnInit, OnChanges {
     let _userOption: any = selectedOption === 'false' ? '' : this.userSelectedOption;
     if (_userOption) {
       this.componentCallback.emit({'response': true, 'data': this.userSelectedOption});
-    }else {
+    } else {
       this.componentCallback.emit({'response': false, 'reason': 'No user input'});
     }
   }
@@ -414,7 +458,7 @@ export class AutoCompleteComponent implements OnInit, OnChanges {
         if (!result) {
           this.gettingCurrentLocationFlag = false;
           this.componentCallback.emit({'response': false, 'reason': 'Failed to get geo location'});
-        }else {
+        } else {
           this.getCurrentLocationInfo(result);
         }
       });
@@ -426,11 +470,11 @@ export class AutoCompleteComponent implements OnInit, OnChanges {
     this.settings = this.setUserSettings();
     //condition to check if Radius is set without location detail.
     if (this.settings.geoRadius) {
-        if (this.settings.geoLocation.length !== 2) {
-          this.isSettingsError = true;
-          this.settingsErrorMsg = this.settingsErrorMsg +
+      if (this.settings.geoLocation.length !== 2) {
+        this.isSettingsError = true;
+        this.settingsErrorMsg = this.settingsErrorMsg +
           'Radius should be used with GeoLocation. Please use "geoLocation" key to set lat and lng. ';
-        }
+      }
     }
 
     //condition to check if lat and lng is set and radious is not set then it will set to 20,000KM by default
@@ -444,17 +488,17 @@ export class AutoCompleteComponent implements OnInit, OnChanges {
       if (!this.settings.geoPredictionServerUrl) {
         this.isSettingsError = true;
         this.settingsErrorMsg = this.settingsErrorMsg +
-        'Prediction custom server url is not defined. Please use "geoPredictionServerUrl" key to set. ';
+          'Prediction custom server url is not defined. Please use "geoPredictionServerUrl" key to set. ';
       }
       if (!this.settings.geoLatLangServiceUrl) {
         this.isSettingsError = true;
         this.settingsErrorMsg = this.settingsErrorMsg +
-        'Latitude and longitude custom server url is not defined. Please use "geoLatLangServiceUrl" key to set. ';
+          'Latitude and longitude custom server url is not defined. Please use "geoLatLangServiceUrl" key to set. ';
       }
       if (!this.settings.geoLocDetailServerUrl) {
         this.isSettingsError = true;
         this.settingsErrorMsg = this.settingsErrorMsg +
-        'Location detail custom server url is not defined. Please use "geoLocDetailServerUrl" key to set. ';
+          'Location detail custom server url is not defined. Please use "geoLocDetailServerUrl" key to set. ';
       }
     }
     this.locationInput = this.settings.inputString;
@@ -465,7 +509,7 @@ export class AutoCompleteComponent implements OnInit, OnChanges {
     if (this.queryItems.length) {
       if (this.selectedDataIndex > -1) {
         this.selectedListNode(this.selectedDataIndex);
-      }else {
+      } else {
         this.selectedListNode(0);
       }
     }
@@ -480,7 +524,7 @@ export class AutoCompleteComponent implements OnInit, OnChanges {
         _tempObj[value] = (this.userSettings[value] !== undefined) ? this.userSettings[value] : this.defaultSettings[value];
       }
       return _tempObj;
-    }else {
+    } else {
       return this.defaultSettings;
     }
   }
@@ -501,7 +545,7 @@ export class AutoCompleteComponent implements OnInit, OnChanges {
       this._autoCompleteSearchService.getGeoPrediction(_tempParams).then((result) => {
         this.updateListItem(result);
       });
-    }else {
+    } else {
       this._autoCompleteSearchService.getPredictions(this.settings.geoPredictionServerUrl, value).then((result) => {
         result = this.extractServerList(this.settings.serverResponseListHierarchy, result);
         this.updateListItem(result);
@@ -517,7 +561,7 @@ export class AutoCompleteComponent implements OnInit, OnChanges {
         _tempData = _tempData[key];
       }
       return _tempData;
-    }else {
+    } else {
       return data;
     }
   }
@@ -535,7 +579,7 @@ export class AutoCompleteComponent implements OnInit, OnChanges {
     this._autoCompleteSearchService.getRecentList(this.settings.recentStorageName).then((result: any) => {
       if (result) {
         this.queryItems = result;
-      }else {
+      } else {
         this.queryItems = [];
       }
     });
@@ -550,10 +594,10 @@ export class AutoCompleteComponent implements OnInit, OnChanges {
         arrayIndex = ((this.selectedDataIndex + 1) <= (this.queryItems.length - 1)) ? (this.selectedDataIndex + 1) : 0;
       }
       this.activeListNode(arrayIndex);
-    }else if (keyCode === 38) {//arrow up
+    } else if (keyCode === 38) {//arrow up
       if (this.selectedDataIndex >= 0) {
         arrayIndex = ((this.selectedDataIndex - 1) >= 0) ? (this.selectedDataIndex - 1) : (this.queryItems.length - 1);
-      }else {
+      } else {
         arrayIndex = this.queryItems.length - 1;
       }
       this.activeListNode(arrayIndex);
@@ -567,11 +611,11 @@ export class AutoCompleteComponent implements OnInit, OnChanges {
     if (this.settings.useGoogleGeoApi) {
       this._autoCompleteSearchService.getGeoLatLngDetail(latlng).then((result: any) => {
         if (result) {
-         this.setRecentLocation(result);
+          this.setRecentLocation(result);
         }
         this.gettingCurrentLocationFlag = false;
       });
-    }else {
+    } else {
       this._autoCompleteSearchService.getLatLngDetail(this.settings.geoLatLangServiceUrl, latlng.lat, latlng.lng).then((result: any) => {
         if (result) {
           result = this.extractServerList(this.settings.serverResponseatLangHierarchy, result);
@@ -590,7 +634,7 @@ export class AutoCompleteComponent implements OnInit, OnChanges {
           this.setRecentLocation(data);
         }
       });
-    }else {
+    } else {
       this._autoCompleteSearchService.getPlaceDetails(this.settings.geoLocDetailServerUrl, selectedData.place_id).then((result: any) => {
         if (result) {
           result = this.extractServerList(this.settings.serverResponseDetailHierarchy, result);
