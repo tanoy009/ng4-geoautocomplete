@@ -92,7 +92,10 @@ List of settings that can be used to configure the module (all config. are optio
     currentLocIconUrl?: string;           //Current location icon can be changed *(Should be an image url or svg url)*
     searchIconUrl?: string;               //Search icon can be changed *(Should be an image url or svg url)*
     locationIconUrl?: string;             //General Location icon can be changed *(Should be an image or svg url)*
-	}
+	useCurrentLocationLabel?: string;     //Sets the label text to select the current location
+	locationsLabel?: string;              //Sets the label text for the separator of the founded locations
+	recentSearchesLabel?: string;         //Sets the label text for the separator of the last selected locations
+    }
 ```
 #### NOTE: Component settings can also be altered after component initialization. Please follow the below method to change.
 ```typescript

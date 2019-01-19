@@ -26,6 +26,9 @@ export interface Settings {
   currentLocIconUrl?: string;
   searchIconUrl?: string;
   locationIconUrl?: string;
+  useCurrentLocationLabel?: string;
+  locationsLabel?: string;
+  recentSearchesLabel?: string;
 }
 
 @Component({
@@ -46,13 +49,13 @@ export interface Settings {
       <ul class="custom-autocomplete__dropdown" *ngIf="dropdownOpen && (settings.showCurrentLocation || queryItems.length)">
         <li *ngIf="settings.showCurrentLocation" class="currentlocation">
           <a href="javascript:;" (click)="currentLocationSelected()">
-            <i class="location-icon" *ngIf="settings.currentLocIconUrl" [ngStyle]="{'background-image': 'url(' + settings.currentLocIconUrl + ')'}"></i>Use Current Location
+            <i class="location-icon" *ngIf="settings.currentLocIconUrl" [ngStyle]="{'background-image': 'url(' + settings.currentLocIconUrl + ')'}"></i>{{settings.useCurrentLocationLabel}}
             <i class="location-icon current-default-icon" *ngIf="!settings.currentLocIconUrl"></i>
           </a>
         </li>
-        <li class="heading heading-recent" *ngIf="!recentDropdownOpen && queryItems.length"><span>Locations</span><span class="line line-location"></span></li>
+        <li class="heading heading-recent" *ngIf="!recentDropdownOpen && queryItems.length"><span>{{settings.locationsLabel}}</span><span class="line line-location"></span></li>
         <li class="heading heading-recent" *ngIf="recentDropdownOpen && queryItems.length">
-          <span>Recent Searches</span><span class="line line-recent"></span>
+          <span>{{settings.recentSearchesLabel}}</span><span class="line line-recent"></span>
         </li>
         <li *ngFor = "let data of queryItems;let $index = index" [ngClass]="{'active': data.active}">
           <a href="javascript:;" (mouseover)="activeListNode($index)" (click)="selectedListNode($index)">
@@ -317,7 +320,10 @@ export class AutoCompleteComponent implements OnInit, OnChanges {
     noOfRecentSearchSave: 5,
     currentLocIconUrl: '',
     searchIconUrl: '',
-    locationIconUrl: ''
+    locationIconUrl: '',
+    useCurrentLocationLabel: 'Use Current Location',
+    locationsLabel: 'Locations',
+    recentSearchesLabel: 'Recent Searches'
   };
 
   constructor(@Inject(PLATFORM_ID) private platformId: Object,

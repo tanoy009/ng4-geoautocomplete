@@ -28,7 +28,10 @@ export class DemoComponent {
     currentLocIconUrl: 'https://cdn4.iconfinder.com/data/icons/proglyphs-traveling/512/Current_Location-512.png',
     locationIconUrl: 'http://www.myiconfinder.com/uploads/iconsets/369f997cef4f440c5394ed2ae6f8eecd.png',
     recentStorageName: 'componentData4',
-    noOfRecentSearchSave: 8
+    noOfRecentSearchSave: 8,
+    useCurrentLocationLabel: 'My location',
+    locationsLabel: 'Schauplätze',
+    recentSearchesLabel: 'Already searched'
   };
   public userSettings5: any = {
     geoCountryRestriction: ['in'],
