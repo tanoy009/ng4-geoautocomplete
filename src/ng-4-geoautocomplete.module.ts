@@ -1,6 +1,6 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { AutoCompleteComponent } from './auto-complete.component';
 import { AutoCompleteSearchService } from './auto-complete.service';
@@ -12,7 +12,7 @@ import { GlobalRef, BrowserGlobalRef } from './windowRef.service';
   ],
   imports: [
     CommonModule,
-    HttpModule,
+    HttpClientModule,
     FormsModule
   ],
   exports: [
